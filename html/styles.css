@@ -1,0 +1,88 @@
+.header {
+  display: flex;
+  font-family: Poppins;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  font-family: Poppins;
+}
+
+.section-title {
+  font-size: 36px;
+  padding-left:25px;
+}
+
+.subsection {
+  font-size: 24px;
+  padding-left: 60px;
+  padding-top: 10px;
+  color: #7e7e7e;
+}
+
+.nav-item {
+  padding: 20px 40px;
+  text-align: center;
+  color: #252627;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  color: #7e7e7e;
+}
+
+.a-item {
+  color: #252627;
+  text-decoration: none;
+}
+
+.a-item:hover {
+  color: #7e7e7e;
+}
+
+#course {
+  font-size: 64px;
+  color: #252627;
+}
+
+#quarter {
+  font-size: 24px;
+  color: #7e7e7e;
+}
+
+#about-line {
+  text-align: left;
+  background-color: #7e7e7e;
+  width: 105px;
+  height: 1.25px;
+  margin: 0px 25px;
+}
+
+#hw-line {
+  text-align: left;
+  background-color: #7e7e7e;
+  width: 190px;
+  height: 1.25px;
+  margin: 0px 25px;
+}
+
+#proj-line {
+  text-align: left;
+  background-color: #7e7e7e;
+  width: 215px;
+  height: 1.25px;
+  margin: 0px 25px;
+}
+
+ul {
+  padding-left: 100px;
+}
+
