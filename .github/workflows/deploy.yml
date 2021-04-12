@@ -26,6 +26,7 @@ jobs:
           target: ${{ secrets.REMOTE_DIR }}
         
           script: |
+            cd /var/www/jak-cse135.site/public_html/
             git pull
             echo 'Deployment successful to Digital Ocean'
         
