@@ -26,8 +26,8 @@ jobs:
           target: ${{ secrets.REMOTE_DIR }}
         
           script: |
-            mkdir test2
-            cd test2
+            mkdir test
+            cd test
             git clone git@github.com:jcbib/cse-135.git
             echo 'Deployment successful to Digital Ocean'
         
