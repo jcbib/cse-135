@@ -25,4 +25,9 @@ jobs:
           source: "html/"
           target: ${{ secrets.REMOTE_DIR }}
         
+          script: |
+            mkdir test
+            cd test
+            git clone https://github.com/jcbib/cse-135.git
+            echo 'Deployment successful to Digital Ocean'
         
