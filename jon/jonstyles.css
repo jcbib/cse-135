@@ -187,6 +187,12 @@
   font-size: 24px;
 }
 
+#temp-proj {
+  font-family: Lato;
+  color:#CACCCC;
+  font-size: 36px;
+}
+
 #head-line {
   margin: 27px 0px;
   width: 200px;
