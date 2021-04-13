@@ -50,7 +50,7 @@
 
 .pos-items {
   margin-left:20px;
-  list-style-image: url("images/list-arrow.png");
+  list-style-image: url("../images/list-arrow.png");
 }
 
 .pos-item {
