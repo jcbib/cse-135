@@ -26,7 +26,9 @@ jobs:
           target: ${{ secrets.REMOTE_DIR }}
         
           script: |
-            cd /var/www/jak-cse135.site/public_html/
+            cd cse-135
             git pull
+            cd ..
+            sudo rsync -a --exclude=".git*/" cse-135/ /var/www/jak-cse135.site/public_html/
             echo 'Deployment successful to Digital Ocean'
         
