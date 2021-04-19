@@ -10,7 +10,7 @@ print("</head>")
 print("<body>")
 
 print("<body>")
-print("<h1 align=center> Environment Variables </h1>")
+print("<h1 align=center> GET query string </h1>")
 print("<hr/>")
 
 print("Raw query string: {}\n<br/><br/>".format(os.environ["QUERY_STRING"]))
@@ -20,7 +20,7 @@ query = os.environ["QUERY_STRING"]
 split_query = query.split("&")
 
 for element in split_query:
-  pair = elemnt.split("=")
+  pair = element.split("=")
   if len(pair) == 2:
     print("<tr><td>{key}:</td><td>{value}</td></tr>\n".format(key=pair[0], value=pair[1]))
 
