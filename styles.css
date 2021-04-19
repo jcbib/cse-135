@@ -39,6 +39,18 @@
   color: #7e7e7e;
 }
 
+.item-sub {
+  font-size: 18px;
+  color: #252627;
+  margin-left: 85px;
+  font-weight: bold;
+}
+
+.sub-list {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
 .a-item {
   color: #252627;
   text-decoration: none;

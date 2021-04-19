@@ -1,2 +1,22 @@
+#!/usr/bin/perl
 
-<html><head><title>Hello CGI World</title></head><body><h1 align=center>Hello HTML World!</h1><hr/><p>Hello World</p><p>This page was generated with the Perl programming langauge</p><p>This program was generated at: Sun Apr 18 21:37:34 2021</p><p>Your current IP Address is: 172.113.11.57</p></body></html>
+print "Cache-Control: no-cache\n";
+print "Content-type: text/html\n\n";
+print "<html>";
+print "<head>";
+print "<title>Hello, Perl!</title>";
+print "</head>";
+print "<body>";
+
+print "<h1>Thomas was here - Hello, Perl!</h1>";
+print "<p>This page was generated with the Perl programming langauge</p>";
+
+$date = localtime();
+print "<p>Current Time: $date</p>";
+
+# IP Address is an environment variable when using CGI
+$address = $ENV{REMOTE_ADDR};
+print "<p>Your IP Address: $address</p>";
+
+print "</body>";
+print "</html>";
