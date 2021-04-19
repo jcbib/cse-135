@@ -17,10 +17,8 @@ dt_string = datetime.now().strftime("%A %B %d %H:%M:%S %Y")
 print("<p>Current Time: {}</p>".format(dt_string))
 
 # IP Address is an environment variable when using CGI
-# address = os.environ['REMOTE_ADDR']
-# print("<p>Your IP Address: {}</p>".format(address))
-for param in os.environ.keys():
-   print ("<b>%20s</b>: %s<\br>" % (param, os.environ[param]))
+address = os.environ['REMOTE_ADDR']
+print("<p>Your IP Address: {}</p>".format(address))
 
 print("</body>")
 print("</html>")
