@@ -5,18 +5,14 @@ from datetime import datetime
 import os
 
 print("Content-type: application/json\r\n\r\n")
+
+dt_string = datetime.now().strftime("%A %B %d %H:%M:%S %Y")
+address = os.environ['REMOTE_ADDR']
+
 print("{")
-
-print("\t\"message\": \"Hello, Python!\",")
-# print("<p>This page was generated with Python! :D</p>")
-
-# dt_string = datetime.now().strftime("%A %B %d %H:%M:%S %Y")
-# print("<p>Current Time: {}</p>".format(dt_string))
-
-# # IP Address is an environment variable when using CGI
-# address = os.environ['REMOTE_ADDR']
-# print("<p>Your IP Address: {}</p>".format(address))
-
-# print("</body>")
-# print("</html>")
+print("\t\"title\": \"Hello, Python!\",")
+print("\"IP\": \"{}\",".format(address))
+print("\"time\": \"{}\",".format(dt_string))
+print("\"heading\": \"Hello, Python!\",")
+print("\"message\": \"This page was generated with Python! :D\"")
 print("}")
