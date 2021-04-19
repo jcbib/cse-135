@@ -1,7 +1,7 @@
 #!/usr/bin/python3.8
 from datetime import datetime
 import os
-import html
+import cgi
 
 # print("Cache-Control: no-cache\n");
 print("Content-type: text/html\r\n\r\n")
@@ -18,8 +18,8 @@ dt_string = datetime.now().strftime("%A %B %d %H:%M:%S %Y")
 print("<p>Current Time: {}</p>".format(dt_string))
 
 # IP Address is an environment variable when using CGI
-# address = html.escape(os.environ['REMOTE_ADDR'])
-# print("<p>Your IP Address: {}</p>".format(address))
+address = cgi.escape(os.environ['REMOTE_ADDR'])
+print("<p>Your IP Address: {}</p>".format(address))
 
 print("</body>")
 print("</html>")
