@@ -3,18 +3,24 @@ import os
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
-
 print("<html>")
 print("<head>")
-print("<title> Environment Variables </title>")
+print("<title>GET query string</title>")
 print("</head>")
+print("<body>")
 
 print("<body>")
 print("<h1 align=center> Environment Variables </h1>")
 print("<hr/>")
 
-for param in os.environ.keys():
-   print ("<b>%20s</b>: %s<br/>" % (param, os.environ[param]))
+print("Raw query string: %s\n<br/><br/>", os.environ["QUERY_STRING"])
+# print("<table> Formatted Query String:")
 
+# query = os.environ["QUERY_STRING"]
+
+
+
+
+# print("</table>")
 print("</body>")
 print("</html>")
