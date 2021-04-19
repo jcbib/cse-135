@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 def main():
   print ("Content-type:text/html\r\n\r\n")
