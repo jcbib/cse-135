@@ -21,7 +21,7 @@ split_query = query.split("&")
 
 for element in split_query:
   pair = element.split("=")
-  if len(pair) == 2:
+  if len(pair[1]) = 0:
     print("<tr><td>{key}:</td><td>{value}</td></tr>\n".format(key=pair[0], value=pair[1]))
 
 
