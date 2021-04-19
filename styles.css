@@ -39,6 +39,11 @@
   color: #7e7e7e;
 }
 
+.langs {
+  display: flex;
+  flex-direction: row;
+}
+
 .item-sub {
   font-size: 18px;
   color: #252627;
