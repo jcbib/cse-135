@@ -20,7 +20,7 @@ print("<p>Current Time: {}</p>".format(dt_string))
 # address = os.environ['REMOTE_ADDR']
 # print("<p>Your IP Address: {}</p>".format(address))
 for param in os.environ.keys():
-   print "<b>%20s</b>: %s<\br>" % (param, os.environ[param])
+   print ("<b>%20s</b>: %s<\br>" % (param, os.environ[param]))
 
 print("</body>")
 print("</html>")
