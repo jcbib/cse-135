@@ -16,9 +16,9 @@
 
   print("<table> Formatted Query String:")
   
-  foreach ($_GET as $key=>$val) {
-    print "<tr><td>" . $key . ": </td><td>" .  $val . "</td></tr>";
-  }
+  // foreach ($_GET as $key=>$val) {
+  //   print "<tr><td>" . $key . ": </td><td>" .  $val . "</td></tr>";
+  // }
   
   print "</table>";
   print "</body>";
