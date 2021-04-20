@@ -13,7 +13,7 @@ print "<h1 align=center> Environment Variables </h1>";
 print "<hr/>";
 
 foreach ($_SERVER as $v) {
-  print "<b>$v:</b> $_SERVER[$v] <br/>";
+  print "<b>" . $v . ":</b>" .  $_SERVER[$v] . "<br/>";
 }
 
 print "</body>";
