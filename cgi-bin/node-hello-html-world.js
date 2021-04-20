@@ -1,6 +1,5 @@
 #!/usr/bin/node
 // var os = require('os');
-var dateFormat = require("dateformat");
 
 console.log("Cache-Control: no-cache")
 console.log("Content-type: text/html\r\n\r\n")
@@ -17,10 +16,10 @@ console.log("<p>This page was generated with NodeJS! :D</p>")
 var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 var d = new Date();
+var hmsFormat = {hour: '2-digit', minute: '2-digit', second: '2-digit'};
 
-var dateString = new Date();
-console.log("<p>Current Time: %s %s %s </p>", weekday[d.getDay()], months[d.getMonth()], d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds(), d.getFullYear());
-console.log("<p>Current Time: " + dateFormat(now, "dddd mmmm dS HH:MM:ss yyyy") + "</p>");
+console.log("<p>Current Time: %s %s %s %s %s</p>", weekday[d.getDay()], months[d.getMonth()], d.getDate(), d.toDateString(undefined, hmsFormat), d.getFullYear());
+// console.log("<p>Current Time: " + dateFormat(now, "dddd mmmm dS HH:MM:ss yyyy") + "</p>");
 // IP Address is an environment variable when using CGI
 // address = os.environ['REMOTE_ADDR']
 // var networkInterfaces = os.networkInterfaces();
