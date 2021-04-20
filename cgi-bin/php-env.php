@@ -12,8 +12,8 @@ print "<body>";
 print "<h1 align=center> Environment Variables </h1>";
 print "<hr/>";
 
-foreach ($_SERVER as $v) {
-  print "<b>" . $v . ":</b>" .  $_SERVER[$v] . "<br/>";
+foreach ($_SERVER as $key=>$val) {
+  print "<b>" . $key . ":</b>" .  $val . "<br/>";
 }
 
 print "</body>";
