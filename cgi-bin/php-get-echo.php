@@ -12,7 +12,7 @@
   print "<h1 align=center> Get Request Echo </h1>";
   print "<hr/>";
 
-  print "<b>Raw query string: </b>" . $_SERVER['QUERY_STRING'] . "<br/>";
+  print "Raw query string: " . $_SERVER['QUERY_STRING'] . "<br/><br/>";
 
   print("<table> Formatted Query String:");
   
