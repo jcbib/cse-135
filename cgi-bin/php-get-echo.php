@@ -12,12 +12,15 @@
   print "<h1 align=center> Get Request Echo </h1>";
   print "<hr/>";
 
-  print "<b>Query String: </b>" . $_SERVER['QUERY_STRING'] . "<br/>";
+  print "<b>Raw query string: </b>" . $_SERVER['QUERY_STRING'] . "<br/>";
 
+  print("<table> Formatted Query String:")
+  
   foreach ($_GET as $key=>$val) {
-    print "<b>" . $key . ": </b>" .  $val . "<br/>";
+    print "<tr><td>" . $key . ": </td><td>" .  $val . "</td></tr>";
   }
   
+  print "</table>";
   print "</body>";
   print "</html>";
   
