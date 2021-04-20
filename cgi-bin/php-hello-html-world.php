@@ -1,15 +1,13 @@
-#!/usr/bin/php
-
 <?php
-  print "Cache-Control: no-cache\n";
-  print "Content-type: text/html\n\n";
+  header("Cache-Control: no-cache");
+  header("Content-type: text/html");
   print "<html>";
   print "<head>";
   print "<title>Hello, Perl!</title>";
   print "</head>";
   print "<body>";
 
-  print "<h1>Jon, Anh, and Kelly were here - Hello, Perl!</h1>";
+  print "<h1>Jon, Anh, and Kelly were here - Hello, PHPh1>";
   print "<p>This page was generated with the Perl programming langauge</p>";
   
   print "<p>Current Time: " . date("l M d H:i:s Y") . "</p>";
