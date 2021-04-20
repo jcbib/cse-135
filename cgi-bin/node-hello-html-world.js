@@ -1,5 +1,6 @@
 #!/usr/bin/node
 // var os = require('os');
+var dateFormat = require("dateformat");
 
 console.log("Cache-Control: no-cache")
 console.log("Content-type: text/html\r\n\r\n")
@@ -18,8 +19,8 @@ var months = ['January','February','March','April','May','June','July','August',
 var d = new Date();
 
 var dateString = new Date();
-console.log("<p>Current Time: %s $s %s</p>", weekday[d.getDay()], months[d.getMonth()], d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds(), d.getFullYear());
-
+console.log("<p>Current Time: %s %s %s </p>", weekday[d.getDay()], months[d.getMonth()], d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds(), d.getFullYear());
+console.log("<p>Current Time: " + dateFormat(now, "dddd mmmm dS HH:MM:ss yyyy") + "</p>");
 // IP Address is an environment variable when using CGI
 // address = os.environ['REMOTE_ADDR']
 // var networkInterfaces = os.networkInterfaces();
