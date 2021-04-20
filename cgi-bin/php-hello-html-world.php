@@ -7,8 +7,8 @@
   print "</head>";
   print "<body>";
 
-  print "<h1>Jon, Anh, and Kelly were here - Hello, PHPh1>";
-  print "<p>This page was generated with the Perl programming langauge</p>";
+  print "<h1>Jon, Anh, and Kelly were here - Hello, PHP<h1>";
+  print "<p>This page was generated with the Perl programming language</p>";
   
   print "<p>Current Time: " . date("l M d H:i:s Y") . "</p>";
 
