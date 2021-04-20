@@ -10,7 +10,7 @@ $myObj->heading = "Hello, PHP!";
 $myObj->message = "This page was generated with the PHP!!!!! O_O :D";
 $address = $ENV{REMOTE_ADDR};
 
-$myJSON = json_encode($myObj);
+$myJSON = json_encode($myObj, JSON_PRETTY_PRINT);
 
 print $myJSON;
 ?>
