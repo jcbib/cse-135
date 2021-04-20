@@ -1,7 +1,7 @@
 <?php
 
 header("Cache-Control: no-cache");
-header("Content-type: application/json");
+header("Content-type: text/html");
 
 print "<html>";
 print "<head>";
