@@ -1,3 +1,4 @@
+#!/usr/bin/node
 // var os = require('os');
 
 console.log("Cache-Control: no-cache")
