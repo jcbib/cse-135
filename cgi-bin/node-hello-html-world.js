@@ -1,4 +1,4 @@
-var os = require('os');
+// var os = require('os');
 
 console.log("Cache-Control: no-cache")
 console.log("Content-type: text/html\r\n\r\n")
@@ -21,8 +21,8 @@ console.log("<p>Current Time: %s $s %s</p>", weekday[d.getDay()], months[d.getMo
 
 // IP Address is an environment variable when using CGI
 // address = os.environ['REMOTE_ADDR']
-var networkInterfaces = os.networkInterfaces();
-console.log("<p>Your IP Address: {}</p>".format(networkInterfaces))
+// var networkInterfaces = os.networkInterfaces();
+// console.log("<p>Your IP Address: {}</p>".format(networkInterfaces))
 
 console.log("</body>")
 console.log("</html>")
