@@ -24,7 +24,7 @@
   }
   print "<br/><br/>";
   print "<a href=\"/cgi-bin/php-sessions-2.php\">Session Page 2</a><br/>";
-  print "<a href=\"/hw2/php-cgiform.html\">PHP CGI Form</a><br />";
+  print "<a href=\"/hw2/php-state-demo.html\">PHP CGI Form</a><br />";
   print "<form style=\"margin-top:30px\" action=\"/cgi-bin/php-destroy-session.php\" method=\"get\">";
   print "<button type=\"submit\">Destroy Session</button>";
   print "</form>";
