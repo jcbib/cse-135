@@ -14,12 +14,6 @@ print("<body>")
 print("<h1 align=center> General Request Echo </h1>")
 print("<hr/>")
 
-# Get environment vars
-print("<table>");
-print("<tr><td>Protocol:</td><td>{}</td></tr>".format(os.environ["SERVER_PROTOCOL"]))
-print("<tr><td>Method:</td><td>{}</td></tr>".format(os.environ["REQUEST_METHOD"]))
-print("<tr><td>Query String:</td><td>{}</td></tr>".format(os.environ["QUERY_STRING"]))
-print("<tr><td>Message Body:</td><td>{}</td></tr>".format(data))
 
 # Print HTML footer
 print("</body>");
