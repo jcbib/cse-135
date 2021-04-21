@@ -14,8 +14,6 @@ print("<body>")
 print("<h1 align=center> General Request Echo </h1>")
 print("<hr/>")
 
-data = sys.stdin.read()
-
 # Get environment vars
 print("<table>");
 print("<tr><td>Protocol:</td><td>{}</td></tr>".format(os.environ["SERVER_PROTOCOL"]))
