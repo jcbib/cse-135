@@ -4,6 +4,7 @@
   header("Content-type: text/html");
 
   session_destroy();
+  $_SESSION = array(); // Clears the $_SESSION variable
   
   print "<html>";
   print "<head>";
