@@ -29,8 +29,8 @@ jobs:
             cd cse-135
             git pull
             cd ..
-            rsync -ar --delete --exclude=".git*/" ~/cse-135/ /var/www/jak-cse135.site/public_html/
+            sudo rsync -ar --delete --exclude=".git*/" ~/cse-135/ /var/www/jak-cse135.site/public_html/
             cd /var/www/jak-cse135.site/public_html/cgi-bin/
-            chmod -R a+x ./
+            sudo chmod -R a+x ./
             echo 'Deployment successful to Digital Ocean'
         
