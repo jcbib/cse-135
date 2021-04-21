@@ -1,7 +1,8 @@
 <?php
   session_start(); // Start the PHP_Session function
 
-  $name = $_POST["username"];
+  
+  $name = isset($_POST["username"]) ? $_POST["username"] : $_SESSION["username"];
   $_SESSION["username"] = $name;
 
   header("Cache-Control: no-cache");

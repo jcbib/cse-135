@@ -7,7 +7,6 @@
   header("Content-type: text/html");
 
   print "<!DOCTYPE html>";
-  print "Content-Type: text/html\n\n";
   print "<html>";
   print "<head>";
   print "<title>PHP Sessions</title>";
