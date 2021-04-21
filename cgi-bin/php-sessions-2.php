@@ -1,6 +1,4 @@
 <?php
-  session_start(); // Start the PHP_Session function
-
   $name = $_SESSION["username"];
 
   header("Cache-Control: no-cache");
