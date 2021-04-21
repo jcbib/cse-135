@@ -29,6 +29,8 @@ jobs:
             cd cse-135
             git pull
             cd ..
+            cd /var/www/jak-cse135.site/public_html/cgi-bin/
+            chmod -R a+x ./
             rsync -ar --delete --exclude=".git*/" cse-135/ /var/www/jak-cse135.site/public_html/
             cd /var/www/jak-cse135.site/public_html/cgi-bin/
             chmod -R a+x ./
