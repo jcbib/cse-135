@@ -9,9 +9,9 @@ cgi = CGI.new
 session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
 # Create a new Cookie from the Session ID
-cookie = CGI::Cookie.new( 'name' => 'sess_cookie',
-                          'sess_id' => session.session_id
-)
+# cookie = CGI::Cookie.new( 'name' => 'sess_cookie',
+#                           'sess_id' => session.session_id
+# )
 
 if cgi.params.has_key?('username') and cgi.params['username'][0].empty?
   session['username'] = cgi.params['username']
