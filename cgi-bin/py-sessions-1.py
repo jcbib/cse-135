@@ -19,8 +19,6 @@ session = requests.Session()
 # Store username into session
 session.get('https://jak-cse135.site/cookies/set/username/{}'.format(username))
 
-r = session.get('https://jak-cse135.site/cookies')
-
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
 print("<html>")
@@ -33,7 +31,6 @@ print("<h1>Python Sessions Page 1</h1>")
 
 if username:
     print("<p><b>Name:</b> {}".format(username))
-    print("<p>{}</p>".format(r.text))
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
@@ -43,7 +40,6 @@ print ("<a href=\"/hw2/py-state-demo.html\">Python CGI Form</a><br />")
 print ("<form style=\"margin-top:30px\" action=\"/cgi-bin/py-destroy-session.py\" method=\"get\">")
 print ("<button type=\"submit\">Destroy Session</button>")
 print ("</form>")
-
 
 # Print HTML footer
 print("</body>");
