@@ -38,6 +38,7 @@ end
 
 puts cgi.params.has_key?('username')
 puts cgi.params['username'] != ''
+puts cgi.params['username'] != nil
 puts cgi.params['username']
 puts session.session_id
 
