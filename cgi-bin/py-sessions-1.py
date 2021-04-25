@@ -8,7 +8,7 @@ data = sys.stdin.read()
 split_body = data.split("&")
 username = ""
 
-if len(split_body) == 1):
+if len(split_body) == 1:
     messageElement = split_body[0].split("=")
     if len(messageElement[1]) != 0:
         username = messageElement[1]
