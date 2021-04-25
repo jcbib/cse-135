@@ -13,35 +13,31 @@ cookie = CGI::Cookie.new( 'name' => 'test_cookie',
                           'sess_id' => session.session_id
 )
 
-cgi.out("cookie" => cookie) {}
-
-
 if cgi.params.has_key?('username') and cgi.params['username'][0] != ''
   session['username'] = cgi.params['username']
 elsif !session['username']
   session['username'] = ''
 end
 
-puts "Cache-Control: no-cache"
-puts "Content-type: text/html\n\n"
+cgi.out("cookie" => cookie,
+        "Cache-Control" => "no-cache",
+        "type" => "text/html") {
 
-puts "<html>"
-puts "<head>"
-puts "<title>Ruby Sessions</title>"
-puts "</head>"
-puts "<body>"
+  "<html>
+  <head>
+  <title>Ruby Sessions</title>
+  </head>"
+}
 
-puts "<h1> Ruby Sessions Page 1</h1>"
+  puts "<body>"
+          
+  puts "<h1> Ruby Sessions Page 1</h1>"
 
 if session['username'] and session['username'] != '' 
   puts "<p><b>Name:</b> %s" % session['username']
 else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
-
-# puts session.session_id
-# puts "<br/>"
-# puts session.session_id
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-2.rb\">Session Page 2</a><br/>"
