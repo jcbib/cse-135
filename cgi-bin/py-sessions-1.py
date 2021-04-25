@@ -17,9 +17,9 @@ if len(split_body) == 1:
 session = requests.Session()
 
 # Store username into session
-session.get('https://jak-cse135.site / cookies / set / username / {}'.format(username))
+session.get('https://jak-cse135.site/cookies/set/username/{}'.format(username))
 
-r = s.get('https://jak-cse135.site / cookies')
+r = s.get('https://jak-cse135.site/cookies')
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
