@@ -22,7 +22,7 @@ puts "<b>Message Body:</b><br/>\n"
 
 puts "<ul>\n"
 
-for element in split_query do
+for element in split_body do
   pair = element.split('=')
   puts "<li>%s = %s</li>\n" % pair
 end
