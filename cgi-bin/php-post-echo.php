@@ -5,11 +5,11 @@
   print "<!DOCTYPE html>";
   print "<html>";
   print "<head>";
-  print "<title> POST Message Body </title>";
+  print "<title> POST Request Echo </title>";
   print "</head>";
 
   print "<body>";
-  print "<h1 align=center> POST Message Body </h1>";
+  print "<h1 align=center> POST Request Echo </h1>";
   print "<hr/>";
 
   print "<b>Message Body:</b><br />\n";
