@@ -20,7 +20,7 @@ session = requests.Session()
 data = { 'username' : username }
 url = 'https://jak-cse135.site'
 url = 'https://httpbin.org'
-session.get('{}/cookies/set/username/{}'.format(url, username))
+session.post('POST', '{}/cookies/set/username/{}'.format(url, username))
 
 r = session.get('https://httpbin.org/cookies')
 
@@ -39,7 +39,7 @@ if username:
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
-print("<p>{}</p>".format(r.text))
+print("<p>{}</p>".format(r.cookies))
 
 
 print ("<br/><br/>")
