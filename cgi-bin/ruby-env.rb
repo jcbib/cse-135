@@ -15,8 +15,10 @@ puts "<body>"
 puts "<h1 align=center> Environment Variables </h1>"
 puts "<hr/>"
 
-for i in cgi.attributes
+for i in cgi.attributes do
   puts i
+
+end
 
 puts "</body>"
 puts "</html>"
