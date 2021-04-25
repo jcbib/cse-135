@@ -19,7 +19,7 @@ elsif !session['username']
   session['username'] = ''
 end
 
-cgi.out("cookie" => cookie,
+cgi.out(
         "Cache-Control" => "no-cache",
         "type" => "text/html") { "" }
 
