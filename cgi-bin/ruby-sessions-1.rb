@@ -29,11 +29,12 @@ puts "<body>"
 
 puts "<h1> Ruby Sessions Page 1</h1>"
 
-if session['user_name'] and session['user_name'] != '' 
-  puts "<p><b>Name:</b> %s" % session['user_name']
+if session['username'] and session['username'] != '' 
+  puts "<p><b>Name:</b> %s" % session['username']
 else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
+
 
 puts cgi.params.has_key?('username')
 puts cgi.params['username'] != ''
