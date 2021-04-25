@@ -10,7 +10,7 @@ dt_string = Time.now
 address = cgi.remote_addr
 
 puts "{"
-puts "\t\"title\": \"Hello, Ruby!\",")
+puts "\t\"title\": \"Hello, Ruby!\","
 puts "\t\"IP\": \"%s\"," % address
 puts "\t\"time\": \"%s\"," % dt_string
 puts "\t\"heading\": \"Hello, Ruby!\","
