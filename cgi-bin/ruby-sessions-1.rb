@@ -20,7 +20,7 @@ puts "Content-type: text/html\n\n"
 
 puts "<html>"
 puts "<head>"
-puts "<title>General Request Echo</title>"
+puts "<title>Ruby Sessions</title>"
 puts "</head>"
 puts "<body>"
 

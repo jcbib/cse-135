@@ -16,11 +16,11 @@ puts "Content-type: text/html\n\n"
 
 puts "<html>"
 puts "<head>"
-puts "<title>General Request Echo</title>"
+puts "<title>Ruby Sessions</title>"
 puts "</head>"
 puts "<body>"
 
-puts "<h1> Ruby Sessions Page 1</h1>"
+puts "<h1> Ruby Sessions Page 2</h1>"
 
 if session['username'] and session['username'] != '' 
   puts "<p><b>Name:</b> %s" % session['username']
@@ -35,7 +35,7 @@ puts session.methods
 # puts session.dbprot_get().class
 
 puts "<br/><br/>"
-puts "<a href=\"/cgi-bin/ruby-sessions-2.rb\">Session Page 2</a><br/>"
+puts "<a href=\"/cgi-bin/ruby-sessions-1.rb\">Session Page 1</a><br/>"
 puts "<a href=\"/hw2/ruby-state-demo.html\">Ruby CGI Form</a><br />"
 puts "<form style=\"margin-top:30px\" action=\"/cgi-bin/ruby-destroy-session.rb\" method=\"get\">"
 puts "<button type=\"submit\">Destroy Session</button>"
