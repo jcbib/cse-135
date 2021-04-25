@@ -17,9 +17,20 @@ print("<body>")
 
 print("<h1>Python Sessions Page 1</h1>")
 
-print("<h2>")
-print(session.cookies)
-print("</h2")
+data = sys.stdin.read()
+
+split_body = data.split("&")
+
+print("<b>Message Body:</b><br />\n")
+
+print("<ul>\n")
+
+for element in split_body:
+  pair = element.split("=")
+  if len(pair[1]) != 0:
+    print("<li>{key} = {value}</li>\n".format(key=pair[0], value=pair[1]))
+
+print("</ul>")
 
 print ("<br/><br/>")
 print ("<a href=\"/cgi-bin/py-sessions-2.py\">Session Page 2</a><br/>")
