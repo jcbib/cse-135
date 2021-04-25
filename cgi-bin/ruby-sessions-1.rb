@@ -35,7 +35,9 @@ else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
 
-puts cgi.params
+puts cgi.params.has_key?('username')
+puts cgi.params['username'] != ''
+puts cgi.params['username']
 puts session.session_id
 
 puts "<br/><br/>"
