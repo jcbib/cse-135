@@ -4,9 +4,9 @@ require 'cgi'
 require 'cgi/session'
 require 'cgi/session/pstore'
 
-data_body = $stdin.read()
-name = data_body.split('=')[1]
-tests = ""
+# data_body = $stdin.read()
+# name = data_body.split('=')[1]
+# tests = ""
 cgi = CGI.new
 
 session = CGI::Session.new(cgi, 
@@ -14,7 +14,7 @@ session = CGI::Session.new(cgi,
   'session_key' => '_rb_sess_id',
   'prefix' => 'pstore_sid_')
 
-if cgi.has_key?('user_name') and cgi['user_name'] != ''
+if cgi.has_key?('username') and cgi['username'] != ''
   tests = "asfasfasfasf"
   session['user_name'] = cgi['user_name'].to_s
 elsif !session['user_name'] and name != nil
