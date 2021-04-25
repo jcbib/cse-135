@@ -8,14 +8,14 @@ puts "Content-type: text/html\n\n"
 
 puts "<html>"
 puts "<head>"
-puts "<title>Hello, Ruby!</title>"
+puts "<title>Environment Variables</title>"
 puts "</head>"
 puts "<body>"
 
 puts "<h1 align=center> Environment Variables </h1>"
 puts "<hr/>"
 
-puts "HI" + cgi.ENV['REMOTE_ADDR']
+puts "HI"
 
 puts "</body>"
 puts "</html>"
