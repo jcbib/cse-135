@@ -10,6 +10,7 @@ session = requests.Session()
 request = session.get('https://jak-cse135.site/cookies/')
 
 username = ""
+print(request['data'])
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
@@ -29,7 +30,7 @@ else:
 print("<p>{}</p>".format(request))
 
 print ("<br/><br/>")
-print ("<a href=\"/cgi-bin/py-sessions-2.py\">Session Page 2</a><br/>")
+print ("<a href=\"/cgi-bin/py-sessions-1.py\">Session Page 2</a><br/>")
 print ("<a href=\"/hw2/py-state-demo.html\">Python CGI Form</a><br />")
 print ("<form style=\"margin-top:30px\" action=\"/cgi-bin/py-destroy-session.py\" method=\"get\">")
 print ("<button type=\"submit\">Destroy Session</button>")
