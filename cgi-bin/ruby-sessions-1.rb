@@ -38,8 +38,8 @@ end
 puts session.instance_variables
 puts session.methods
 puts "<br/>"
-puts session.dbman.class
-puts session.dbprot.class
+puts session.dbman_get().class
+puts session.dbprot_get().class
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-2.rb\">Session Page 2</a><br/>"
