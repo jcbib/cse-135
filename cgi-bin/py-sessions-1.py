@@ -19,7 +19,7 @@ session = requests.Session()
 # Store username into session
 data = { 'username' : username }
 url = 'https://jak-cse135.site'
-session.get('https://httpbin.org/', data=data)
+session.get('https://httpbin.org/cookies/set/username/{}'.format(username))
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
@@ -44,8 +44,8 @@ print ("<button type=\"submit\">Destroy Session</button>")
 print ("</form>")
 
 # Print HTML footer
-print("</body>");
-print("</html>");
+print("</body>")
+print("</html>")
 
 
 
