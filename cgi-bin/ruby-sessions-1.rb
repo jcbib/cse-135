@@ -13,7 +13,7 @@ cookie = CGI::Cookie.new( 'name' => 'sess_cookie',
                           'sess_id' => session.session_id
 )
 
-if cgi.params.has_key?('username') and cgi.params['username'][0] != ''
+if cgi.params.has_key?('username') and cgi.params['username'][0].empty?
   session['username'] = cgi.params['username']
 elsif !session['username']
   session['username'] = ''
