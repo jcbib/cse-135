@@ -16,9 +16,7 @@ puts "<h1 align=center> Environment Variables </h1>"
 puts "<hr/>"
 
 ENV.each do |key, value|
-  puts key 
-  puts value
-
+  puts "<b>%s</b>: %s<br/>" % [key, value]
 end 
 
 puts "</body>"
