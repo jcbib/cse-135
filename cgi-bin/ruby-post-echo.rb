@@ -15,7 +15,7 @@ puts "<body>"
 puts "<h1 align=center> POST Request Echo </h1>"
 puts "<hr/>"
 
-data_body = $stdin.read
+data_body = $stdin.read()
 split_body = data_body.split('&')
 
 puts "<b>Message Body:</b><br/>\n"
