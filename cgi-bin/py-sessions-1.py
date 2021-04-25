@@ -21,7 +21,7 @@ data = { 'username' : username }
 url = 'https://jak-cse135.site'
 session.get('{}/cookies/set/username/{}'.format(url, username))
 
-r = s.get('https://httpbin.org / cookies')
+r = session.get('https://httpbin.org / cookies')
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
