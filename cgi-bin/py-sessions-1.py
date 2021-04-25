@@ -19,7 +19,9 @@ session = requests.Session()
 # Store username into session
 data = { 'username' : username }
 url = 'https://jak-cse135.site'
-session.get('https://httpbin.org/cookies/set/username/{}'.format(username))
+session.get('{}/cookies/set/username/{}'.format(url, username))
+
+r = s.get('https://httpbin.org / cookies')
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
@@ -35,6 +37,9 @@ if username:
     print("<p><b>Name:</b> {}".format(username))
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
+
+print("<p>{}</p>".format(r.text))
+
 
 print ("<br/><br/>")
 print ("<a href=\"/cgi-bin/py-sessions-2.py\">Session Page 2</a><br/>")
