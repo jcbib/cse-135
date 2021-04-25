@@ -9,10 +9,7 @@ require 'cgi/session/pstore'
 # tests = ""
 cgi = CGI.new
 
-session = CGI::Session.new(cgi, 
-  'database_manager' => CGI::Session::PStore,
-  'session_key' => '_rb_sess_id',
-  'prefix' => 'pstore_sid_')
+session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
 if cgi.params.has_key?('username') and cgi.params['username'][0] != ''
   session['username'] = cgi.params['username']
