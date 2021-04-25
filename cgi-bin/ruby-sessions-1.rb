@@ -14,6 +14,8 @@ session = CGI::Session.new(cgi,
   'session_key' => '_rb_sess_id',
   'prefix' => 'pstore_sid_')
 
+session.database_manager.restore()
+
 if cgi.params.has_key?('username') and cgi.params['username'][0] != ''
   session['username'] = cgi.params['username']
 end
