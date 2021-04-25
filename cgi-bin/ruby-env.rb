@@ -16,8 +16,7 @@ puts "<h1 align=center> Environment Variables </h1>"
 puts "<hr/>"
 
 for i in cgi.attributes do
-  puts i
-
+  puts "hi: " + i
 end
 
 puts "</body>"
