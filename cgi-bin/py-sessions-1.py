@@ -14,7 +14,7 @@ if len(split_body) == 1:
         username = messageElement[1]
 
 # Start the session
-session = requests.session()
+session = requests.Session()
 
 # Store username into session
 session['username'] = username
