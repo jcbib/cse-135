@@ -4,12 +4,17 @@ require 'cgi'
 require 'cgi/session'
 require 'cgi/session/pstore'
 
-# data_body = $stdin.read()
-# name = data_body.split('=')[1]
-# tests = ""
 cgi = CGI.new
 
 session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
+
+# Create a new Cookie from the Session ID
+cookie = CGI::Cookie.new( 'name' => 'test_cookie',
+                          'sess_id' => session.session_id
+)
+
+cgi.out("cookie" => cookie) { "string" }
+
 
 if cgi.params.has_key?('username') and cgi.params['username'][0] != ''
   session['username'] = cgi.params['username']
@@ -32,11 +37,9 @@ else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
 
-puts session.instance_variables
-puts session.methods
-# puts "<br/>"
-# puts session.dbman_get().class
-# puts session.dbprot_get().class
+puts session.session_id
+puts "<br/>"
+puts session.session_id
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-2.rb\">Session Page 2</a><br/>"
@@ -51,29 +54,46 @@ puts "</html>"
 session.close
 
 
-# header("Cache-Control: no-cache");
-#   header("Content-type: text/html");
+# #!/usr/bin/perl
+# use CGI;
 
-#   print "<!DOCTYPE html>";
-#   print "<html>";
-#   print "<head>";
-#   print "<title>PHP Sessions</title>";
-#   print "</head>";
-#   print "<body>";
+# # Create a new Perl Session
+# use CGI::Session;
+# $session = new CGI::Session("driver:File", undef, {Directory=>"/tmp"});
 
-#   print "<h1>PHP Sessions Page 1</h1>";
+# # Create CGI Object
+# $cgi = CGI->new;
 
-#   if ($name){
-#     print("<p><b>Name:</b> $name");
-#   }else{
-#     print "<p><b>Name:</b> You do not have a name set</p>";
-#   }
-#   print "<br/><br/>";
-#   print "<a href=\"/cgi-bin/php-sessions-2.php\">Session Page 2</a><br/>";
-#   print "<a href=\"/hw2/php-state-demo.html\">PHP CGI Form</a><br />";
-#   print "<form style=\"margin-top:30px\" action=\"/cgi-bin/php-destroy-session.php\" method=\"get\">";
-#   print "<button type=\"submit\">Destroy Session</button>";
-#   print "</form>";
+# # Create a new Cookie from the Session ID
+# $cookie = $cgi->cookie(CGISESSID => $session->id);
+# print $cgi->header( -cookie=>$cookie );
 
-#   print "</body>";
-#   print "</html>";
+# #Store Data in that Perl Session
+# my $name = $session->param('username') || $cgi->param('username');
+# $session->param("username", $name);
+
+# print "<html>";
+# print "<head>";
+# print "<title>Perl Sessions</title>";
+# print "</head>";
+# print "<body>";
+
+# print "<h1>Perl Sessions Page 1</h1>";
+
+# if ($name){
+# 	print("<p><b>Name:</b> $name");
+# }else{
+# 	print "<p><b>Name:</b> You do not have a name set</p>";
+# }
+# print "<br/><br/>";
+# print "<a href=\"/cgi-bin/perl-sessions-2.pl\">Session Page 2</a><br/>";
+# print "<a href=\"/hw2/perl-cgiform.html\">Perl CGI Form</a><br />";
+# print "<form style=\"margin-top:30px\" action=\"/cgi-bin/perl-destroy-session.pl\" method=\"get\">";
+# print "<button type=\"submit\">Destroy Session</button>";
+# print "</form>";
+
+# print "</body>";
+# print "</html>";
+
+
+

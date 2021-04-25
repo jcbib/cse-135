@@ -3,8 +3,9 @@
   header("Cache-Control: no-cache");
   header("Content-type: text/html");
 
-  session_destroy();
+  
   $_SESSION = []; // Clears the $_SESSION variable
+  session_destroy();
   
   print "<html>";
   print "<head>";
