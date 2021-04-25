@@ -14,8 +14,10 @@ session = CGI::Session.new(cgi,
   'prefix' => 'pstore_sid_')
 
 if cgi.has_key?('user_name') and cgi['user_name'] != ''
+  puts "test"
   session['user_name'] = cgi['user_name'].to_s
 elsif !session['user_name'] and name != ''
+  puts "test2"
   session['user_name'] = name
 
 end
