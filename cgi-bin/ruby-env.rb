@@ -15,7 +15,7 @@ puts "<body>"
 puts "<h1 align=center> Environment Variables </h1>"
 puts "<hr/>"
 
-puts "HI"
+puts ENV['REMOTE_ADDR']
 
 puts "</body>"
 puts "</html>"
