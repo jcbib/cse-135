@@ -20,7 +20,7 @@ session = requests.Session()
 data = { 'username' : username }
 url = 'https://jak-cse135.site'
 url = 'https://httpbin.org'
-session.post('POST', '{}/cookies/set/username/{}'.format(url, username))
+session.post('POST', url, cookies = data)
 
 r = session.get('https://httpbin.org/cookies')
 
