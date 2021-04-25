@@ -14,7 +14,7 @@ session = CGI::Session.new(cgi,
   'session_key' => '_rb_sess_id',
   'prefix' => 'pstore_sid_')
 
-if cgi.params.has_key?('username') and cgi.params['username'] != nil
+if cgi.params.has_key?('username') and cgi.params['username'][0] != nil
   session['username'] = cgi.params['username']
 end
 
@@ -37,8 +37,8 @@ end
 
 
 puts cgi.params.has_key?('username')
-puts cgi.params['username'] != ''
-puts cgi.params['username'] != nil
+puts cgi.params['username'][0] != ''
+puts cgi.params['username'][0] != nil
 puts cgi.params['username'].class
 puts session.session_id
 
