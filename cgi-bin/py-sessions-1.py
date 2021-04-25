@@ -18,7 +18,8 @@ session = requests.Session()
 
 # Store username into session
 data = { 'username' : username }
-session.get('https://jak-cse135.site', data=data)
+url = 'https://jak-cse135.site'
+session.get('https://httpbin.org/', data=data)
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")

@@ -7,10 +7,10 @@ import requests
 session = requests.Session()
 
 # Store username into session
-request = session.get('https://jak-cse135.site/cookies/')
+request = session.get('https://httpbin.org/')
 
 username = ""
-print(request['data'])
+print(request)
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
