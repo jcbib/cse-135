@@ -18,10 +18,10 @@ data = sys.stdin.read()
 
 # Get environment vars
 print("<table>");
-print("<tr><td>Protocol:</td><td>{}</td></tr>".format(os.environ["SERVER_PROTOCOL"]))
-print("<tr><td>Method:</td><td>{}</td></tr>".format(os.environ["REQUEST_METHOD"]))
-print("<tr><td>Query String:</td><td>{}</td></tr>".format(os.environ["QUERY_STRING"]))
-print("<tr><td>Message Body:</td><td>{}</td></tr>".format(data))
+print("<tr><td><b>HTTP Protocol:</b></td><td>{}</td></tr>".format(os.environ["SERVER_PROTOCOL"]))
+print("<tr><td><b>HTTP Method:</b></td><td>{}</td></tr>".format(os.environ["REQUEST_METHOD"]))
+print("<tr><td><b>Query String:</b></td><td>{}</td></tr>".format(os.environ["QUERY_STRING"]))
+print("<tr><td><b>Message Body:</b></td><td>{}</td></tr>".format(data))
 
 print("</table>")
 # Print HTML footer

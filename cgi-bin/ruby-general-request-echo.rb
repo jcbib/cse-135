@@ -21,10 +21,10 @@ cgi = CGI.new
 puts "<table>\n"
 
 puts "<ul>\n"
-puts "<tr><td>Protocol:</td><td>%s</td></tr>" % [ENV['SERVER_PROTOCOL']]
-puts "<tr><td>Method:</td><td>%s</td></tr>" % [ENV['REQUEST_METHOD']]
-puts "<tr><td>Query String:</td><td>%s</td></tr>" % [ENV['QUERY_STRING']]
-puts "<tr><td>Message Body:</td><td>%s</td></tr>" % [data_body]
+puts "<tr><td><b>Protocol:</b></td><td>%s</td></tr>" % [ENV['SERVER_PROTOCOL']]
+puts "<tr><td><b>Method:</b></td><td>%s</td></tr>" % [ENV['REQUEST_METHOD']]
+puts "<tr><td><b>Query String:</b></td><td>%s</td></tr>" % [ENV['QUERY_STRING']]
+puts "<tr><td><b>Message Body:</b></td><td>%s</td></tr>" % [data_body]
 
 puts "</table>"
 puts "</body>"
