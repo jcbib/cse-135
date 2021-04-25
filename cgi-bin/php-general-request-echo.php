@@ -17,10 +17,15 @@
   print "<p><b>HTTP Method: </b>" . $_SERVER["REQUEST_METHOD"] . "</p>";
   print "<p><b>Query String: </b>" . $_SERVER["QUERY_STRING"] . "</p>";
 
-  $form_data = stream_get_contents(STDIN);
+  print "<b>Message Body:</b><br />\n";
+  print "<ul>\n";
 
-  print "<p><b>Message Body:</b> $form_data </p>";
+  #Print out the Query string
+  foreach ($_POST as $key=>$val) {
+    print "<li>" . $key .  "=" . $val . "</li>\n";
+  }
   
+  print "</ul>";
   print "</body>";
   print "</html>";
 ?>

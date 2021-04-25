@@ -15,8 +15,18 @@ print("<hr/>")
 
 data = sys.stdin.read()
 
-print("Message Body: {}<br/>".format(data));
+split_body = data.split("&")
 
+print("<b>Message Body:</b><br />\n")
+
+print("<ul>\n")
+
+for element in split_body:
+  pair = element.split("=")
+  if len(pair[1]) != 0:
+    print("<li>{key} = {value}</li>\n".format(key=pair[0], value=pair[1]))
+
+print("</ul>")
 # Print HTML footer
-print("</body>");
-print("</html>");
+print("</body>")
+print("</html>")
