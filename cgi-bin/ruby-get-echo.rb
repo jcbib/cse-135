@@ -18,9 +18,12 @@ puts "<hr/>"
 query = ENV['QUERY_STRING']
 split_query = query.split('&')
 
+puts "Raw query string: %s\n<br/><br/>" % query
+puts "<table> Formatted Query String:"
+
 for element in split_query do
   pair = element.split('=')
-  puts "<tr><td> %s: </td><td> %s </td></tr>\n" % pair
+  puts "<tr><td> " + pair[0] + ": </td><td>" + pair[1] +  "</td></tr>\n" 
 end
 
 puts "</body>"
