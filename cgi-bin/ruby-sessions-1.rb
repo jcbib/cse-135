@@ -2,6 +2,7 @@
 
 require 'cgi'
 require 'cgi/session'
+require 'cgi/session/pstore'
 
 data_body = $stdin.read()
 cgi = CGI.new
