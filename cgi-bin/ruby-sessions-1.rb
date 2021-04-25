@@ -6,6 +6,7 @@ require 'cgi/session/pstore'
 
 data_body = $stdin.read()
 name = data_body.split('=')[1]
+tests = ""
 cgi = CGI.new
 
 session = CGI::Session.new(cgi, 
@@ -14,8 +15,10 @@ session = CGI::Session.new(cgi,
   'prefix' => 'pstore_sid_')
 
 if cgi.has_key?('user_name') and cgi['user_name'] != ''
+  tests = "asfasfasfasf"
   session['user_name'] = cgi['user_name'].to_s
 elsif !session['user_name'] and name != nil
+  tests = "higihihih"
   session['user_name'] = name
 
 end
@@ -37,6 +40,7 @@ else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
 
+puts tests
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-2.rb\">Session Page 2</a><br/>"
