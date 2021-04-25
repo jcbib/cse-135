@@ -9,9 +9,9 @@ require 'cgi/session/pstore'
 # tests = ""
 cgi = CGI.new
 
-cookie_string = cgi.cookies['cookie']
-cookie = CGI::Cookie.parse(cookie_string)
-sid = cookie['sess_id']
+# cookie_string = cgi.cookies['cookie']
+cookie = CGI::Cookie.parse(cgi.cookies)
+# sid = cookie['sess_id']
 
 session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
@@ -34,9 +34,10 @@ end
 
 puts session.session_id
 puts "<br/>"
-puts sid
-puts cookie_string.class
+# puts sid
+# puts cookie_string.class
 puts cookie.class
+puts cookie
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-1.rb\">Session Page 1</a><br/>"

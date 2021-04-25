@@ -18,6 +18,8 @@ cgi.out("cookie" => cookie) { "string" }
 
 if cgi.params.has_key?('username') and cgi.params['username'][0] != ''
   session['username'] = cgi.params['username']
+elsif !session['username']
+  session['username'] = ''
 end
 
 puts "Cache-Control: no-cache"
