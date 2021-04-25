@@ -1,18 +1,32 @@
 #!/usr/bin/python3.8
 import os
 import sys
+import requests
+
+# Start the session
+session = requests.session()
+URL = "../hw2/py-state-demo.html"
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
 print("<html>")
 print("<head>")
-print("<title>General Request Echo</title>")
+print("<title>Python Sessions</title>")
 print("</head>")
 print("<body>")
 
-print("<body>")
-print("<h1 align=center> General Request Echo </h1>")
-print("<hr/>")
+print("<h1>Python Sessions Page 1</h1>")
+
+print("<h2>")
+print(session.cookies)
+print("</h2")
+
+print ("<br/><br/>")
+print ("<a href=\"/cgi-bin/py-sessions-2.py\">Session Page 2</a><br/>")
+print ("<a href=\"/hw2/py-state-demo.html\">Python CGI Form</a><br />")
+print ("<form style=\"margin-top:30px\" action=\"/cgi-bin/py-destroy-session.py\" method=\"get\">")
+print ("<button type=\"submit\">Destroy Session</button>")
+print ("</form>")
 
 
 # Print HTML footer
