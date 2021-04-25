@@ -3,9 +3,21 @@ import os
 import sys
 import requests
 
+# Get username from POST request
+data = sys.stdin.read()
+split_body = data.split("&")
+username = ""
+
+if len(split_body) == 1):
+    messageElement = split_body[0].split("=")
+    if len(messageElement[1]) != 0:
+        username = messageElement[1]
+
 # Start the session
 session = requests.session()
-URL = "../hw2/py-state-demo.html"
+
+# Store username into session
+session['username'] = username
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
@@ -17,20 +29,10 @@ print("<body>")
 
 print("<h1>Python Sessions Page 1</h1>")
 
-data = sys.stdin.read()
-
-split_body = data.split("&")
-
-print("<b>Message Body:</b><br />\n")
-
-print("<ul>\n")
-
-for element in split_body:
-  pair = element.split("=")
-  if len(pair[1]) != 0:
-    print("<li>{key} = {value}</li>\n".format(key=pair[0], value=pair[1]))
-
-print("</ul>")
+if username:
+    print("<p><b>Name:</b> {}".format(username))
+else:
+    print("<p><b>Name:</b> You do not have a name set</p>")
 
 print ("<br/><br/>")
 print ("<a href=\"/cgi-bin/py-sessions-2.py\">Session Page 2</a><br/>")
