@@ -14,7 +14,7 @@ session = CGI::Session.new(cgi,
   'session_key' => '_rb_sess_id',
   'prefix' => 'pstore_sid_')
 
-if cgi.params.has_key?('username') and cgi.params['username'][0] != nil
+if cgi.params.has_key?('username') and cgi.params['username'][0] != false
   session['username'] = cgi.params['username']
 end
 
@@ -35,11 +35,6 @@ else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
 
-
-puts cgi.params.has_key?('username')
-puts cgi.params['username'][0] != ''
-puts cgi.params['username'][0] != nil
-puts cgi.params['username'].class
 puts session.session_id
 
 puts "<br/><br/>"
