@@ -21,7 +21,7 @@ session.verify = False
 data = { 'username' : username }
 url = 'https://jak-cse135.site'
 url = 'https://httpbin.org'
-session.post(url, data = data)
+session.post(url, cookies = data)
 
 r = session.get('https://httpbin.org')
 
