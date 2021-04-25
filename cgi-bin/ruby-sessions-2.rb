@@ -6,8 +6,6 @@ require 'cgi/session/pstore'
 
 cgi = CGI.new
 
-# cookie_string = cgi.cookies['cookie'].to_s()
-# cookie = CGI::Cookie.parse(cookie_string)
 session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
 puts "Cache-Control: no-cache"
@@ -26,13 +24,6 @@ if session['username'] and session['username'] != ''
 else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
-
-# puts session.session_id
-# puts "<br/>"
-# # puts sid
-# puts cookie_string
-# puts cookie.class
-# puts cookie
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-1.rb\">Session Page 1</a><br/>"

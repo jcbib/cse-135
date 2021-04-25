@@ -9,7 +9,7 @@ cgi = CGI.new
 session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
 # Create a new Cookie from the Session ID
-cookie = CGI::Cookie.new( 'name' => 'test_cookie',
+cookie = CGI::Cookie.new( 'name' => 'sess_cookie',
                           'sess_id' => session.session_id
 )
 
@@ -29,9 +29,9 @@ cgi.out("cookie" => cookie,
   </head>"
 }
 
-  puts "<body>"
-          
-  puts "<h1> Ruby Sessions Page 1</h1>"
+puts "<body>"
+        
+puts "<h1> Ruby Sessions Page 1</h1>"
 
 if session['username'] and session['username'] != '' 
   puts "<p><b>Name:</b> %s" % session['username']
