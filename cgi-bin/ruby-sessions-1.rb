@@ -52,7 +52,7 @@ puts "</form>"
 puts "</body>"
 puts "</html>"
 
-session.close
+# session.close
 
 
 # header("Cache-Control: no-cache");
