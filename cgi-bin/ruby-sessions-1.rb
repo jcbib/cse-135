@@ -4,9 +4,9 @@ require 'cgi'
 require 'cgi/session'
 require 'cgi/session/pstore'
 
-session = CGI::Session.new(nil, 'database_manager' => CGI::Session::PStore)
-
 cgi = CGI.new
+
+session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
 # Create a new Cookie from the Session ID
 cookie = CGI::Cookie.new( 'name' => 'sess_cookie',
