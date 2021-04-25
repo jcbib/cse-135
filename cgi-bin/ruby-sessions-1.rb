@@ -7,7 +7,7 @@ data_body = $stdin.read()
 cgi = CGI.new
 
 session = CGI::Session.new(cgi, 
-  'database_manager' => CGI::Session::Pstore,
+  'database_manager' => CGI::Session::PStore,
   'session_key' => '_rb_sess_id',
   'prefix' => 'pstore_sid_')
 
