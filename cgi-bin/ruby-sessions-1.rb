@@ -37,7 +37,9 @@ end
 
 puts session.instance_variables
 puts session.methods
-puts session['database_manager']
+puts "<br/>"
+puts session.dbman.class
+puts session.dbprot.class
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-2.rb\">Session Page 2</a><br/>"
