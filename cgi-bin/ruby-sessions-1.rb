@@ -16,10 +16,10 @@ session = CGI::Session.new(cgi,
 
 if cgi.has_key?('username') and cgi['username'] != ''
   tests = "asfasfasfasf"
-  session['user_name'] = cgi['user_name'].to_s
-elsif !session['user_name'] and name != nil
+  session['username'] = cgi['username'].to_s
+elsif !session['username']
   tests = "higihihih"
-  session['user_name'] = name
+  session['username'] = name
 
 end
 
