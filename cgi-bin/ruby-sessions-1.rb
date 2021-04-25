@@ -37,9 +37,9 @@ end
 
 puts session.instance_variables
 puts session.methods
-puts "<br/>"
-puts session.dbman_get().class
-puts session.dbprot_get().class
+# puts "<br/>"
+# puts session.dbman_get().class
+# puts session.dbprot_get().class
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-2.rb\">Session Page 2</a><br/>"
@@ -51,7 +51,7 @@ puts "</form>"
 puts "</body>"
 puts "</html>"
 
-# session.close
+session.close
 
 
 # header("Cache-Control: no-cache");
