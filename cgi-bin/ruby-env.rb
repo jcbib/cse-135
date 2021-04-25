@@ -15,7 +15,11 @@ puts "<body>"
 puts "<h1 align=center> Environment Variables </h1>"
 puts "<hr/>"
 
-puts ENV['REMOTE_ADDR']
+ENV.each do |key, value|
+  puts key 
+  puts value
+
+end 
 
 puts "</body>"
 puts "</html>"
