@@ -20,9 +20,9 @@ session = requests.Session()
 data = { 'username' : username }
 url = 'https://jak-cse135.site'
 url = 'https://httpbin.org'
-session.post('POST', url, cookies = data)
+session.post(url, cookies = data)
 
-r = session.get('https://httpbin.org/cookies')
+r = session.get('https://httpbin.org')
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
