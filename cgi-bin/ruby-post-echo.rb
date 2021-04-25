@@ -1,7 +1,6 @@
 #!/usr/bin/ruby
 
 require "cgi"
-cgi = CGI.new
 
 puts "Cache-Control: no-cache"
 puts "Content-type: text/html\n\n"
@@ -17,6 +16,7 @@ puts "<hr/>"
 
 data_body = $stdin.read()
 split_body = data_body.split('&')
+cgi = CGI.new
 
 puts "<b>Message Body:</b><br/>\n"
 
