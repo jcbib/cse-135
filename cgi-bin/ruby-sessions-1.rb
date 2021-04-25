@@ -40,6 +40,7 @@ else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
 
+puts cgi.params
 puts session.session_id
 
 puts "<br/><br/>"
