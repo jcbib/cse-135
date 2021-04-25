@@ -40,7 +40,7 @@ if username:
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
-print("<p>{}</p>".format(r.text))
+print("<p>{}</p>".format(r.text.cookies))
 
 
 print ("<br/><br/>")
