@@ -14,13 +14,8 @@ session = CGI::Session.new(cgi,
   'session_key' => '_rb_sess_id',
   'prefix' => 'pstore_sid_')
 
-if cgi.has_key?('username') and cgi['username'] != ''
-  tests = "asfasfasfasf"
-  session['username'] = cgi['username'].to_s
-elsif !session['username']
-  tests = "higihihih"
-  session['username'] = name
-
+if cgi.params.has_key?('username') and cgi.params['username'] != ''
+  session['username'] = cgi.params['username']
 end
 
 puts "Cache-Control: no-cache"
