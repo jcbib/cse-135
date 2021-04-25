@@ -15,7 +15,7 @@ puts "<body>"
 puts "<h1 align=center> Environment Variables </h1>"
 puts "<hr/>"
 
-cgi.ENV
+puts cgi.ENV
 
 puts "</body>"
 puts "</html>"
