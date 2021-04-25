@@ -23,6 +23,7 @@ print("<tr><td>Method:</td><td>{}</td></tr>".format(os.environ["REQUEST_METHOD"]
 print("<tr><td>Query String:</td><td>{}</td></tr>".format(os.environ["QUERY_STRING"]))
 print("<tr><td>Message Body:</td><td>{}</td></tr>".format(data))
 
+print("</table>")
 # Print HTML footer
-print("</body>");
-print("</html>");
+print("</body>")
+print("</html>")
