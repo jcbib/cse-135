@@ -35,7 +35,7 @@ else
   puts "<p><b>Name:</b> You do not have a name set</p>"
 end
 
-puts session.attributes
+puts session.instance_variables
 puts session.methods
 puts session['database_manager']
 
