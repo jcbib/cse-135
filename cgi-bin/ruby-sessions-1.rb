@@ -10,6 +10,7 @@ session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
 # Create a new Cookie from the Session ID
 cookie = CGI::Cookie.new( 'name' => 'sess_cookie',
+                          'sess_id' => session.session_id
 )
 
 if cgi.params.has_key?('username') and cgi.params['username'][0] != ''
@@ -20,13 +21,12 @@ end
 
 cgi.out("cookie" => cookie,
         "Cache-Control" => "no-cache",
-        "type" => "text/html") {
+        "type" => "text/html") { "" }
 
-  "<html>
-  <head>
-  <title>Ruby Sessions</title>
-  </head>"
-}
+puts "<html>"
+puts "<head>"
+puts "<title>Ruby Sessions</title>"
+puts "</head>"
 
 puts "<body>"
         
