@@ -23,23 +23,8 @@ puts "<table> Formatted Query String:"
 
 for element in split_query do
   pair = element.split('=')
-  puts "<tr><td> " + pair[0] + ": </td><td>" + pair[1] +  "</td></tr>\n" 
+  puts "<tr><td> %s: </td><td> %s </td></tr>\n" % pair
 end
 
 puts "</body>"
 puts "</html>"
-
-# query = os.environ["QUERY_STRING"]
-# split_query = query.split("&")
-
-# for element in split_query:
-#   pair = element.split("=")
-#   if len(pair[1]) != 0:
-#     print("<tr><td>{key}:</td><td>{value}</td></tr>\n".format(key=pair[0], value=pair[1]))
-
-
-
-
-# print("</table>")
-# print("</body>")
-# print("</html>")
