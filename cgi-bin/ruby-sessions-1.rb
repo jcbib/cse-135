@@ -41,6 +41,7 @@ else
 end
 
 puts tests
+puts "Sessions: " + session['user_name']
 
 puts "<br/><br/>"
 puts "<a href=\"/cgi-bin/ruby-sessions-2.rb\">Session Page 2</a><br/>"
