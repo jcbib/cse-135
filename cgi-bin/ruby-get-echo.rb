@@ -21,6 +21,7 @@ split_query = query.split('&')
 for element in split_query do
   pair = element.split('=')
   puts "<tr><td> %s: </td><td> %s </td></tr>\n" % pair
+end
 
 puts "</body>"
 puts "</html>"
