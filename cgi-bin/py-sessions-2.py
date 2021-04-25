@@ -7,7 +7,7 @@ import requests
 session = requests.Session()
 
 # Store username into session
-request = session.get('https://httpbin.org/cookies/')
+request = session.get('https://httpbin.org/')
 
 username = ""
 
@@ -26,7 +26,7 @@ if username:
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
-print("<p>{}</p>".format(request.text))
+print("<p>{}</p>".format(request.cookies))
 
 print ("<br/><br/>")
 print ("<a href=\"/cgi-bin/py-sessions-1.py\">Session Page 2</a><br/>")
