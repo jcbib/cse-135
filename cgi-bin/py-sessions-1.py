@@ -10,11 +10,12 @@ username = ""
 
 if len(split_body) == 1:
     messageElement = split_body[0].split("=")
-    if len(messageElement) == 2 or len(messageElement[1]) != 0:
+    if len(messageElement) == 2 and len(messageElement[1]) != 0:
         username = messageElement[1]
 
 # Start the session
 session = requests.Session()
+session.verify = False
 
 # Store username into session
 data = { 'username' : username }
@@ -39,7 +40,7 @@ if username:
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
-print("<p>{}</p>".format(r.cookies))
+print("<p>{}</p>".format(r.cookies.get_dict()))
 
 
 print ("<br/><br/>")
