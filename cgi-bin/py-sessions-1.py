@@ -17,7 +17,9 @@ if len(split_body) == 1:
 session = requests.Session()
 
 # Store username into session
-session['username'] = username
+session.get('https://jak-cse135.site / cookies / set / username / {}'.format(username))
+
+r = s.get('https://jak-cse135.site / cookies')
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
@@ -31,6 +33,7 @@ print("<h1>Python Sessions Page 1</h1>")
 
 if username:
     print("<p><b>Name:</b> {}".format(username))
+    print("<p>{}</p>".format(r.text))
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
