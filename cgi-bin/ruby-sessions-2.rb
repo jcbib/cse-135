@@ -6,8 +6,8 @@ require 'cgi/session/pstore'
 
 cgi = CGI.new
 
-cookie_string = cgi.cookies['cookie'].to_s()
-cookie = CGI::Cookie.parse(cookie_string)
+# cookie_string = cgi.cookies['cookie'].to_s()
+# cookie = CGI::Cookie.parse(cookie_string)
 session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
 puts "Cache-Control: no-cache"

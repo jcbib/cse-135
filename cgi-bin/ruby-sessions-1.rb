@@ -13,7 +13,7 @@ cookie = CGI::Cookie.new( 'name' => 'test_cookie',
                           'sess_id' => session.session_id
 )
 
-cgi.out("cookie" => cookie) { "string" }
+cgi.out("cookie" => cookie)
 
 
 if cgi.params.has_key?('username') and cgi.params['username'][0] != ''
