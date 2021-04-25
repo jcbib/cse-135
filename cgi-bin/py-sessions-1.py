@@ -10,7 +10,7 @@ username = ""
 
 if len(split_body) == 1:
     messageElement = split_body[0].split("=")
-    if len(messageElement[1]) != 0:
+    if len(messageElement) == 2 or len(messageElement[1]) != 0:
         username = messageElement[1]
 
 # Start the session
@@ -20,7 +20,7 @@ session = requests.Session()
 data = { 'username' : username }
 url = 'https://jak-cse135.site'
 url = 'https://httpbin.org'
-session.post(url, cookies = data)
+session.post(url, data = data)
 
 r = session.get('https://httpbin.org')
 
