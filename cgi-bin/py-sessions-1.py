@@ -11,8 +11,10 @@ cookie_dict = {}
 if cookie_string:
     split_cookie = cookie_string.split(';')
     for pair in split_cookie:
-        key, val = pair.split('=')
-        cookie_dict[key.strip()] = val
+        pair_list = pair.split('=')
+        if len(pair_list) == 2 :
+            key, val = pair_list
+            cookie_dict[key.strip()] = val
 
 username = ""
 
