@@ -20,6 +20,7 @@ print("<h1>Python Sessions Page 2</h1>")
 
 if cookie_string:
     cookie.load(cookie_string)
+    print(cookie_string)
     username = cookie['username'].value
 
 if len(username) != 0:
