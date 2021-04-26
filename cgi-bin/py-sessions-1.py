@@ -1,5 +1,5 @@
 #!/usr/bin/python3.8
-import sha, time, Cookie, os, sys
+import hashlib, time, Cookie, os, sys
 
 # Start the session
 cookie = Cookie.SimpleCookie()
@@ -8,7 +8,8 @@ username = ""
 
 # if new session
 if not cookie_string:
-    sid = sha.new(repr(time.time())).hexdigest()
+    hash = hashlib.sha1()
+    sid = hash.update(str(time.time())).hexdigest()
     cookie['sid'] = sid
 else:
     cookie.load(cookie_string)
