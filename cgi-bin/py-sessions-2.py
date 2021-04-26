@@ -36,5 +36,5 @@ print ("<button type=\"submit\">Destroy Session</button>")
 print ("</form>")
 
 # Print HTML footer
-print("</body>");
-print("</html>");
+print("</body>")
+print("</html>")

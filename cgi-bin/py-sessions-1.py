@@ -15,20 +15,16 @@ if cookie_string:
         cookie_dict[key.strip()] = val
 
 username = ""
-test = "a"
 
 # if new session
-if 'sid' not in cookie_dict:
+if 'sid' not in cookie_dict or cookie_dict['sid'] == '':
     m = hashlib.sha1()
     m.update(str(time.time()).encode('utf-8'))
     sid = m.hexdigest()
     cookie['sid'] = sid
 else:
-    test = "b"
     cookie.load(cookie_string)
     sid = cookie['sid'].value
-
-
 
 # Get username from POST request
 data = sys.stdin.read()
@@ -56,7 +52,6 @@ print("<h1>Python Sessions Page 1</h1>")
 
 username = cookie['username'].value
 
-print(test)
 if len(username) != 0:
     print("<p><b>Name:</b> {}</p>".format(username))
 else:
@@ -72,41 +67,3 @@ print ("</form>")
 # Print HTML footer
 print("</body>")
 print("</html>")
-
-
-
-# <?php
-#   session_start(); // Start the PHP_Session function
-
-  
-#   $name = isset($_POST["username"]) ? $_POST["username"] : $_SESSION["username"];
-#   $_SESSION["username"] = $name;
-
-#   header("Cache-Control: no-cache");
-#   header("Content-type: text/html");
-
-#   print "<!DOCTYPE html>";
-#   print "<html>";
-#   print "<head>";
-#   print "<title>PHP Sessions</title>";
-#   print "</head>";
-#   print "<body>";
-
-#   print "<h1>PHP Sessions Page 1</h1>";
-
-#   if ($name){
-#     print("<p><b>Name:</b> $name");
-#   }else{
-#     print "<p><b>Name:</b> You do not have a name set</p>";
-#   }
-#   print "<br/><br/>";
-#   print "<a href=\"/cgi-bin/php-sessions-2.php\">Session Page 2</a><br/>";
-#   print "<a href=\"/hw2/php-state-demo.html\">PHP CGI Form</a><br />";
-#   print "<form style=\"margin-top:30px\" action=\"/cgi-bin/php-destroy-session.php\" method=\"get\">";
-#   print "<button type=\"submit\">Destroy Session</button>";
-#   print "</form>";
-
-#   print "</body>";
-#   print "</html>";
-
-# ?>
