@@ -24,7 +24,7 @@ if cookie_string:
     username = cookie['username'].value
 
 if len(username) != 0:
-    print("<p><b>Name:</b> {}".format(username))
+    print("<p><b>Name:</b> {}</p>".format(username))
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
