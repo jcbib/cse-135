@@ -11,7 +11,7 @@ split_cookie = cookie_string.split(';')
 cookie_dict = {}
 for pair in split_cookie:
     key, val = pair.split('=')
-    cookie_dict['key'] = val
+    cookie_dict[key] = val
 
 username = ""
 test = "a"
@@ -53,6 +53,7 @@ print ("<br/><br/>")
 print(test)
 print ("<br/><br/>")
 print(cookie_dict)
+print ("<br/><br/>")
 username = cookie['username'].value
 print(username)
 
