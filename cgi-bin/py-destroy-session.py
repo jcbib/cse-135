@@ -13,6 +13,8 @@ cookie.load(cookie_string)
 cookie['sid'] = ''
 cookie['username'] = ''
 
+print("Cache-Control: no-cache")
+print("Content-type: text/html\r\n\r\n")
 print ("<html>")
 print ("<head>")
 print ("<title>PHP Session Destroyed</title>")

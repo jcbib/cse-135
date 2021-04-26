@@ -6,7 +6,6 @@ import sys
 cookie = cookies.SimpleCookie()
 username = ""
 
-# print (cookie)
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
 print("<html>")
