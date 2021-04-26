@@ -5,12 +5,18 @@ import hashlib, time, os, sys
 # Start the session
 cookie = cookies.SimpleCookie()
 cookie_string = os.environ.get('HTTP_COOKIE')
+
+# Split cookie string to see if sid exists
 split_cookie = cookie_string.split(';')
+cookie_dict = {}
+for pair in split_cookie:
+    key, val = pair.split('=')
+    cookie_dict['key'] = val
 
 username = ""
 
 # if new session
-if not cookie_string:
+if not cookie_dict.has_key(' sid'):
     m = hashlib.sha1()
     m.update(str(time.time()).encode('utf-8'))
     sid = m.hexdigest()
