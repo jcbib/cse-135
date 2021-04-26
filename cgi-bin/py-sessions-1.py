@@ -16,14 +16,14 @@ for pair in split_cookie:
 username = ""
 
 # if new session
-if ' sid' not in cookie_dict:
+if '_sid' not in cookie_dict:
     m = hashlib.sha1()
     m.update(str(time.time()).encode('utf-8'))
     sid = m.hexdigest()
-    cookie['sid'] = sid
+    cookie['_sid'] = sid
 else:
     cookie.load(cookie_string)
-    sid = cookie['sid'].value
+    sid = cookie['_sid'].value
 
 # Get username from POST request
 data = sys.stdin.read()
@@ -33,7 +33,7 @@ test = "a"
 if len(split_body) == 1:
     messageElement = split_body[0].split("=")
     if len(messageElement) == 2 and len(messageElement[1]) != 0:
-        cookie['username'] = messageElement[1]
+        cookie['_username'] = messageElement[1]
         test = "b"
 
 print(cookie)
@@ -51,7 +51,7 @@ print(split_cookie)
 
 print ("<br/><br/>")
 print(test)
-username = cookie['username'].value
+username = cookie['_username'].value
 print(username)
 
 if len(username) != 0:
