@@ -7,11 +7,12 @@ cookie = cookies.SimpleCookie()
 cookie_string = os.environ.get('HTTP_COOKIE')
 
 # Split cookie string to see if sid exists
-split_cookie = cookie_string.split(';')
 cookie_dict = {}
-for pair in split_cookie:
-    key, val = pair.split('=')
-    cookie_dict[key.strip()] = val
+if cookie_string:
+    split_cookie = cookie_string.split(';')
+    for pair in split_cookie:
+        key, val = pair.split('=')
+        cookie_dict[key.strip()] = val
 
 username = ""
 test = "a"
@@ -27,6 +28,8 @@ else:
     cookie.load(cookie_string)
     sid = cookie['sid'].value
 
+
+
 # Get username from POST request
 data = sys.stdin.read()
 split_body = data.split("&")
@@ -35,6 +38,8 @@ if len(split_body) == 1:
     messageElement = split_body[0].split("=")
     if len(messageElement) == 2 and len(messageElement[1]) != 0:
         cookie['username'] = messageElement[1]
+elif cookie['username']:
+
 
 print(cookie)
 print("Cache-Control: no-cache")
