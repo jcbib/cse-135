@@ -40,7 +40,18 @@ print("<h1>Python Sessions Page 1</h1>")
 if cookie_string:
     cookie.load(cookie_string)
     username = cookie['username'].value
+print(cookie_string)
 
+print ("<br/><br/>")
+print(cookie['username'].value)
+
+print ("<br/><br/>")
+print(messageElement[1])
+
+print ("<br/><br/>")
+print(username)
+
+print ("<br/><br/>")
 if len(username) == 0:
     print("<p><b>Name:</b> {}".format(username))
 else:
