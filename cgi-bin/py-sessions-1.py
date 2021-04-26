@@ -52,7 +52,7 @@ print ("<br/><br/>")
 print(username)
 
 print ("<br/><br/>")
-if len(username) == 0:
+if len(username) != 0:
     print("<p><b>Name:</b> {}".format(username))
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
