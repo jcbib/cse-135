@@ -39,7 +39,6 @@ print("<h1>Python Sessions Page 1</h1>")
 
 username = cookie['username'].value
 
-print ("<br/><br/>")
 if len(username) != 0:
     print("<p><b>Name:</b> {}".format(username))
 else:
