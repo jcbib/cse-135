@@ -1,9 +1,9 @@
 #!/usr/bin/python3.8
+from http import cookies
 import os
 import sys
-import Cookie
 
-cookie = Cookie.SimpleCookie()
+cookie = cookies.SimpleCookie()
 username = ""
 
 print (cookie)

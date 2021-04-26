@@ -1,8 +1,9 @@
 #!/usr/bin/python3.8
-import hashlib, time, Cookie, os, sys
+from http import cookies
+import hashlib, time, os, sys
 
 # Start the session
-cookie = Cookie.SimpleCookie()
+cookie = cookies.SimpleCookie()
 cookie_string = os.environ.get('HTTP_COOKIE')
 username = ""
 
