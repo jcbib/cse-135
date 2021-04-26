@@ -6,7 +6,6 @@ require 'cgi/session/pstore'
 
 cgi = CGI.new
 
-
 session = CGI::Session.new(cgi, 'database_manager' => CGI::Session::PStore)
 
 puts "Cache-Control: no-cache"

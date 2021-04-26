@@ -1,30 +1,29 @@
 #!/usr/bin/python3.8
-import os
-import sys
-import requests
+import sha, time, Cookie, os, sys
+
+# Start the session
+cookie = Cookie.SimpleCookie()
+cookie_string = os.environ.get('HTTP_COOKIE')
+username = ""
+
+# if new session
+if not cookie_string:
+    sid = sha.new(repr(time.time())).hexdigest()
+    cookie['sid'] = sid
+else:
+    cookie.load(cookie_string)
+    sid = cookie['sid'].value
 
 # Get username from POST request
 data = sys.stdin.read()
 split_body = data.split("&")
-username = ""
 
 if len(split_body) == 1:
     messageElement = split_body[0].split("=")
     if len(messageElement) == 2 and len(messageElement[1]) != 0:
-        username = messageElement[1]
+        cookie['username'] = messageElement[1]
 
-# Start the session
-session = requests.Session()
-session.verify = False
-
-# Store username into session
-url = 'https://jak-cse135.site'
-cookie = {'username' : username}
-# url = 'https://httpbin.org'
-# cookie = requests.cookies.create_cookie(domain=url, name="username", value=username)
-# session.get("{}/cookies/set/username/{}".format(url, username))
-r = session.post(url, data=cookie, verify=False)
-
+print(cookie)
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
 print("<html>")
@@ -35,15 +34,14 @@ print("<body>")
 
 print("<h1>Python Sessions Page 1</h1>")
 
-if username:
+if cookie_string:
+    cookie.load(cookie_string)
+    username = cookie['username'].value
+
+if len(username) == 0:
     print("<p><b>Name:</b> {}".format(username))
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
-
-print(r.cookies.get_dict())
-print(r.text)
-print(r.status_code)
-
 
 print ("<br/><br/>")
 print ("<a href=\"/cgi-bin/py-sessions-2.py\">Session Page 2</a><br/>")

@@ -1,16 +1,12 @@
 #!/usr/bin/python3.8
 import os
 import sys
-import requests
+import Cookie
 
-# Start the session
-session = requests.Session()
-
-# Store username into session
-request = session.get('https://httpbin.org/')
-
+cookie = Cookie.SimpleCookie()
 username = ""
 
+print (cookie)
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
 print("<html>")
@@ -19,14 +15,18 @@ print("<title>Python Sessions</title>")
 print("</head>")
 print("<body>")
 
+cookie_string = os.environ.get('HTTP_COOKIE')
+
 print("<h1>Python Sessions Page 2</h1>")
 
-if username:
+if cookie_string:
+    cookie.load(cookie_string)
+    username = cookie['username'].value
+
+if len(username) == 0:
     print("<p><b>Name:</b> {}".format(username))
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
-
-print("<p>{}</p>".format(request.cookies))
 
 print ("<br/><br/>")
 print ("<a href=\"/cgi-bin/py-sessions-1.py\">Session Page 1</a><br/>")
