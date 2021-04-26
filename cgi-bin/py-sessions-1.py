@@ -5,6 +5,8 @@ import hashlib, time, os, sys
 # Start the session
 cookie = cookies.SimpleCookie()
 cookie_string = os.environ.get('HTTP_COOKIE')
+split_cookie = cookie_string.split(';')
+
 username = ""
 
 # if new session
@@ -37,7 +39,7 @@ print("<body>")
 
 print("<h1>Python Sessions Page 1</h1>")
 
-print(cookie_string)
+print(split_cookie)
 username = cookie['username'].value
 
 if len(username) != 0:
