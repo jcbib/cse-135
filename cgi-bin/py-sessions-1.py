@@ -10,7 +10,8 @@ username = ""
 # if new session
 # if not cookie_string:
 m = hashlib.sha1()
-sid = m.update(str(time.time()).encode('utf-8')).hexdigest()
+m.update(str(time.time()).encode('utf-8'))
+sid = m.hexdigest()
 cookie['sid'] = sid
 # else:
 #     cookie.load(cookie_string)
