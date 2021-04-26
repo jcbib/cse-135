@@ -8,7 +8,7 @@ cookie_string = os.environ.get('HTTP_COOKIE')
 username = ""
 
 # if new session
-if cookie.has_key('sid'):
+if not cookie_string:
     m = hashlib.sha1()
     m.update(str(time.time()).encode('utf-8'))
     sid = m.hexdigest()
