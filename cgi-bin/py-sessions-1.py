@@ -15,8 +15,9 @@ for pair in split_cookie:
 
 username = ""
 test = "a"
+
 # if new session
-if ' sid' not in cookie_dict:
+if 'sid' not in cookie_dict:
     m = hashlib.sha1()
     m.update(str(time.time()).encode('utf-8'))
     sid = m.hexdigest()
@@ -50,6 +51,8 @@ print(split_cookie)
 
 print ("<br/><br/>")
 print(test)
+print ("<br/><br/>")
+print(cookie_dict)
 username = cookie['username'].value
 print(username)
 
