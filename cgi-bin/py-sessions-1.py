@@ -38,11 +38,10 @@ if len(split_body) == 1:
     messageElement = split_body[0].split("=")
     if len(messageElement) == 2 and len(messageElement[1]) != 0:
         cookie['username'] = messageElement[1]
-    else:
+    elif 'username' not in cookie_dict:
         cookie['username'] = ""
-else:
-    if 'username' not in cookie_dict:
-        cookie['username'] = ""
+elif 'username' not in cookie_dict:
+     cookie['username'] = ""
 
 print(cookie)
 print("Cache-Control: no-cache")
