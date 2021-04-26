@@ -28,12 +28,13 @@ else:
 # Get username from POST request
 data = sys.stdin.read()
 split_body = data.split("&")
+test = "a"
 
 if len(split_body) == 1:
     messageElement = split_body[0].split("=")
     if len(messageElement) == 2 and len(messageElement[1]) != 0:
         cookie['username'] = messageElement[1]
-        print('testestest')
+        test = "b"
 
 print(cookie)
 print("Cache-Control: no-cache")
@@ -54,6 +55,8 @@ if len(username) != 0:
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
+print ("<br/><br/>")
+print(test)
 print ("<br/><br/>")
 print ("<a href=\"/cgi-bin/py-sessions-2.py\">Session Page 2</a><br/>")
 print ("<a href=\"/hw2/py-state-demo.html\">Python CGI Form</a><br />")
