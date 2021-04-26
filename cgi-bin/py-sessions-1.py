@@ -8,14 +8,14 @@ cookie_string = os.environ.get('HTTP_COOKIE')
 username = ""
 
 # if new session
-# if not cookie_string:
-m = hashlib.sha1()
-m.update(str(time.time()).encode('utf-8'))
-sid = m.hexdigest()
-cookie['sid'] = sid
-# else:
-#     cookie.load(cookie_string)
-#     sid = cookie['sid'].value
+if not cookie['sid']:
+    m = hashlib.sha1()
+    m.update(str(time.time()).encode('utf-8'))
+    sid = m.hexdigest()
+    cookie['sid'] = sid
+else:
+    cookie.load(cookie_string)
+    sid = cookie['sid'].value
 
 # Get username from POST request
 data = sys.stdin.read()
@@ -44,9 +44,6 @@ print(cookie_string)
 
 print ("<br/><br/>")
 print(cookie['username'].value)
-
-print ("<br/><br/>")
-print(messageElement[1])
 
 print ("<br/><br/>")
 print(username)
