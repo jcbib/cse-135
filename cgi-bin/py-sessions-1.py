@@ -23,7 +23,7 @@ cookie = {'username' : username}
 # url = 'https://httpbin.org'
 # cookie = requests.cookies.create_cookie(domain=url, name="username", value=username)
 # session.get("{}/cookies/set/username/{}".format(url, username))
-r = session.post(url, data=cookie)
+r = session.post(url, data=cookie, verify=False)
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
@@ -42,6 +42,7 @@ else:
 
 print(r.cookies.get_dict())
 print(r.text)
+print(r.status_code)
 
 
 print ("<br/><br/>")
