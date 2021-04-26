@@ -14,27 +14,26 @@ for pair in split_cookie:
     cookie_dict['key'] = val
 
 username = ""
-
+test = "a"
 # if new session
-if '_sid' not in cookie_dict:
+if ' sid' not in cookie_dict:
     m = hashlib.sha1()
     m.update(str(time.time()).encode('utf-8'))
     sid = m.hexdigest()
-    cookie['_sid'] = sid
+    cookie['sid'] = sid
 else:
+    test = "b"
     cookie.load(cookie_string)
-    sid = cookie['_sid'].value
+    sid = cookie['sid'].value
 
 # Get username from POST request
 data = sys.stdin.read()
 split_body = data.split("&")
-test = "a"
 
 if len(split_body) == 1:
     messageElement = split_body[0].split("=")
     if len(messageElement) == 2 and len(messageElement[1]) != 0:
-        cookie['_username'] = messageElement[1]
-        test = "b"
+        cookie['username'] = messageElement[1]
 
 print(cookie)
 print("Cache-Control: no-cache")
@@ -51,7 +50,7 @@ print(split_cookie)
 
 print ("<br/><br/>")
 print(test)
-username = cookie['_username'].value
+username = cookie['username'].value
 print(username)
 
 if len(username) != 0:
