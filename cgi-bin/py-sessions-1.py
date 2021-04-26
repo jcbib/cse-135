@@ -19,11 +19,11 @@ session.verify = False
 
 # Store username into session
 url = 'https://jak-cse135.site'
-url = 'https://httpbin.org'
+cookie = {'username' : username}
+# url = 'https://httpbin.org'
 # cookie = requests.cookies.create_cookie(domain=url, name="username", value=username)
-session.get("{}/cookies/set/username/{}".format(url, username))
-
-r = session.get('https://httpbin.org/cookies')
+# session.get("{}/cookies/set/username/{}".format(url, username))
+r = session.post(url, data=cookie)
 
 print("Cache-Control: no-cache")
 print("Content-type: text/html\r\n\r\n")
@@ -40,7 +40,8 @@ if username:
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
-print("<p>{}</p>".format(r.cookies.get_dict()))
+print(r.cookies.get_dict())
+print(r.text)
 
 
 print ("<br/><br/>")
