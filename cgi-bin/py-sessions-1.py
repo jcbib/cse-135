@@ -48,15 +48,17 @@ print("<body>")
 print("<h1>Python Sessions Page 1</h1>")
 
 print(split_cookie)
+
+print ("<br/><br/>")
+print(test)
 username = cookie['username'].value
+print(username)
 
 if len(username) != 0:
     print("<p><b>Name:</b> {}".format(username))
 else:
     print("<p><b>Name:</b> You do not have a name set</p>")
 
-print ("<br/><br/>")
-print(test)
 print ("<br/><br/>")
 print ("<a href=\"/cgi-bin/py-sessions-2.py\">Session Page 2</a><br/>")
 print ("<a href=\"/hw2/py-state-demo.html\">Python CGI Form</a><br />")
