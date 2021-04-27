@@ -5,7 +5,7 @@ int main(int argc, char **argv, char **envp)
 {
   // Headers
   printf("Cache-Control: no-cache\n");
-  printf("Set-Cookie: destroyed\n");
+  printf("Set-Cookie: c_user=destroyed\n");
   printf("Content-type: text/html\n\n");
 
   // Body - HTML
