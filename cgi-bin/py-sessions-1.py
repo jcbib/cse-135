@@ -19,14 +19,14 @@ if cookie_string:
 username = ""
 
 # if new session
-# if 'sid' not in cookie_dict or cookie_dict['sid'] == '':
-#     m = hashlib.sha1()
-#     m.update(str(time.time()).encode('utf-8'))
-#     sid = m.hexdigest()
-#     cookie['sid'] = sid
-# else:
-#     cookie.load(cookie_string)
-#     sid = cookie['sid'].value
+if 'sid' not in cookie_dict or cookie_dict['sid'] == '':
+    m = hashlib.sha1()
+    m.update(str(time.time()).encode('utf-8'))
+    sid = m.hexdigest()
+    cookie['sid'] = sid
+else:
+    cookie.load(cookie_string)
+    sid = cookie['sid'].value
 
 # Get username from POST request
 data = sys.stdin.read()
