@@ -15,6 +15,7 @@ if cookie_string:
         if len(pair_list) == 2 :
             key, val = pair_list
             cookie_dict[key.strip()] = val
+    cookie.load(cookie_string)
 
 username = ""
 
@@ -25,7 +26,6 @@ if 'sid' not in cookie_dict or cookie_dict['sid'] == '':
     sid = m.hexdigest()
     cookie['sid'] = sid
 else:
-    cookie.load(cookie_string)
     sid = cookie['sid'].value
 
 # Get username from POST request
