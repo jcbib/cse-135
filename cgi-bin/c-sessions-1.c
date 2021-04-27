@@ -22,7 +22,7 @@ int main(int argc, char **argv, char **envp)
   if (strlen(name) > 0)
   {
     printf("Content-type: text/html\n");
-    printf("Set-Cookie: %s\n\n", name);
+    printf("Set-Cookie: c_user=%s\n\n", name);
   }
   else
   {

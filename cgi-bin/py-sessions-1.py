@@ -53,8 +53,6 @@ print("<body>")
 print("<h1>Python Sessions Page 1</h1>")
 
 username = cookie['username'].value
-
-print(cookie_string)
 if len(username) != 0:
     print("<p><b>Name:</b> {}</p>".format(username))
 else:
