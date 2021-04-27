@@ -20,7 +20,7 @@ if cookie_string:
 username = ""
 
 # if new session
-if 'sid' not in cookie_dict or cookie_dict['sid'] == '':
+if 'sid' not in cookie_dict or len(cookie_dict['sid']) < 3:
     m = hashlib.sha1()
     m.update(str(time.time()).encode('utf-8'))
     sid = m.hexdigest()
