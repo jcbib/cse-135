@@ -19,14 +19,14 @@ if cookie_string:
 username = ""
 
 # if new session
-if 'sid' not in cookie_dict or cookie_dict['sid'] == '':
-    m = hashlib.sha1()
-    m.update(str(time.time()).encode('utf-8'))
-    sid = m.hexdigest()
-    cookie['sid'] = sid
-else:
-    cookie.load(cookie_string)
-    sid = cookie['sid'].value
+# if 'sid' not in cookie_dict or cookie_dict['sid'] == '':
+#     m = hashlib.sha1()
+#     m.update(str(time.time()).encode('utf-8'))
+#     sid = m.hexdigest()
+#     cookie['sid'] = sid
+# else:
+#     cookie.load(cookie_string)
+#     sid = cookie['sid'].value
 
 # Get username from POST request
 data = sys.stdin.read()
@@ -54,6 +54,7 @@ print("<h1>Python Sessions Page 1</h1>")
 
 username = cookie['username'].value
 
+print(cookie_string)
 if len(username) != 0:
     print("<p><b>Name:</b> {}</p>".format(username))
 else:
