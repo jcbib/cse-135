@@ -1,237 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<head>
 
-    <title> CSE 135 </title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <!-- log rocket -->
-    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('pcnkmr/jak-cse135');</script>
+  <title> CSE 135 </title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195043294-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- log rocket -->
+  <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+  <script>
+    window.LogRocket && window.LogRocket.init('pcnkmr/jak-cse135');
+  </script>
 
-      gtag('config', 'UA-195043294-1');
-    </script>
-  </head>
-  <body>
-    <div class="header">
-      <span id="course"> CSE 135 </span>
-      <span id="quarter"> Spring 2021 </span>
-      <div class="navbar">
-        <a class="nav-item" href="#about"> About </a>
-        <a class="nav-item" href="#homework"> Homework </a>
-        <a class="nav-item" href="#proj"> Final Project </a>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195043294-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-195043294-1');
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <span id="course"> CSE 135 </span>
+    <span id="quarter"> Spring 2021 </span>
+    <div class="navbar">
+      <a class="nav-item" href="#about"> About </a>
+      <a class="nav-item" href="#homework"> Homework </a>
+      <a class="nav-item" href="#proj"> Final Project </a>
+    </div>
+  </div>
+  <div class="section">
+    <span id="about" class="section-title">
+      About
+    </span>
+    <hr id="about-line">
+    <span class="subsection">
+      Team Members
+    </span>
+    <ul>
+      <li>
+        <a class="a-item" href="jon/jon.html"> Jon Carlo Bibat </a>
+      </li>
+      <li>
+        <a class="a-item" href="kelly/kellylo.html"> Kelly Lo </a>
+      </li>
+      <li>
+        <a class="a-item" href="anh/anh.html"> Anh Tran </a>
+      </li>
+    </ul>
+  </div>
+  <div class="section">
+    <span id="homework" class="section-title">
+      Homework
+    </span>
+    <hr id="hw-line">
+    <span class="subsection">
+      Homework 1
+    </span>
+    <ul>
+      <li>
+        <a class="a-item" href="hw1/hello.php"> PHP </a>
+      </li>
+      <li>
+        <a class="a-item" href="robots.txt"> robots.txt </a>
+      </li>
+      <li>
+        <a class="a-item" href="hw1/report.html"> Analytics </a>
+      </li>
+    </ul>
+    <span class="subsection">
+      Homework 2
+    </span>
+    <div class="langs">
+      <div class="lang-container">
+        <span class="item-sub">
+          Perl
+        </span>
+        <ul class="sub-list">
+          <li>
+            <a class="a-item" href="/cgi-bin/perl-hello-html-world.pl"> Hello, Perl! </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/perl-hello-json-world.pl"> Hello, Perl! (JSON) </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/perl-env-pm.pl"> Environment Variables </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/perl-get-echo.pl"> GET Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/perl-post-echo.pl"> POST Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/perl-general-echo.pl"> General Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/hw2/perl-cgiform.html"> Sessioning </a>
+          </li>
+        </ul>
+      </div>
+      <div class="lang-container">
+        <span class="item-sub">
+          C
+        </span>
+        <ul class="sub-list">
+          <li>
+            <a class="a-item" href="/cgi-bin/c-hello-html-world.cgi"> Hello, C! </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/c-hello-json-world.cgi"> Hello, C! (JSON) </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/c-env.cgi"> Environment Variables </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/c-get-echo.cgi"> GET Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/c-post-echo.cgi"> POST Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/c-general-request-echo.cgi"> General Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/hw2/c-cgiform.html"> Sessioning </a>
+          </li>
+        </ul>
+      </div>
+      <div class="lang-container">
+        <span class="item-sub">
+          Python
+        </span>
+        <ul class="sub-list">
+          <li>
+            <a class="a-item" href="/cgi-bin/py-hello-html-world.py"> Hello, Python! </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/py-hello-json-world.py"> Hello, Python! (JSON) </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/py-env.py"> Environment Variables </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/py-get-echo.py"> GET Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/py-post-echo.py"> POST Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/py-general-request-echo.py"> General Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/hw2/py-state-demo.html"> Sessioning </a>
+          </li>
+        </ul>
+      </div>
+      <div class="lang-container">
+        <span class="item-sub">
+          PHP
+        </span>
+        <ul class="sub-list">
+          <li>
+            <a class="a-item" href="/cgi-bin/php-hello-html-world.php"> Hello, PHP! </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/php-hello-json-world.php"> Hello, PHP! (JSON) </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/php-env.php"> Environment Variables </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/php-get-echo.php"> GET Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/php-post-echo.php"> POST Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/php-general-request-echo.php"> General Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/hw2/php-state-demo.html"> Sessioning </a>
+          </li>
+        </ul>
+      </div>
+      <div class="lang-container">
+        <span class="item-sub">
+          Ruby
+        </span>
+        <ul class="sub-list">
+          <li>
+            <a class="a-item" href="/cgi-bin/ruby-hello-html-world.rb"> Hello, Ruby! </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/ruby-hello-json-world.rb"> Hello, Ruby! (JSON) </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/ruby-env.rb"> Environment Variables </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/ruby-get-echo.rb"> GET Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/ruby-post-echo.rb"> POST Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/cgi-bin/ruby-general-request-echo.rb"> General Echo </a>
+          </li>
+          <li>
+            <a class="a-item" href="/hw2/ruby-state-demo.html"> Sessioning </a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="section">
-      <span id="about" class="section-title">
-        About
-      </span>
-      <hr id="about-line">
-      <span class="subsection">
-        Team Members
-      </span>
-      <ul>
-        <li>
-          <a class="a-item" href="jon/jon.html"> Jon Carlo Bibat </a>
-        </li>
-        <li>
-          <a class="a-item" href="kelly/kellylo.html"> Kelly Lo </a>
-        </li>
-        <li>
-          <a class="a-item" href="anh/anh.html"> Anh Tran </a>
-        </li>
-      </ul>
-    </div>
-    <div class="section">
-      <span id="homework" class="section-title">
-        Homework
-      </span>
-      <hr id="hw-line">
-      <span class="subsection">
-        Homework 1
-      </span>
-      <ul>
-        <li>
-          <a class="a-item" href="hw1/hello.php"> PHP </a>
-        </li>
-        <li>
-          <a class="a-item" href="robots.txt"> robots.txt </a>
-        </li>
-        <li>
-          <a class="a-item" href="hw1/report.html"> Analytics </a>
-        </li>
-      </ul>
-      <span class="subsection">
-        Homework 2
-      </span>
-      <div class="langs">
-        <div class="lang-container">
-          <span class="item-sub">
-            Perl
-          </span>
-            <ul class="sub-list">
-              <li>
-                <a class="a-item" href="/cgi-bin/perl-hello-html-world.pl"> Hello, Perl! </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/perl-hello-json-world.pl"> Hello, Perl! (JSON) </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/perl-env-pm.pl"> Environment Variables </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/perl-get-echo.pl"> GET Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/perl-post-echo.pl"> POST Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/perl-general-echo.pl"> General Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/hw2/perl-cgiform.html"> Sessioning </a>
-              </li>
-            </ul>
-        </div>
-        <div class="lang-container">
-          <span class="item-sub">
-            C
-          </span>
-            <ul class="sub-list">
-              <li>
-                <a class="a-item" href="/cgi-bin/c-hello-html-world.cgi"> Hello, C! </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/c-hello-json-world.cgi"> Hello, C! (JSON) </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/c-env.cgi"> Environment Variables </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/c-get-echo.cgi"> GET Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/c-post-echo.cgi"> POST Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/c-general-request-echo.cgi"> General Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/hw2/c-cgiform.html"> Sessioning </a>
-              </li>
-            </ul>
-        </div>
-        <div class="lang-container">
-          <span class="item-sub">
-            Python
-          </span>
-            <ul class="sub-list">
-              <li>
-                <a class="a-item" href="/cgi-bin/py-hello-html-world.py"> Hello, Python! </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/py-hello-json-world.py"> Hello, Python! (JSON) </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/py-env.py"> Environment Variables </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/py-get-echo.py"> GET Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/py-post-echo.py"> POST Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/py-general-request-echo.py"> General Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/hw2/py-state-demo.html"> Sessioning </a>
-              </li>
-            </ul>
-        </div>
-        <div class="lang-container">
-          <span class="item-sub">
-            PHP
-          </span>
-            <ul class="sub-list">
-              <li>
-                <a class="a-item" href="/cgi-bin/php-hello-html-world.php"> Hello, PHP! </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/php-hello-json-world.php"> Hello, PHP! (JSON) </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/php-env.php"> Environment Variables </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/php-get-echo.php"> GET Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/php-post-echo.php"> POST Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/php-general-request-echo.php"> General Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/hw2/php-state-demo.html"> Sessioning </a>
-              </li>
-            </ul>
-        </div>
-        <div class="lang-container">
-          <span class="item-sub">
-            Ruby
-          </span>
-            <ul class="sub-list">
-              <li>
-                <a class="a-item" href="/cgi-bin/ruby-hello-html-world.rb"> Hello, Ruby! </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/ruby-hello-json-world.rb"> Hello, Ruby! (JSON) </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/ruby-env.rb"> Environment Variables </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/ruby-get-echo.rb"> GET Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/ruby-post-echo.rb"> POST Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/cgi-bin/ruby-general-request-echo.rb"> General Echo </a>
-              </li>
-              <li>
-                <a class="a-item" href="/hw2/ruby-state-demo.html"> Sessioning </a>
-              </li>
-            </ul>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-      <span id="proj" class="section-title">
-        Final Project
-      </span>
-      <hr id="proj-line">
-      <span class="subsection">
-        Analytics App
-      </span>
-      <ul>
-        <li>
-          TBD
-        </li>
-      </ul>
-    </div>
-  </body>
+  </div>
+  <div class="section">
+    <span id="proj" class="section-title">
+      Final Project
+    </span>
+    <hr id="proj-line">
+    <span class="subsection">
+      Analytics App
+    </span>
+    <ul>
+      <li>
+        TBD
+      </li>
+    </ul>
+  </div>
+
+  <script src="./collector.js" async> </script>
+
+</body>
+
 </html>
