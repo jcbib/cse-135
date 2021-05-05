@@ -3,7 +3,7 @@ const url = 'https://jak-cse135.site/';
 let h = new Headers();
 h.append('Accept', 'application/json');
 
-let req = new Request(uri, {
+let req = new Request(url, {
     method: 'POST',
     headers: h,
     mode: 'cors'
