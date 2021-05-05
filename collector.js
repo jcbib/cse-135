@@ -1,4 +1,4 @@
-const url = 'https://jak-cse135.site/';
+const url = 'https://collector.jak-cse135.site/';
 
 let h = new Headers();
 h.append('Accept', 'application/json');
