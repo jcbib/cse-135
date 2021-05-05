@@ -4,7 +4,9 @@ let h = new Headers();
 h.append('Accept', 'application/json');
 h.append("Access-Control-Allow-Origin", "*");
 
-fetch(url).then(async response => {
+fetch(url, {
+    mode: 'no-cors'
+}).then(async response => {
     try {
         const data = await response.json()
         console.log('response data?', data)
