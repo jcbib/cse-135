@@ -12,6 +12,12 @@ let req = new Request(url, {
 });
 
 console.log("2");
-fetch(url)
-    .then(response => response.json())
-    .then(data => console.log(data));
+fetch(url).then(async response => {
+    try {
+        const data = await response.json()
+        console.log('response data?', data)
+    } catch (error) {
+        console.log('Error happened here!')
+        console.error(error)
+    }
+})
