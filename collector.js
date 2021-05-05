@@ -2,6 +2,7 @@ const url = 'https://collector.jak-cse135.site/';
 
 let h = new Headers();
 h.append('Accept', 'application/json');
+h.append("Access-Control-Allow-Origin", "*");
 
 fetch(url).then(async response => {
     try {
