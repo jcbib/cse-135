@@ -20,5 +20,6 @@ console.log(navigator.userAgent);
 console.log(navigator.language);
 console.log(navigator.cookieEnabled);
 
-console.log(window.screen.availWidth + "x" + window.screen.availHeight);
+
 console.log(window.screen.width + "x" + window.screen.height);
+console.log(window.innerWidth + "x" + window.innerHeight);
