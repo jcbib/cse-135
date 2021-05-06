@@ -23,4 +23,4 @@ console.log(navigator.cookieEnabled);
 
 console.log(window.screen.width + "x" + window.screen.height);
 console.log(window.innerWidth + "x" + window.innerHeight);
-console.log(navigator);
+console.log(navigator.connection.effectiveType);
