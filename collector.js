@@ -16,4 +16,9 @@
 //     }
 // })
 
-console.log(window.navigator)
+console.log(navigator.userAgent);
+console.log(navigator.language);
+console.log(navigator.cookieEnabled);
+
+console.log(window.screen.availWidth + "x" + window.screen.availHeight);
+console.log(window.screen.width + "x" + window.screen.height);
