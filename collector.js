@@ -25,5 +25,8 @@ console.log(window.screen.width + "x" + window.screen.height);
 console.log(window.innerWidth + "x" + window.innerHeight);
 console.log(window.navigator.connection.effectiveType);
 
-console.log(window.performance);
+console.log(window.performance.timing);
+console.log(window.performance.timing.loadEventStart);
+console.log(window.performance.timing.loadEventEnd);
+console.log(window.performance.timing.loadEventEnd - window.performance.timing.loadEventStart);
 
