@@ -27,7 +27,7 @@ console.log(window.navigator.connection.effectiveType);
 
 console.log(window.performance.timing);
 
-window.onload() = function(e) {
+window.onload = function(e) {
   console.log(window.performance.timing.loadEventStart);
   console.log(window.performance.timing.loadEventEnd);
   console.log(window.performance.timing.loadEventEnd - window.performance.timing.loadEventStart);
