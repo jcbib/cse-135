@@ -16,17 +16,28 @@
 //     }
 // })
 
+// Static
 console.log(navigator.userAgent);
 console.log(navigator.language);
 console.log(navigator.cookieEnabled);
 
+// Check JS
+// Check Images
+// Check CSS
 
 console.log(window.screen.width + "x" + window.screen.height);
 console.log(window.innerWidth + "x" + window.innerHeight);
 console.log(window.navigator.connection.effectiveType);
 
+
+// Performance
 console.log(window.performance.timing);
 
 console.log(window.performance.timing.domContentLoadedEventStart);
 console.log(window.performance.timing.domContentLoadedEventEnd);
 console.log(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart);
+
+// Activity
+document.onmousemove = function(e) {
+  console.log("mouse location: ", e.clientX, e.clientY)
+};
