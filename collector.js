@@ -41,3 +41,11 @@ console.log(window.performance.timing.domContentLoadedEventEnd - window.performa
 document.onmousemove = function(e) {
   console.log("mouse location: ", e.clientX, e.clientY)
 };
+
+document.onmousedown = function(e) {
+  console.log("mousedown: ", e.button);
+};
+
+document.onmouseup = function (e) {
+  console.log("mouseup: ", e.button);
+}
