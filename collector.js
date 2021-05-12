@@ -107,8 +107,8 @@ document.onkeyup = function(e) {
 };
 
 // Scroll Activity
-document.onscroll=function(e) {
-  console.log( 'scroll amount: '  + (window.pageYOffset || document.documentElement.scrollTop));
+document.onscroll = function(e) {
+  console.log("scroll amount: "  + (window.pageYOffset || document.documentElement.scrollTop));
 }
 
 // Idle activity
@@ -118,5 +118,10 @@ function setIdle() {
 }
 
 // User left and entered page
+window.onload = function(e) {
+  console.log("User has entered the page.");
+}
 
-
+window.beforeunload = function(e) {
+  console.log("User has left the page.");
+}
