@@ -10,20 +10,23 @@ var server = jsonServer.create();
 server.use(jsonServer.defaults());
 
 // Add custom routes
-server.get(apiPrefix, (req, res) => {
-    return res.send('Received a GET HTTP method');
-});
+// server.get(apiPrefix, (req, res) => {
+//     return res.send('Received a GET HTTP method');
+// });
 
-server.post(apiPrefix, (req, res) => {
-    return res.send('Received a POST HTTP method');
-});
+// server.post(apiPrefix, (req, res) => {
+//     return res.send('Received a POST HTTP method');
+// });
 
-server.put(apiPrefix, (req, res) => {
-    return res.send('Received a PUT HTTP method');
-});
+// server.put(apiPrefix, (req, res) => {
+//     return res.send('Received a PUT HTTP method');
+// });
 
-server.delete(apiPrefix, (req, res) => {
-    return res.send('Received a DELETE HTTP method');
+// server.delete(apiPrefix, (req, res) => {
+//     return res.send('Received a DELETE HTTP method');
+// server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
+server.post('/test', function(req, res) {
+    res.json({msg: "this works"});
 });
 
 // Returns an Express router
