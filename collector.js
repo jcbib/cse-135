@@ -125,3 +125,6 @@ window.onload = function(e) {
 window.beforeunload = function(e) {
   console.log("User has left the page.");
 }
+
+// User page is on
+console.log(document.URL);
