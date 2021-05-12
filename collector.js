@@ -54,7 +54,7 @@ document.onmouseup = function (e) {
 
 // Keyboard Activity
 document.onkeydown = function(e) {
-  console.log("key down: ", e.button);
+  console.log("key down: ", e.key);
 };
 
 document.onkeyup = function(e) {
