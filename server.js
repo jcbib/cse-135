@@ -1,6 +1,7 @@
 // app.js file
 
 var jsonServer = require('json-server');
+var apiPrefix = '/api/static';
 
 // Returns an Express server
 var server = jsonServer.create();
@@ -9,7 +10,21 @@ var server = jsonServer.create();
 server.use(jsonServer.defaults());
 
 // Add custom routes
-// server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
+server.get(apiPrefix, (req, res) => {
+    return res.send('Received a GET HTTP method');
+});
+
+server.post(apiPrefix, (req, res) => {
+    return res.send('Received a POST HTTP method');
+});
+
+server.put(apiPrefix, (req, res) => {
+    return res.send('Received a PUT HTTP method');
+});
+
+server.delete(apiPrefix, (req, res) => {
+    return res.send('Received a DELETE HTTP method');
+});
 
 // Returns an Express router
 var router = jsonServer.router('db.json');
