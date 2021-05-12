@@ -10,6 +10,7 @@ server.use(jsonServer.defaults());
 
 // Add custom routes
 server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) });
+server.get('/custom_2', function(req, res) { res.json({ msg: 'AaSDFAS' })});
 
 // Returns an Express router
 var router = jsonServer.router('db.json');
