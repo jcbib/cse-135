@@ -22,21 +22,6 @@ var idleTimeout = setTimeout(setIdle, 2000);
 
 const data = { username: 'test' };
 
-fetch('https://jak-cse135.site/test', {
-  method: 'POST',
-  headers: {
-    'Content-Type' : 'application/json',
-  },
-  body: JSON.stringify(data),
-})
-.then(response => response.json())
-.then(data => {
-  console.log('Success: ', data);
-})
-.catch((error) => {
-  console.error('Error: ', error);
-});
-
 // Static
 console.log(navigator.userAgent);
 console.log(navigator.language);
