@@ -29,7 +29,7 @@ server.post('/test', function(req, res) {
     res.json({msg: "this works"});
 });
 
-server.get('/test', function(req, res) {
+server.get('/json/test', function(req, res) {
   res.json({ msg: "this works"});
 });
 
