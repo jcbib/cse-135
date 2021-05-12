@@ -61,4 +61,7 @@ document.onkeyup = function(e) {
   console.log("key up: ", e.key);
 };
 
-
+// Scroll Activity
+document.onscroll=function(e) {
+  console.log( 'scroll amount: '  + (window.pageYOffset || document.documentElement.scrollTop));
+}
