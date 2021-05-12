@@ -19,7 +19,6 @@
 var startTime = window.performance.now();
 var idle = false;
 var idleTimeout = setTimeout(setIdle, 2000);
-var currDateTime = new Date();
 
 // Static
 console.log(navigator.userAgent);
@@ -49,6 +48,7 @@ document.onmousemove = function(e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
+    var currDateTime = new Date();
     idle = false;
     console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime, "ms");
@@ -61,6 +61,7 @@ document.onmousedown = function(e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
+    var currDateTime = new Date();
     idle = false;    
     console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime);
@@ -73,6 +74,7 @@ document.onmouseup = function (e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
+    var currDateTime = new Date();
     idle = false;
     console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime);
@@ -86,6 +88,7 @@ document.onkeydown = function(e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
+    var currDateTime = new Date();
     idle = false;
     console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime);
@@ -98,6 +101,7 @@ document.onkeyup = function(e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
+    var currDateTime = new Date();
     idle = false;
     console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime);
@@ -119,10 +123,12 @@ function setIdle() {
 
 // User left and entered page
 window.onload = function(e) {
+  var currDateTime = new Date();
   console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
 }
 
 window.beforeunload = function(e) {
+  var currDateTime = new Date();
   console.log("User has left the page", document.URL," at ", currDateTime.toUTCString());
 }
 
