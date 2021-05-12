@@ -58,7 +58,7 @@ document.onkeydown = function(e) {
 };
 
 document.onkeyup = function(e) {
-  console.log("key up: ", e.button);
+  console.log("key up: ", e.key);
 };
 
 
