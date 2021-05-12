@@ -24,6 +24,7 @@ app.delete('/users/:userId', (req, res) => {
         `DELETE HTTP method on user/${req.params.userId} resource`,
     );
 });
-app.listen(process.env.PORT, () =>
+
+app.listen(3000, () =>
     console.log(`Example app listening on port ${process.env.PORT}!`),
 );
