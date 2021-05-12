@@ -1,30 +1,49 @@
+/*
 // app.js file
+
+var jsonServer = require('json-server');
+
+// Returns an Express server
+var server = jsonServer.create();
+
+// Set default middlewares (logger, static, cors and no-cache)
+server.use(jsonServer.defaults());
+
+// Add custom routes
+server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) });
+
+// Returns an Express router
+var router = jsonServer.router('db.json');
+
+server.use(router);
+
+server.listen(3000);
+*/
 
 import express from 'express';
 
 const app = express();
 
-// Add custom routes
-app.get('/users', (req, res) => {
-    return res.send('GET HTTP method on user resource');
+app.get('/', (req, res) => {
+    return res.send('Received a GET HTTP method');
 });
 
-app.post('/users', (req, res) => {
-    return res.send('POST HTTP method on user resource');
+app.post('/', (req, res) => {
+    return res.send('Received a POST HTTP method');
 });
 
-app.put('/users/:userId', (req, res) => {
-    return res.send(
-        `PUT HTTP method on user/${req.params.userId} resource`,
-    );
+app.put('/', (req, res) => {
+    return res.send('Received a PUT HTTP method');
 });
 
-app.delete('/users/:userId', (req, res) => {
-    return res.send(
-        `DELETE HTTP method on user/${req.params.userId} resource`,
-    );
+app.delete('/', (req, res) => {
+    return res.send('Received a DELETE HTTP method');
 });
+
+app.listen(process.env.PORT, () =>
+    console.log(`Example app listening on port ${process.env.PORT}!`),
+);
 
 app.listen(3000, () =>
-    console.log(`Example app listening on port ${process.env.PORT}!`),
+    console.log(`Example app listening on port 3000!`),
 );
