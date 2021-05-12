@@ -24,14 +24,7 @@ server.use(jsonServer.defaults());
 
 // server.delete(apiPrefix, (req, res) => {
 //     return res.send('Received a DELETE HTTP method');
-// server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
-server.post('/test', function(req, res) {
-    res.json({msg: "this works"});
-});
-
-server.get('/json/test', function(req, res) {
-  res.json({ msg: "this works"});
-});
+server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
 
 // Returns an Express router
 var router = jsonServer.router('db.json');
