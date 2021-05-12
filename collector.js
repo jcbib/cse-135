@@ -38,14 +38,27 @@ console.log(window.performance.timing.domContentLoadedEventEnd);
 console.log(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart);
 
 // Activity
+
+// Mouse Activity
 document.onmousemove = function(e) {
   console.log("mouse location: ", e.clientX, e.clientY)
 };
 
 document.onmousedown = function(e) {
-  console.log("mousedown: ", e.button);
+  console.log("mousedown button: ", e.button);
 };
 
 document.onmouseup = function (e) {
-  console.log("mouseup: ", e.button);
-}
+  console.log("mouseup button: ", e.button);
+};
+
+// Keyboard Activity
+document.onkeydown = function(e) {
+  console.log("key down: ", e.button);
+};
+
+document.onkeyup = function(e) {
+  console.log("key up: ", e.button);
+};
+
+
