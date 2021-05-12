@@ -1,7 +1,6 @@
 // app.js file
 
 var jsonServer = require('json-server');
-var apiPrefix = '/api/static';
 
 // Returns an Express server
 var server = jsonServer.create();
@@ -24,7 +23,7 @@ server.use(jsonServer.defaults());
 
 // server.delete(apiPrefix, (req, res) => {
 //     return res.send('Received a DELETE HTTP method');
-server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) })
+server.get('/custom', function (req, res) { res.json({ msg: 'hello' }) });
 
 // Returns an Express router
 var router = jsonServer.router('db.json');
