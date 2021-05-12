@@ -20,6 +20,8 @@ var startTime = window.performance.now();
 var idle = false;
 var idleTimeout = setTimeout(setIdle, 2000);
 
+const data = { username: 'test' };
+
 fetch('https://jak-cse135.site/test', {
   method: 'POST',
   headers: {
