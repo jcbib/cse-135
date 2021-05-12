@@ -29,6 +29,10 @@ server.post('/test', function(req, res) {
     res.json({msg: "this works"});
 });
 
+server.get('/test', function(req, res) {
+  res.json({ msg: "this works"});
+});
+
 // Returns an Express router
 var router = jsonServer.router('db.json');
 
