@@ -16,6 +16,11 @@
 //     }
 // })
 
+var startTime = window.performance.now();
+var idle = false;
+var idleTimeout = setTimeout(setIdle, 2000);
+var currDateTime = new Date();
+
 // Static
 console.log(navigator.userAgent);
 console.log(navigator.language);
@@ -41,23 +46,63 @@ console.log(window.performance.timing.domContentLoadedEventEnd - window.performa
 
 // Mouse Activity
 document.onmousemove = function(e) {
+  clearTimeout(idleTimeout);
+  idleTimeout = setTimeout(setIdle, 2000);
+  if ( idle ) {
+    idle = false;
+    console.log("idle end: ", currDateTime.toUTCString());
+    console.log("idle for: ", window.performance.now() - startTime, "ms");
+  }
+  startTime = window.performance.now();
   console.log("mouse location: ", e.clientX, e.clientY)
 };
 
 document.onmousedown = function(e) {
+  clearTimeout(idleTimeout);
+  idleTimeout = setTimeout(setIdle, 2000);
+  if ( idle ) {
+    idle = false;    
+    console.log("idle end: ", window.performance.now());
+    console.log("idle for: ", window.performance.now() - startTime);
+  }
+  startTime = window.performance.now();
   console.log("mousedown button: ", e.button);
 };
 
 document.onmouseup = function (e) {
+  clearTimeout(idleTimeout);
+  idleTimeout = setTimeout(setIdle, 2000);
+  if ( idle ) {
+    idle = false;
+    console.log("idle end: ", window.performance.now());
+    console.log("idle for: ", window.performance.now() - startTime);
+  }
+  startTime = window.performance.now();
   console.log("mouseup button: ", e.button);
 };
 
 // Keyboard Activity
 document.onkeydown = function(e) {
+  clearTimeout(idleTimeout);
+  idleTimeout = setTimeout(setIdle, 2000);
+  if ( idle ) {
+    idle = false;
+    console.log("idle end: ", window.performance.now());
+    console.log("idle for: ", window.performance.now() - startTime);
+  }
+  startTime = window.performance.now();
   console.log("key down: ", e.key);
 };
 
 document.onkeyup = function(e) {
+  clearTimeout(idleTimeout);
+  idleTimeout = setTimeout(setIdle, 2000);
+  if ( idle ) {
+    idle = false;
+    console.log("idle end: ", window.performance.now());
+    console.log("idle for: ", window.performance.now() - startTime);
+  }
+  startTime = window.performance.now();
   console.log("key up: ", e.key);
 };
 
@@ -65,3 +110,13 @@ document.onkeyup = function(e) {
 document.onscroll=function(e) {
   console.log( 'scroll amount: '  + (window.pageYOffset || document.documentElement.scrollTop));
 }
+
+// Idle activity
+function setIdle() {
+  console.log("idle");
+  idle = true; 
+}
+
+// User left and entered page
+
+
