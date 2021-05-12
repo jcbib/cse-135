@@ -62,7 +62,7 @@ document.onmousedown = function(e) {
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
     idle = false;    
-    console.log("idle end: ", window.performance.now());
+    console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime);
   }
   startTime = window.performance.now();
@@ -74,7 +74,7 @@ document.onmouseup = function (e) {
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
     idle = false;
-    console.log("idle end: ", window.performance.now());
+    console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime);
   }
   startTime = window.performance.now();
@@ -87,7 +87,7 @@ document.onkeydown = function(e) {
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
     idle = false;
-    console.log("idle end: ", window.performance.now());
+    console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime);
   }
   startTime = window.performance.now();
@@ -99,7 +99,7 @@ document.onkeyup = function(e) {
   idleTimeout = setTimeout(setIdle, 2000);
   if ( idle ) {
     idle = false;
-    console.log("idle end: ", window.performance.now());
+    console.log("idle end: ", currDateTime.toUTCString());
     console.log("idle for: ", window.performance.now() - startTime);
   }
   startTime = window.performance.now();
@@ -119,11 +119,11 @@ function setIdle() {
 
 // User left and entered page
 window.onload = function(e) {
-  console.log("User has entered the page.");
+  console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
 }
 
 window.beforeunload = function(e) {
-  console.log("User has left the page.");
+  console.log("User has left the page", document.URL," at ", currDateTime.toUTCString());
 }
 
 // User page is on
