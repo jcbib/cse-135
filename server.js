@@ -22,7 +22,7 @@ apiServer.get('/static/:sessionId', function(req, res) {
   res.json({ msg: 'AaSDFAS' }); 
 });
 apiServer.post('/static', function(req, res) { 
-  const db = router.db;
+  const db = apiRouter.db;
   const table = db.get('test');
   res.send(table);
   if ( _.isEmpty(table.find(data).value())) {
