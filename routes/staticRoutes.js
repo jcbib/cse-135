@@ -16,10 +16,11 @@ router.get('/:sessionId', function(req, res) {
  *               screen-width, screen-height, window-width, window-height, connection-type
  */
 router.post('/', function(req, res) { 
-  const db = apiRouter.db;
-  const table = db.get('test');
-  table.push(req.body).write();
-  res.send(req.body);
+  // const db = apiRouter.db;
+  // const table = db.get('test');
+  // table.push(req.body).write();
+  // res.send(req.body);
+  res.json( {msg: 'posted posted' });
 });
 
 router.delete('/:sessionId', function(req, res) {
