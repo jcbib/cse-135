@@ -2,7 +2,7 @@ const jsonServer = require('json-server');
 const bodyParser = require('body-parser');
 
 const staticRoutes = require('./routes/staticRoutes.js');
-const performanceRoutes = require('./routes/performanceROutes.js');
+const performanceRoutes = require('./routes/performanceRoutes.js');
 const activityRoutes = require('./routes/activityRoutes.js');
 
 // Returns an Express server
