@@ -219,7 +219,7 @@ function fetchActivityData() {
     body: JSON.stringify(activityData)
   })
     .then(res => res.text())
-    .then(data => console.log("data: " + JSON.stringify(data)))
+    .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
 };
 
