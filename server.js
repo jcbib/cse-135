@@ -16,7 +16,7 @@ const jsonRouter = jsonServer.router('data/db.json');
 const router = jsonServer.router('data/db.json');
 
 // Add activity data routes
-apiServer.get('/activity', function (req, res) { 
+router.get('/activity', function (req, res) { 
   res.json({ msg: 'hello' }); 
 });
 
@@ -39,7 +39,6 @@ router.put('/activity/:sessionId', function(req, res) {
 
 // Set default middlewares (logger, static, cors and no-cache)
 json.use(jsonServer.defaults());
-apiServer.use(jsonServer.defaults());
 apiServer.use(bodyParser.json())
 apiServer.use(bodyParser.urlencoded({ extended: true }));
 
