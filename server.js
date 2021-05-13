@@ -52,7 +52,8 @@ apiServer.get('/activity/:sessionId', function(req, res) {
   res.json({ msg: 'AaSDFAS' }); 
 });
 apiServer.post('/activity', function(req, res) { 
-  res.send(req.body);
+  console.log(req.body);
+  res.send("Post Success!");
 });
 apiServer.delete('/activity/:sessionId', function(req, res) {
   res.json({ msg: 'you deleted'}); 
