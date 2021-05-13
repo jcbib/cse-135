@@ -24,9 +24,7 @@ apiServer.get('/static/:sessionId', function(req, res) {
 apiServer.post('/static', function(req, res) { 
   const db = apiRouter.db;
   const table = db.get('test');
-  if ( _.isEmpty(table.find(data).value())) {
-    table.push(data).write();
-  }
+  table.push(data).write();
   res.send("Post Success!");
 });
 apiServer.delete('/static/:sessionId', function(req, res) {
