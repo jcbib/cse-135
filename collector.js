@@ -22,7 +22,7 @@ var idleTimeout = setTimeout(setIdle, 2000);
 
 const data = { username: 'test' };
 
-const url = '/static'; 
+const url = '/api/static'; 
 var request = new Request(url, {
   method: 'POST',
   body: data,
@@ -31,9 +31,8 @@ var request = new Request(url, {
 
 fetch(request)
   .then(res => res.json())
-  .then(data => console.log('test'))
-  .catch(err => console.log(err));
-
+  .then(data => console.log("data:" + data))
+  .catch(err => console.log("err:" + err));
 
 
 // Static

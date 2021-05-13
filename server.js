@@ -40,15 +40,19 @@ apiServer.put('/static/:sessionId', function(req, res) {
 apiServer.get('/performance', function (req, res) { 
   res.json({ msg: 'hello' }); 
 });
+
 apiServer.get('/performance/:sessionId', function(req, res) { 
   res.json({ msg: 'AaSDFAS' }); 
 });
+
 apiServer.post('/performance', function(req, res) { 
   res.json({ msg: 'test'}); 
 });
+
 apiServer.delete('/performance/:sessionId', function(req, res) {
   res.json({ msg: 'you deleted'}); 
 });
+
 apiServer.put('/performance/:sessionId', function(req, res) {
   res.json({ msg: 'you put something'});
 });
@@ -57,16 +61,20 @@ apiServer.put('/performance/:sessionId', function(req, res) {
 apiServer.get('/activity', function (req, res) { 
   res.json({ msg: 'hello' }); 
 });
+
 apiServer.get('/activity/:sessionId', function(req, res) { 
   res.json({ msg: 'AaSDFAS' }); 
 });
+
 apiServer.post('/activity', function(req, res) { 
   console.log(req.body);
   res.send("Post Success!");
 });
+
 apiServer.delete('/activity/:sessionId', function(req, res) {
   res.json({ msg: 'you deleted'}); 
 });
+
 apiServer.put('/activity/:sessionId', function(req, res) {
   res.json({ msg: 'you put something'});
 });
