@@ -169,7 +169,9 @@ function jsEnabled() {
 
 fetch(url, {
   method: 'POST',
-  headers: new Headers(),
+  headers: {
+    "Content-Type": "application/json"
+  },
   body: '{ "usernfasfsa": "test" }'
 })
   .then(res => res.json())
