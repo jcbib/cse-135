@@ -25,13 +25,13 @@ const data = { username: 'test' };
 const url = '/api/static'; 
 var request = new Request(url, {
   method: 'POST',
-  body: data,
+  body: JSON.stringify(data),
   headers: new Headers()
 });
 console.log("Request being sent: " + request);
 
 fetch(request)
-  .then(res => res.text())
+  .then(res => res.json())
   .then(data => console.log("data:" + data))
   .catch(err => console.log("err:" + err));
 
