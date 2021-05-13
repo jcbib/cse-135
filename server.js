@@ -10,7 +10,7 @@ const json = jsonServer.create();
 const apiServer = jsonServer.create();
 
 // Returns an Express router
-const jsonRouter = jsonServer.router('./data/db.json');
+const jsonRouter = jsonServer.router('db.json');
 
 // Set default middlewares (logger, static, cors and no-cache)
 json.use(jsonServer.defaults());
