@@ -1,6 +1,5 @@
 const server = require('json-server');
-const router = server.router('../data/db.json');
-
+const router = server.router('data/db.json');
 // Get all static data
 router.get('/static', function (req, res) { 
   res.json({ msg: 'hello' }); 
