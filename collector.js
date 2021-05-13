@@ -216,7 +216,7 @@ function fetchActivityData() {
     headers: {
       "Content-Type": "application/json"
     },
-    body: activityData
+    body: JSON.stringify(activityData)
   })
     .then(res => res.json())
     .then(data => console.log("data: " + JSON.stringify(data)))
