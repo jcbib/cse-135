@@ -27,7 +27,6 @@ apiServer.post('/static', function(req, res) {
   const db = apiRouter.db;
   const table = db.get('test');
   table.push(req.body).write();
-  console.log(req);
   res.send(req.body);
 });
 

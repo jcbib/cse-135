@@ -28,11 +28,13 @@ var request = new Request(url, {
   body: JSON.stringify(data),
   headers: new Headers()
 });
+
 console.log("Request being sent: " + request);
+console.log(request);
 
 fetch(request)
   .then(res => res.json())
-  .then(data => console.log("data:" + data))
+  .then(data => console.log(data))
   .catch(err => console.log("err:" + err));
 
 
