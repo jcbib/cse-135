@@ -22,6 +22,20 @@ var idleTimeout = setTimeout(setIdle, 2000);
 
 const data = { username: 'test' };
 
+const url = 'https://jak-cse135.site/api/static'; 
+var request = new Request(url, {
+  method: 'POST',
+  body: data,
+  headers: new Headers()
+});
+
+fetch(request)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
+
+
+
 // Static
 console.log(navigator.userAgent);
 console.log(navigator.language);

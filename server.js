@@ -6,6 +6,10 @@ var jsonServer = require('json-server');
 var json = jsonServer.create();
 var apiServer = jsonServer.create();
 
+// Returns an Express router
+var jsonRouter = jsonServer.router('db.json');
+var apiRouter = jsonServer.router('db.json');
+
 // Set default middlewares (logger, static, cors and no-cache)
 json.use(jsonServer.defaults());
 apiServer.use(jsonServer.defaults());
@@ -18,7 +22,12 @@ apiServer.get('/static/:sessionId', function(req, res) {
   res.json({ msg: 'AaSDFAS' }); 
 });
 apiServer.post('/static', function(req, res) { 
-  res.json({ msg: 'test'}); 
+  const db = router.db;
+  const table = db.get('test');
+  if ( _.isEmpty(table.find(data).value())) {
+    table.push(data).write();
+  }
+  res.send("Post Success!");
 });
 apiServer.delete('/static/:sessionId', function(req, res) {
   res.json({ msg: 'you deleted'}); 
@@ -61,10 +70,6 @@ apiServer.delete('/activity/:sessionId', function(req, res) {
 apiServer.put('/activity/:sessionId', function(req, res) {
   res.json({ msg: 'you put something'});
 });
-
-// Returns an Express router
-var jsonRouter = jsonServer.router('db.json');
-var apiRouter = jsonServer.router('db.json');
 
 json.use(jsonRouter);
 apiServer.use(apiRouter);
