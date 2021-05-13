@@ -18,19 +18,23 @@ apiServer.use(jsonServer.defaults());
 apiServer.get('/static', function (req, res) { 
   res.json({ msg: 'hello' }); 
 });
+
 apiServer.get('/static/:sessionId', function(req, res) { 
   res.json({ msg: 'AaSDFAS' }); 
 });
+
 apiServer.post('/static', function(req, res) { 
   const db = apiRouter.db;
   const table = db.get('test');
   table.push(req.body).write();
   console.log(req);
-  res.send(req.body);
+  res.json(req.body);
 });
+
 apiServer.delete('/static/:sessionId', function(req, res) {
   res.json({ msg: 'you deleted'}); 
 });
+
 apiServer.put('/static/:sessionId', function(req, res) {
   res.json({ msg: 'you put something'});
 });

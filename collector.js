@@ -20,7 +20,7 @@ var startTime = window.performance.now();
 var idle = false;
 var idleTimeout = setTimeout(setIdle, 2000);
 
-const data = 'hello';
+const data = { username: 'test' };
 
 const url = '/api/static'; 
 var request = new Request(url, {
