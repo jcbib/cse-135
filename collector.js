@@ -1,67 +1,85 @@
-// const url = 'https://collector.jak-cse135.site/';
-
-// let h = new Headers();
-// h.append('Accept', 'application/json');
-// h.append("Access-Control-Allow-Origin", "*");
-
-// fetch(url, {
-//     mode: 'no-cors'
-// }).then(async response => {
-//     try {
-//         const data = await response.json()
-//         console.log('response data?', data)
-//     } catch (error) {
-//         console.log('Error happened here!')
-//         console.error(error)
-//     }
-// })
-
 var startTime = window.performance.now();
 var idle = false;
 var idleTimeout = setTimeout(setIdle, 2000);
 
-const url = '/api/static'; 
-
 // Static
-console.log(navigator.userAgent);
-console.log(navigator.language);
-console.log(navigator.cookieEnabled);
-
-// Check JS - If we can run this file, this means that it's enabled
-console.log("Javascript is enabled.");
+// var userAgent = navigator.userAgent;
+// var userLanguage = navigator.language;
+// var cookiesEnabled = navigator.cookieEnabled;
 
 // Check Images
 function isImagesEnabled() {
   if ((document.getElementById("imgFlag").offsetWidth == 1 && document.getElementById("imgFlag").readyState == "complete") || 
       (document.getElementById("imgFlag").offsetWidth == 1 && document.getElementById("imgFlag").readyState == undefined)) {
-        return "Images are enabled.";
-      } else {
-        return "Images are disabled.";
-      }
-}
-console.log(isImagesEnabled());
+    return true;
+  } else {
+    return false;
+  }
+};
 
 // Check CSS
 function isCSSEnabled() {
   if (document.styleSheets == null || document.styleSheets.length == 0) {
-    return "CSS is disabled.";
+    return false;
   } else {
-    return "CSS is enabled.";
+    return true;
   }
 }
-console.log(isCSSEnabled());
 
-console.log(window.screen.width + "x" + window.screen.height);
-console.log(window.innerWidth + "x" + window.innerHeight);
-console.log(window.navigator.connection.effectiveType);
+// var screenDimensions = window.screen.width + "x" + window.screen.height;
+// var windowDimensions = window.innerWidth + "x" + window.innerHeight;
+// var networkConnectionType = window.navigator.connection.effectiveType;
 
+var staticData = {
+  'userAgent' : navigator.userAgent,
+  'userLanguage' : navigator.language,
+  'cookiesEnabled' : navigator.cookieEnabled,
+  'jsEnabled' : true,
+  'imageEnabled': isImagesEnabled(),
+  'cssEnabled' : isCSSEnabled(),
+  'screenDimensions' : window.screen.width + "x" + window.screen.height,
+  'windowsDimensions' : window.innerWidth + "x" + window.innerHeight,
+  'networkConnectionType' : window.navigator.connection.effectiveType
+};
+
+// Fetch Static 
+const staticUrl = '/api/static'; 
+fetch(staticUrl, {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: staticData
+})
+  .then(res => res.json())
+  // .then(data => console.log("data: " + JSON.stringify(data)))
+  .catch(err => console.log("err: " + err));
 
 // Performance
-console.log(window.performance.timing);
+// console.log(window.performance.timing);
 
-console.log(window.performance.timing.domContentLoadedEventStart);
-console.log(window.performance.timing.domContentLoadedEventEnd);
-console.log(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart);
+// console.log(window.performance.timing.domContentLoadedEventStart);
+// console.log(window.performance.timing.domContentLoadedEventEnd);
+// console.log(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart);
+
+var performanceData = {
+  'wholeTimingObject' : window.performance.timing,
+  'timePageLoadStart' : window.performance.timing.domContentLoadedEventStart,
+  'timePageLoadEnd' : window.performance.timing.domContentLoadedEventEnd,
+  'totalTimeLoad' : window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart
+};
+
+// var performanceUrl = '/../..';
+// fetch(performanceUrl, {
+//   method: 'POST',
+//   headers: {
+//     "Content-Type": "application/json"
+//   },
+//   body: performanceData
+// })
+//   .then(res => res.json())
+//   // .then(data => console.log("data: " + JSON.stringify(data)))
+//   .catch(err => console.log("err: " + err));
 
 // Activity
 
@@ -157,15 +175,6 @@ window.beforeunload = function(e) {
 // User page is on
 console.log(document.URL);
 
-// JS is enabled
-function jsEnabled() {
-  console.log("Javascript is enabled.");
-}
-
-// console.log("Request body being sent: " + request.body);
-
-// console.log("Request being sent: " + request);
-// console.log(request);
 
 fetch(url, {
   method: 'POST',
