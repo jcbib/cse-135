@@ -16,7 +16,7 @@ const jsonRouter = jsonServer.router('data/db.json');
 const router = jsonServer.router('data/db.json');
 
 // Add activity data routes
-router.get('/activity', function (req, res) { 
+apiServer.get('/activity', function (req, res) { 
   res.json({ msg: 'hello' }); 
 });
 
