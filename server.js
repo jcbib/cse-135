@@ -22,7 +22,7 @@ apiServer.use(bodyParser.urlencoded({ extended: true }));
 apiServer.use('/static', staticRoutes);
 apiServer.use('/performance', performanceRoutes);
 apiServer.use('/activity', activityRoutes);
-apiServer.use(router);
+// apiServer.use(router);
 json.use(jsonRouter);
 
 json.listen(3000);
