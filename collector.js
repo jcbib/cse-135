@@ -20,19 +20,16 @@ var startTime = window.performance.now();
 var idle = false;
 var idleTimeout = setTimeout(setIdle, 2000);
 
-const data = { username: 'test' };
+const data = { "username": 'test' };
 
 const url = '/api/static'; 
 var request = new Request(url, {
   method: 'POST',
-  body: JSON.stringify(data),
+  body: data,
   headers: new Headers()
 });
-console.log("Request body being sent: " + request.body);
-
-console.log("Request being sent: " + request);
+console.log("Request being sent: " + request.body);
 console.log(request);
-console.log(request.body);
 
 fetch(request)
   .then(res => res.json())
