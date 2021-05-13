@@ -41,9 +41,29 @@ console.log(navigator.userAgent);
 console.log(navigator.language);
 console.log(navigator.cookieEnabled);
 
-// Check JS
+// Check JS - If we can run this file, this means that it's enabled
+console.log("Javascript is enabled.");
+
 // Check Images
+function isImagesEnabled() {
+  if ((document.getElementById("imgFlag").offsetWidth == 1 && document.getElementById("imgFlag").readyState == "complete") || 
+      (document.getElementById("imgFlag").offsetWidth == 1 && document.getElementById("imgFlag").readyState == undefined)) {
+        return "Images are enabled.";
+      } else {
+        return "Images are disabled.";
+      }
+}
+console.log(isImagesEnabled());
+
 // Check CSS
+function isCSSEnabled() {
+  if (document.styleSheets == null || document.styleSheets.length == 0) {
+    return "CSS is disabled.";
+  } else {
+    return "CSS is enabled.";
+  }
+}
+console.log(isCSSEnabled());
 
 console.log(window.screen.width + "x" + window.screen.height);
 console.log(window.innerWidth + "x" + window.innerHeight);
@@ -150,3 +170,8 @@ window.beforeunload = function(e) {
 
 // User page is on
 console.log(document.URL);
+
+// JS is enabled
+function jsEnabled() {
+  console.log("Javascript is enabled.");
+}

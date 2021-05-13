@@ -29,10 +29,19 @@
 
     gtag('config', 'UA-195043294-1');
   </script>
+
+  <!-- Check if JS detected -->
+  <script type="text/javscript">
+    document.cookie = 'hasJS=true';
+  </script>
+  <noscript>
+    <img src="nojs.php">
+  </noscript>
 </head>
 
 <body>
   <div class="header">
+    <img id="imgFlag" src="images/testImage.gif" alt>
     <span id="course"> CSE 135 </span>
     <span id="quarter"> Spring 2021 </span>
     <div class="navbar">
