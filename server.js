@@ -28,7 +28,7 @@ apiServer.post('/static', function(req, res) {
   const table = db.get('test');
   table.push(req.body).write();
   console.log(req);
-  res.json(req.body);
+  res.send(req);
 });
 
 apiServer.delete('/static/:sessionId', function(req, res) {
