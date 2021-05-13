@@ -78,10 +78,22 @@ var performanceData = {
 //   body: performanceData
 // })
 //   .then(res => res.json())
-//   // .then(data => console.log("data: " + JSON.stringify(data)))
+//   .then(data => console.log("data: " + JSON.stringify(data)))
 //   .catch(err => console.log("err: " + err));
 
 // Activity
+var mousePosX = 0;
+var mousePosY = 0;
+var mouseDownButton = '';
+var mouseUpButton = '';
+var keyDown = '';
+var keyUp = '';
+var scrollCoord = 0;
+var idleTime = 0;
+var idleStopTime = 0;
+var timeUserLeft = 0;
+var timeUserEnter = 0;
+var currentPage = document.URL;
 
 // Mouse Activity
 document.onmousemove = function(e) {
@@ -94,7 +106,9 @@ document.onmousemove = function(e) {
     console.log("idle for: ", window.performance.now() - startTime, "ms");
   }
   startTime = window.performance.now();
-  console.log("mouse location: ", e.clientX, e.clientY)
+  //console.log("mouse location: ", e.clientX, e.clientY)
+  mousePosX = e.clientX;
+  mousePosY = e.clientY;
 };
 
 document.onmousedown = function(e) {
@@ -107,7 +121,8 @@ document.onmousedown = function(e) {
     console.log("idle for: ", window.performance.now() - startTime);
   }
   startTime = window.performance.now();
-  console.log("mousedown button: ", e.button);
+  // console.log("mousedown button: ", e.button);
+  mouseDownButton = e.button;
 };
 
 document.onmouseup = function (e) {
@@ -120,7 +135,8 @@ document.onmouseup = function (e) {
     console.log("idle for: ", window.performance.now() - startTime);
   }
   startTime = window.performance.now();
-  console.log("mouseup button: ", e.button);
+  // console.log("mouseup button: ", e.button);
+  mouseUpButton = e.button;
 };
 
 // Keyboard Activity
@@ -134,7 +150,8 @@ document.onkeydown = function(e) {
     console.log("idle for: ", window.performance.now() - startTime);
   }
   startTime = window.performance.now();
-  console.log("key down: ", e.key);
+  // console.log("key down: ", e.key);
+  keyDown = e.key;
 };
 
 document.onkeyup = function(e) {
@@ -147,34 +164,69 @@ document.onkeyup = function(e) {
     console.log("idle for: ", window.performance.now() - startTime);
   }
   startTime = window.performance.now();
-  console.log("key up: ", e.key);
+  // console.log("key up: ", e.key);
+  keyUp = e.key;
 };
 
 // Scroll Activity
 document.onscroll = function(e) {
-  console.log("scroll amount: "  + (window.pageYOffset || document.documentElement.scrollTop));
+  // console.log("scroll amount: "  + (window.pageYOffset || document.documentElement.scrollTop));
+  scrollCoord = (window.pageYOffset || document.documentElement.scrollTop);
 }
 
 // Idle activity
 function setIdle() {
-  console.log("idle");
+  // console.log("idle");
   idle = true; 
 }
 
 // User left and entered page
 window.onload = function(e) {
   var currDateTime = new Date();
-  console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
+  // console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
+  timeUserEnter = currDateTime.toUTCString();
 }
 
 window.beforeunload = function(e) {
   var currDateTime = new Date();
-  console.log("User has left the page", document.URL," at ", currDateTime.toUTCString());
+  // console.log("User has left the page", document.URL," at ", currDateTime.toUTCString());
+  timeUserLeft = currDateTime.toUTCString();
 }
 
-// User page is on
-console.log(document.URL);
+var activityUrl = '/../..';
+function fetchActivityData() {
 
+  var activityData = {
+    'mousePosX' : mousePosX,
+    'mousePosY' : mousePosY,
+    'mouseDownButton' : mouseDownButton,
+    'mouseUpButton' : mouseUpButton,
+    'keyDown' : keyDown,
+    'keyUp' : keyUp,
+    'scrollCoord' : scrollCoord,
+    'idleTime' : idleTime,
+    'idleStopTime' : idleStopTime,
+    'timeUserLeft' : timeUserLeft,
+    'timeUserEnter' : timeUserEnter,
+    'currentPage' : currentPage
+  };
+
+  fetch(activityUrl, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: activityData
+  })
+    .then(res => res.json())
+    .then(data => console.log("data: " + JSON.stringify(data)))
+    .catch(err => console.log("err: " + err));
+}
+
+setInterval(function() { fetchActivityData(); }, 2000);
+
+// User page is on
+// console.log(document.URL);
 
 // fetch(url, {
 //   method: 'POST',
