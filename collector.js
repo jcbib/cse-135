@@ -22,7 +22,7 @@ var idleTimeout = setTimeout(setIdle, 2000);
 
 const data = { username: 'test' };
 
-const url = 'https://jak-cse135.site/api/static'; 
+const url = '/static'; 
 var request = new Request(url, {
   method: 'POST',
   body: data,
@@ -31,7 +31,7 @@ var request = new Request(url, {
 
 fetch(request)
   .then(res => res.json())
-  .then(data => console.log(data))
+  .then(data => console.log('test'))
   .catch(err => console.log(err));
 
 
