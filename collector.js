@@ -28,9 +28,7 @@ var request = new Request(url, {
   body: JSON.stringify(data),
   headers: new Headers()
 });
-
-console.log("Request being sent: " + request);
-console.log(request);
+console.log("Request being sent: " + request.body);
 
 fetch(request)
   .then(res => res.json())
