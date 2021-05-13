@@ -10,7 +10,7 @@ router.get('/:sessionId', function(req, res) {
   res.json({ msg: 'AaSDFAS' }); 
 });
 
-router.post('/activity', function(req, res) { 
+router.post('/', function(req, res) { 
   console.log(req.body);
   res.send("Post Success!");
 });
