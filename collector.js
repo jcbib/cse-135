@@ -49,7 +49,7 @@ fetch(staticUrl, {
   headers: {
     "Content-Type": "application/json"
   },
-  body: staticData
+  body: JSON.stringify(staticData)
 })
   .then(res => res.json())
   .then(data => console.log("data: " + JSON.stringify(data)))
