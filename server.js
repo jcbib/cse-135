@@ -3,23 +3,70 @@
 var jsonServer = require('json-server');
 
 // Returns an Express server
-var server = jsonServer.create();
-var server_2 = jsonServer.create();
+var json = jsonServer.create();
+var apiServer = jsonServer.create();
 
 // Set default middlewares (logger, static, cors and no-cache)
-server.use(jsonServer.defaults());
-server_2.use(jsonServer.defaults());
+json.use(jsonServer.defaults());
+apiServer.use(jsonServer.defaults());
 
-// Add custom routes
-server_2.get('/custom', function (req, res) { res.json({ msg: 'hello' }) });
-server_2.get('/custom_2', function(req, res) { res.json({ msg: 'AaSDFAS' })});
+// Add static data routes
+apiServer.get('/static', function (req, res) { 
+  res.json({ msg: 'hello' }) 
+});
+apiServer.get('/static/:sessionId', function(req, res) { 
+  res.json({ msg: 'AaSDFAS' }) 
+});
+apiServer.post('/static', function(req, res) { 
+  res.json({ msg: 'test'}) 
+});
+apiServer.delete('/static/:sessionId', function(req, res) {
+  res.json({ msg: 'you deleted'}) 
+});
+apiServer.put('/static/:sessionId', function(req, res) {
+  res.json({ msg: 'you put something'});
+});
+
+// Add performance data routes
+apiServer.get('/performance', function (req, res) { 
+  res.json({ msg: 'hello' }) 
+});
+apiServer.get('/performance/:sessionId', function(req, res) { 
+  res.json({ msg: 'AaSDFAS' }) 
+});
+apiServer.post('/performance', function(req, res) { 
+  res.json({ msg: 'test'}) 
+});
+apiServer.delete('/performance/:sessionId', function(req, res) {
+  res.json({ msg: 'you deleted'}) 
+});
+apiServer.put('/performance/:sessionId', function(req, res) {
+  res.json({ msg: 'you put something'});
+});
+
+// Add activity data routes
+apiServer.get('/activity', function (req, res) { 
+  res.json({ msg: 'hello' }) 
+});
+apiServer.get('/activity/:sessionId', function(req, res) { 
+  res.json({ msg: 'AaSDFAS' }) 
+});
+apiServer.post('/activity', function(req, res) { 
+  res.json({ msg: 'test'}) 
+});
+apiServer.delete('/activity/:sessionId', function(req, res) {
+  res.json({ msg: 'you deleted'}) 
+});
+apiServer.put('/activity/:sessionId', function(req, res) {
+  res.json({ msg: 'you put something'});
+});
 
 // Returns an Express router
-var router = jsonServer.router('db.json');
-var router_2 = jsonServer.router('db.json');
+var jsonRouter = jsonServer.router('db.json');
+var apiRouter = jsonServer.router('db.json');
 
-server.use(router);
-server_2.use(router_2);
+json.use(jsonRouter);
+apiServer.use(apiRouter);
 
-server.listen(3000);
-server_2.listen(3001);
+json.listen(3000);
+apiServer.listen(3001);
