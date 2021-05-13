@@ -69,17 +69,17 @@ var performanceData = {
   'totalTimeLoad' : window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart
 };
 
-// var performanceUrl = '/../..';
-// fetch(performanceUrl, {
-//   method: 'POST',
-//   headers: {
-//     "Content-Type": "application/json"
-//   },
-//   body: performanceData
-// })
-//   .then(res => res.json())
-//   .then(data => console.log("data: " + JSON.stringify(data)))
-//   .catch(err => console.log("err: " + err));
+var performanceUrl = '/api/performance/';
+fetch(performanceUrl, {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(performanceData)
+})
+  .then(res => res.json())
+  .then(data => console.log("data: " + JSON.stringify(data)))
+  .catch(err => console.log("err: " + err));
 
 // Activity
 var mousePosX = 0;
