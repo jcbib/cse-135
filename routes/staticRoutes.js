@@ -1,3 +1,5 @@
+const jsonServer = require('json-server');
+const jsonRouter = jsonServer.router('data/db.json');
 const express = require('express');
 const router = express.Router();
 
