@@ -1,6 +1,7 @@
 // app.js file
 
 var jsonServer = require('json-server');
+const bodyParser = require('body-parser');
 
 // Returns an Express server
 var json = jsonServer.create();
@@ -13,6 +14,8 @@ var apiRouter = jsonServer.router('db.json');
 // Set default middlewares (logger, static, cors and no-cache)
 json.use(jsonServer.defaults());
 apiServer.use(jsonServer.defaults());
+apiServer.use(bodyParser.json())
+apiServer.use(bodyParser.urlencoded({ extended: true }));
 
 // Add static data routes
 apiServer.get('/static', function (req, res) { 
