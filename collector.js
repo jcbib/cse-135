@@ -20,14 +20,7 @@ var startTime = window.performance.now();
 var idle = false;
 var idleTimeout = setTimeout(setIdle, 2000);
 
-// const data = { username: 'test' };
-
 const url = '/api/static'; 
-var request = new Request(url, {
-  method: 'POST',
-  headers: new Headers(),
-  body: '{ "username": "test" }'
-});
 
 // Static
 console.log(navigator.userAgent);
@@ -169,13 +162,16 @@ function jsEnabled() {
   console.log("Javascript is enabled.");
 }
 
+// console.log("Request body being sent: " + request.body);
 
-console.log("Request body being sent: " + request.body);
+// console.log("Request being sent: " + request);
+// console.log(request);
 
-console.log("Request being sent: " + request);
-console.log(request);
-
-fetch(request)
+fetch(url, {
+  method: 'POST',
+  headers: new Headers(),
+  body: '{ "usernfasfsa": "test" }'
+})
   .then(res => res.json())
   .then(data => console.log("data:" + data))
   .catch(err => console.log("err:" + err));
