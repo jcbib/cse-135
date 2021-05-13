@@ -15,6 +15,7 @@ const router = jsonServer.router('data/db.json');
 
 // Set default middlewares (logger, static, cors and no-cache)
 json.use(jsonServer.defaults());
+apiServer.use(jsonServer.defaults());
 apiServer.use(bodyParser.json())
 apiServer.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,7 +23,7 @@ apiServer.use(bodyParser.urlencoded({ extended: true }));
 apiServer.use('/static', staticRoutes);
 apiServer.use('/performance', performanceRoutes);
 apiServer.use('/activity', activityRoutes);
-// apiServer.use(router);
+apiServer.use(router);
 json.use(jsonRouter);
 
 json.listen(3000);
