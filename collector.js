@@ -28,6 +28,7 @@ var request = new Request(url, {
   body: data,
   headers: new Headers()
 });
+console.log("Request being sent: " + request);
 
 fetch(request)
   .then(res => res.text())
