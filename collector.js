@@ -196,33 +196,19 @@ window.beforeunload = function(e) {
 var activityUrl = '/api/activity/';
 function fetchActivityData() {
 
-  // var activityData = {
-  //   mousePosX : mousePosX,
-  //   'mousePosY' : mousePosY,
-  //   'mouseDownButton' : mouseDownButton,
-  //   'mouseUpButton' : mouseUpButton,
-  //   'keyDown' : keyDown,
-  //   'keyUp' : keyUp,
-  //   'scrollCoord' : scrollCoord,
-  //   'idleTime' : idleTime,
-  //   'idleStopTime' : idleStopTime,
-  //   'timeUserLeft' : timeUserLeft,
-  //   'timeUserEnter' : timeUserEnter,
-  //   'currentPage' : currentPage
-  // };
   var activityData = {
-    mousePosX : mousePosX,
-    mousePosY : mousePosY,
-    mouseDownButton : mouseDownButton,
-    mouseUpButton : mouseUpButton,
-    keyDown : keyDown,
-    keyUp : keyUp,
-    scrollCoord : scrollCoord,
-    idleTime : idleTime,
-    idleStopTime : idleStopTime,
-    timeUserLeft : timeUserLeft,
-    timeUserEnter : timeUserEnter,
-    currentPage : currentPage
+    'mousePosX' : mousePosX,
+    'mousePosY' : mousePosY,
+    'mouseDownButton' : mouseDownButton,
+    'mouseUpButton' : mouseUpButton,
+    'keyDown' : keyDown,
+    'keyUp' : keyUp,
+    'scrollCoord' : scrollCoord,
+    'idleTime' : idleTime,
+    'idleStopTime' : idleStopTime,
+    'timeUserLeft' : timeUserLeft,
+    'timeUserEnter' : timeUserEnter,
+    'currentPage' : currentPage
   };
 
   fetch(activityUrl, {
@@ -232,10 +218,11 @@ function fetchActivityData() {
     },
     body: JSON.stringify(activityData)
   })
-    .then(res => res.json())
+    .then(res => res.text())
     .then(data => console.log("data: " + JSON.stringify(data)))
     .catch(err => console.log("err: " + err));
-}
+};
+
 
 setInterval(function() { fetchActivityData(); }, 2000);
 
