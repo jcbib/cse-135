@@ -30,7 +30,7 @@ var request = new Request(url, {
 });
 
 fetch(request)
-  .then(res => res.json())
+  .then(res => res.text())
   .then(data => console.log("data:" + data))
   .catch(err => console.log("err:" + err));
 
