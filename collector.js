@@ -196,19 +196,33 @@ window.beforeunload = function(e) {
 var activityUrl = '/api/activity/';
 function fetchActivityData() {
 
+  // var activityData = {
+  //   mousePosX : mousePosX,
+  //   'mousePosY' : mousePosY,
+  //   'mouseDownButton' : mouseDownButton,
+  //   'mouseUpButton' : mouseUpButton,
+  //   'keyDown' : keyDown,
+  //   'keyUp' : keyUp,
+  //   'scrollCoord' : scrollCoord,
+  //   'idleTime' : idleTime,
+  //   'idleStopTime' : idleStopTime,
+  //   'timeUserLeft' : timeUserLeft,
+  //   'timeUserEnter' : timeUserEnter,
+  //   'currentPage' : currentPage
+  // };
   var activityData = {
-    'mousePosX' : mousePosX,
-    'mousePosY' : mousePosY,
-    'mouseDownButton' : mouseDownButton,
-    'mouseUpButton' : mouseUpButton,
-    'keyDown' : keyDown,
-    'keyUp' : keyUp,
-    'scrollCoord' : scrollCoord,
-    'idleTime' : idleTime,
-    'idleStopTime' : idleStopTime,
-    'timeUserLeft' : timeUserLeft,
-    'timeUserEnter' : timeUserEnter,
-    'currentPage' : currentPage
+    mousePosX : mousePosX,
+    mousePosY : mousePosY,
+    mouseDownButton : mouseDownButton,
+    mouseUpButton : mouseUpButton,
+    keyDown : keyDown,
+    keyUp : keyUp,
+    scrollCoord : scrollCoord,
+    idleTime : idleTime,
+    idleStopTime : idleStopTime,
+    timeUserLeft : timeUserLeft,
+    timeUserEnter : timeUserEnter,
+    currentPage : currentPage
   };
 
   fetch(activityUrl, {
