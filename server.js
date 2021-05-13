@@ -12,16 +12,16 @@ apiServer.use(jsonServer.defaults());
 
 // Add static data routes
 apiServer.get('/static', function (req, res) { 
-  res.json({ msg: 'hello' }) 
+  res.json({ msg: 'hello' }); 
 });
 apiServer.get('/static/:sessionId', function(req, res) { 
-  res.json({ msg: 'AaSDFAS' }) 
+  res.json({ msg: 'AaSDFAS' }); 
 });
 apiServer.post('/static', function(req, res) { 
-  res.json({ msg: 'test'}) 
+  res.json({ msg: 'test'}); 
 });
 apiServer.delete('/static/:sessionId', function(req, res) {
-  res.json({ msg: 'you deleted'}) 
+  res.json({ msg: 'you deleted'}); 
 });
 apiServer.put('/static/:sessionId', function(req, res) {
   res.json({ msg: 'you put something'});
@@ -29,16 +29,16 @@ apiServer.put('/static/:sessionId', function(req, res) {
 
 // Add performance data routes
 apiServer.get('/performance', function (req, res) { 
-  res.json({ msg: 'hello' }) 
+  res.json({ msg: 'hello' }); 
 });
 apiServer.get('/performance/:sessionId', function(req, res) { 
-  res.json({ msg: 'AaSDFAS' }) 
+  res.json({ msg: 'AaSDFAS' }); 
 });
 apiServer.post('/performance', function(req, res) { 
-  res.json({ msg: 'test'}) 
+  res.json({ msg: 'test'}); 
 });
 apiServer.delete('/performance/:sessionId', function(req, res) {
-  res.json({ msg: 'you deleted'}) 
+  res.json({ msg: 'you deleted'}); 
 });
 apiServer.put('/performance/:sessionId', function(req, res) {
   res.json({ msg: 'you put something'});
@@ -46,16 +46,16 @@ apiServer.put('/performance/:sessionId', function(req, res) {
 
 // Add activity data routes
 apiServer.get('/activity', function (req, res) { 
-  res.json({ msg: 'hello' }) 
+  res.json({ msg: 'hello' }); 
 });
 apiServer.get('/activity/:sessionId', function(req, res) { 
-  res.json({ msg: 'AaSDFAS' }) 
+  res.json({ msg: 'AaSDFAS' }); 
 });
 apiServer.post('/activity', function(req, res) { 
-  res.json({ msg: 'test'}) 
+  res.send("Successful post!");
 });
 apiServer.delete('/activity/:sessionId', function(req, res) {
-  res.json({ msg: 'you deleted'}) 
+  res.json({ msg: 'you deleted'}); 
 });
 apiServer.put('/activity/:sessionId', function(req, res) {
   res.json({ msg: 'you put something'});
