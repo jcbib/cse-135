@@ -24,6 +24,7 @@ apiServer.get('/static/:sessionId', function(req, res) {
 apiServer.post('/static', function(req, res) { 
   const db = router.db;
   const table = db.get('test');
+  res.send(table);
   if ( _.isEmpty(table.find(data).value())) {
     table.push(data).write();
   }
