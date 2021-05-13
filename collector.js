@@ -29,17 +29,6 @@ var request = new Request(url, {
   body: '{ "username": "test" }'
 });
 
-console.log("Request body being sent: " + request.body);
-
-console.log("Request being sent: " + request);
-console.log(request);
-
-fetch(request)
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.log("err:" + err));
-
-
 // Static
 console.log(navigator.userAgent);
 console.log(navigator.language);
@@ -179,3 +168,14 @@ console.log(document.URL);
 function jsEnabled() {
   console.log("Javascript is enabled.");
 }
+
+
+console.log("Request body being sent: " + request.body);
+
+console.log("Request being sent: " + request);
+console.log(request);
+
+fetch(request)
+  .then(res => res.json())
+  .then(data => console.log("data:" + data))
+  .catch(err => console.log("err:" + err));
