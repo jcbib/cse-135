@@ -16,24 +16,24 @@ const jsonRouter = jsonServer.router('data/db.json');
 const router = apiServer.router('data/db.json');
 
 // Add activity data routes
-router.get('/activity', function (req, res) { 
+apiServer.get('/activity', function (req, res) { 
   res.json({ msg: 'hello' }); 
 });
 
-router.get('/activity/:sessionId', function(req, res) { 
+apiServer.get('/activity/:sessionId', function(req, res) { 
   res.json({ msg: 'AaSDFAS' }); 
 });
 
-router.post('/activity', function(req, res) { 
+apiServer.post('/activity', function(req, res) { 
   console.log(req.body);
   res.send("Post Success!");
 });
 
-router.delete('/activity/:sessionId', function(req, res) {
+apiServer.delete('/activity/:sessionId', function(req, res) {
   res.json({ msg: 'you deleted'}); 
 });
 
-router.put('/activity/:sessionId', function(req, res) {
+apiServer.put('/activity/:sessionId', function(req, res) {
   res.json({ msg: 'you put something'});
 });
 
