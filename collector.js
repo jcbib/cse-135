@@ -173,5 +173,5 @@ fetch(url, {
   body: '{ "usernfasfsa": "test" }'
 })
   .then(res => res.json())
-  .then(data => console.log("data:" + data))
+  .then(data => console.log("data:" + JSON.stringify(data)))
   .catch(err => console.log("err:" + err));
