@@ -30,7 +30,7 @@ var request = new Request(url, {
 });
 
 request.json().then(function(json) {
-  console.log(json.username);
+  console.log("GASFISOFJASF ",json.username);
 });
 
 console.log("Request body being sent: " + request.body);
