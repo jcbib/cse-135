@@ -1,5 +1,5 @@
-const server = require('json-server');
-const router = server.router('data/db.json');
+const express = require('express');
+const router = express.Router();
 
 // Add activity data routes
 router.get('/', function (req, res) { 

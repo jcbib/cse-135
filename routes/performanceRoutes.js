@@ -1,5 +1,5 @@
-const server = require('json-server');
-const router = server.router('data/db.json');
+const express = require('express');
+const router = express.Router();
 
 // Get all performance data
 router.get('/', function (req, res) { 
