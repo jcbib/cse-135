@@ -193,7 +193,7 @@ window.beforeunload = function(e) {
   timeUserLeft = currDateTime.toUTCString();
 }
 
-var activityUrl = '/../..';
+var activityUrl = '/api/activity/';
 function fetchActivityData() {
 
   var activityData = {
