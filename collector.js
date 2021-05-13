@@ -29,10 +29,6 @@ var request = new Request(url, {
   body: '{ "username": "test" }'
 });
 
-request.json().then(function(json) {
-  console.log("GASFISOFJASF ",json.username);
-});
-
 console.log("Request body being sent: " + request.body);
 
 console.log("Request being sent: " + request);
