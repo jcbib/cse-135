@@ -52,7 +52,7 @@ fetch(staticUrl, {
   body: staticData
 })
   .then(res => res.json())
-  // .then(data => console.log("data: " + JSON.stringify(data)))
+  .then(data => console.log("data: " + JSON.stringify(data)))
   .catch(err => console.log("err: " + err));
 
 // Performance
