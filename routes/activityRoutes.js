@@ -7,7 +7,6 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function(req, res) { 
-  req.session.activity = {};
   if (!req.session.activity) {
     req.session.activity = {};
     req.session.activity['activityData'] = [];
