@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
   if (!req.session.static) {
     req.session.static = req.body;
   }
-  var response = req.sessionID + ": " + req.session.static;
+  var response = req.sessionID + ": " + JSON.stringify(req.session.static);
   res.send(response);
 });
 
