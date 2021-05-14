@@ -12,6 +12,9 @@ router.post('/', function(req, res) {
     req.session.activity['activityData'] = [];
     req.session.activity['activityData'].push(req.body);
   } else {
+    if (!req.session.activity['activityData']) {
+      req.session.activity['activityData'] = [];
+    }
     req.session.activity['activityData'].push(req.body);
   }
   var response = req.sessionID + ": " + JSON.stringify(req.session.activity);
