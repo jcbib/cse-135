@@ -112,6 +112,7 @@ document.onmousemove = function(e) {
   //console.log("mouse location: ", e.clientX, e.clientY)
   mousePosX = e.clientX;
   mousePosY = e.clientY;
+  fetchActivityData();
 };
 
 document.onmousedown = function(e) {
@@ -128,6 +129,7 @@ document.onmousedown = function(e) {
   startTime = window.performance.now();
   // console.log("mousedown button: ", e.button);
   mouseDownButton = e.button;
+  fetchActivityData();
 };
 
 document.onmouseup = function (e) {
@@ -144,6 +146,7 @@ document.onmouseup = function (e) {
   startTime = window.performance.now();
   // console.log("mouseup button: ", e.button);
   mouseUpButton = e.button;
+  fetchActivityData();
 };
 
 // Keyboard Activity
@@ -161,6 +164,7 @@ document.onkeydown = function(e) {
   startTime = window.performance.now();
   // console.log("key down: ", e.key);
   keyDown = e.key;
+  fetchActivityData();
 };
 
 document.onkeyup = function(e) {
@@ -177,12 +181,14 @@ document.onkeyup = function(e) {
   startTime = window.performance.now();
   // console.log("key up: ", e.key);
   keyUp = e.key;
+  fetchActivityData();
 };
 
 // Scroll Activity
 document.onscroll = function(e) {
   // console.log("scroll amount: "  + (window.pageYOffset || document.documentElement.scrollTop));
   scrollCoord = (window.pageYOffset || document.documentElement.scrollTop);
+  fetchActivityData();
 }
 
 // Idle activity
@@ -196,12 +202,14 @@ window.onload = function(e) {
   var currDateTime = new Date();
   // console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
   timeUserEnter = currDateTime.toUTCString();
+  fetchActivityData();
 }
 
 window.beforeunload = function(e) {
   var currDateTime = new Date();
   // console.log("User has left the page", document.URL," at ", currDateTime.toUTCString());
   timeUserLeft = currDateTime.toUTCString();
+  fetchActivityData();
 }
 
 // POST Activity
@@ -234,8 +242,6 @@ function fetchActivityData() {
     .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
 };
-
-setInterval(function() { fetchActivityData(); }, 2000);
 
 // User page is on
 // console.log(document.URL);
