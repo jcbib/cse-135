@@ -10,6 +10,8 @@ print <<END;
 <hr>
 END
 
+print "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>";
+
 # NOTE: Although the Query String is an environment variable, the Message Body
 # must be read in from the Standard Input with any language using CGI.
 # Credit for this code to read in the Post data comes from:
@@ -41,5 +43,6 @@ foreach my $key (%in) {
 }
 
 print "</ul>\n";
+print "<script src=\"../collector.js\" async> </script>\n";
 # Print the HTML file bottom
 print "</body></html>\n";

@@ -10,12 +10,15 @@ int main(int argc, char **argv, char **envp)
   printf("<html><head><title>General Request Echo</title></head> \
 	<body><h1 align=center>General Request Echo</h1> \
   	<hr/>\n");
+  printf("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>");
 
   // Get environment vars
   printf("<table>\n");
   printf("<tr><td>Protocol:</td><td>%s</td></tr>\n", getenv("SERVER_PROTOCOL"));
   printf("<tr><td>Method:</td><td>%s</td></tr>\n", getenv("REQUEST_METHOD"));
   printf("<tr><td>Message Body:</td><td> %s</td></tr>\n", fgets(str, 1000, stdin));
+
+  printf("<script src=\"../collector.js\" async> </script>");
   
   // Print HTML footer
   printf("</body>");

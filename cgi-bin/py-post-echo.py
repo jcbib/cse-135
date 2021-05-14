@@ -9,7 +9,7 @@ print("<title> POST Request Echo </title>")
 print("</head>")
 print("<body>")
 
-print("<body>")
+print("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>")
 print("<h1 align=center> POST Request Echo </h1>")
 print("<hr/>")
 
@@ -27,6 +27,9 @@ for element in split_body:
     print("<li>{key} = {value}</li>\n".format(key=pair[0], value=pair[1]))
 
 print("</ul>")
+
+print("<script src=\"../collector.js\" async> </script>")
+
 # Print HTML footer
 print("</body>")
 print("</html>")

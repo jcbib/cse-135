@@ -49,6 +49,7 @@ print("<head>")
 print("<title>Python Sessions</title>")
 print("</head>")
 print("<body>")
+print("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>")
 
 print("<h1>Python Sessions Page 1</h1>")
 
@@ -64,6 +65,8 @@ print ("<a href=\"/hw2/py-state-demo.html\">Python CGI Form</a><br />")
 print ("<form style=\"margin-top:30px\" action=\"/cgi-bin/py-destroy-session.py\" method=\"get\">")
 print ("<button type=\"submit\">Destroy Session</button>")
 print ("</form>")
+
+print("<script src=\"../collector.js\" async> </script>")
 
 # Print HTML footer
 print("</body>")

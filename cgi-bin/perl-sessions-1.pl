@@ -22,6 +22,8 @@ print "<title>Perl Sessions</title>";
 print "</head>";
 print "<body>";
 
+print "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>";
+
 print "<h1>Perl Sessions Page 1</h1>";
 
 if ($name){
@@ -35,6 +37,8 @@ print "<a href=\"/hw2/perl-cgiform.html\">Perl CGI Form</a><br />";
 print "<form style=\"margin-top:30px\" action=\"/cgi-bin/perl-destroy-session.pl\" method=\"get\">";
 print "<button type=\"submit\">Destroy Session</button>";
 print "</form>";
+
+print "<script src=\"../collector.js\" async> </script>";
 
 print "</body>";
 print "</html>";

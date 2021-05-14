@@ -10,9 +10,12 @@ int main(int argc, char **argv, char **envp)
   printf("<html><head><title>POST Message Body</title></head>\
 	<body><h1 align=center>POST Message Body</h1>\
   	<hr/>\n");
+  printf("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>");
 
   printf("Message Body: %s\n<br/>", fgets(str, 1000, stdin));
 
+  printf("<script src=\"../collector.js\" async> </script>");
+  
   // Print HTML footer
   printf("</body>");
   printf("</html>");

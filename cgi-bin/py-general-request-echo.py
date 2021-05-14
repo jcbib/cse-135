@@ -10,7 +10,7 @@ print("<title>General Request Echo</title>")
 print("</head>")
 print("<body>")
 
-print("<body>")
+print("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>")
 print("<h1 align=center> General Request Echo </h1>")
 print("<hr/>")
 
@@ -24,6 +24,9 @@ print("<tr><td><b>Query String:</b></td><td>{}</td></tr>".format(os.environ["QUE
 print("<tr><td><b>Message Body:</b></td><td>{}</td></tr>".format(data))
 
 print("</table>")
+
+print("<script src=\"../collector.js\" async> </script>")
+
 # Print HTML footer
 print("</body>")
 print("</html>")

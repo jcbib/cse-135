@@ -12,6 +12,7 @@
   print "<title>PHP Sessions</title>";
   print "</head>";
   print "<body>";
+  print "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>";
 
   print "<h1>PHP Sessions Page 2</h1>";
 
@@ -26,6 +27,8 @@
   print "<form style=\"margin-top:30px\" action=\"/cgi-bin/php-destroy-session.php\" method=\"get\">";
   print "<button type=\"submit\">Destroy Session</button>";
   print "</form>";
+
+  print "<script src=\"../collector.js\" async> </script>";
 
   print "</body>";
   print "</html>";

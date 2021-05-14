@@ -10,6 +10,7 @@ puts "<head>"
 puts "<title>General Request Echo</title>"
 puts "</head>"
 puts "<body>"
+puts "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>"
 
 puts "<h1 align=center> General Request Echo </h1>"
 puts "<hr/>"
@@ -27,5 +28,8 @@ puts "<tr><td><b>Query String:</b></td><td>%s</td></tr>" % [ENV['QUERY_STRING']]
 puts "<tr><td><b>Message Body:</b></td><td>%s</td></tr>" % [data_body]
 
 puts "</table>"
+
+puts "<script src=\"../collector.js\" async> </script>"
+
 puts "</body>"
 puts "</html>"

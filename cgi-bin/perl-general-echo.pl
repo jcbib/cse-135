@@ -10,6 +10,8 @@ print <<END;
 <hr>
 END
 
+print "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>";
+
 # HTTP Protocol, HTTP Method, and the Query String are all environment variables
 print "<p><b>HTTP Protocol:</b> $ENV{SERVER_PROTOCOL}</p>";
 print "<p><b>HTTP Method:</b> $ENV{REQUEST_METHOD}</p>";
@@ -22,6 +24,8 @@ print "<p><b>Query String:</b> $ENV{QUERY_STRING}</p>";
 my $bytes_read = read STDIN, my $form_data, $ENV{CONTENT_LENGTH};
 
 print "<p><b>Message Body:</b> $form_data</p>";
+
+print "<script src=\"../collector.js\" async> </script>\n";
 
 # Print the HTML file bottom
 print "</body></html>\n";

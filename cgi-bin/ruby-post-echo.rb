@@ -10,6 +10,7 @@ puts "<head>"
 puts "<title>POST Request Echo</title>"
 puts "</head>"
 puts "<body>"
+puts "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>"
 
 puts "<h1 align=center> POST Request Echo </h1>"
 puts "<hr/>"
@@ -28,5 +29,8 @@ for element in split_body do
 end
 
 puts "</ul>"
+
+puts "<script src=\"../collector.js\" async> </script>"
+
 puts "</body>"
 puts "</html>"

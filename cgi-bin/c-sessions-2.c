@@ -12,6 +12,7 @@ int main(int argc, char **argv, char **envp)
   printf("<html>");
   printf("<head><title>C Sessions</title></head>\n");
   printf("<body>");
+  printf("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>");
   printf("<h1>C Sessions Page 2</h1>");
   printf("<table>");
 
@@ -37,6 +38,8 @@ int main(int argc, char **argv, char **envp)
   printf("<form action=\"/cgi-bin/c-destroy-session.cgi\" method=\"get\">");
   printf("<button type=\"submit\">Destroy Session</button>");
   printf("</form>");
+
+  printf("<script src=\"../collector.js\" async> </script>");
 
   printf("</body>");
   printf("</html>");

@@ -9,6 +9,7 @@
   print "</head>";
 
   print "<body>";
+  print "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>";
   print "<h1 align=center> POST Request Echo </h1>";
   print "<hr/>";
 
@@ -21,6 +22,9 @@
   }
     
   print "</ul>";
+  
+  print "<script src=\"../collector.js\" async> </script>";
+
   print "</body>";
   print "</html>";
 ?>

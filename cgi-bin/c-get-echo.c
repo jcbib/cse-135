@@ -11,6 +11,8 @@ int main(int argc, char **argv, char **envp)
 	<body><h1 align=center>GET query string</h1>\
   	<hr/>\n");
 
+  printf("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>");
+
   // Get and format query string
   printf("Raw query string: %s\n<br/><br/>", getenv("QUERY_STRING"));
   printf("<table> Formatted Query String:");
@@ -28,7 +30,9 @@ int main(int argc, char **argv, char **envp)
     free (query);
 
   printf("</table>");
-
+  
+  printf("<script src=\"../collector.js\" async> </script>");
+  
   // Print HTML footer  
   printf("</body>");
   printf("</html>");

@@ -9,7 +9,7 @@ print("<title>GET Request Echo</title>")
 print("</head>")
 print("<body>")
 
-print("<body>")
+print("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>")
 print("<h1 align=center> GET Request Echo </h1>")
 print("<hr/>")
 
@@ -23,9 +23,9 @@ for element in split_query:
   pair = element.split("=")
   print("<tr><td>{key}:</td><td>{value}</td></tr>\n".format(key=pair[0], value=pair[1]))
 
-
-
-
 print("</table>")
+
+print("<script src=\"../collector.js\" async> </script>")
+
 print("</body>")
 print("</html>")

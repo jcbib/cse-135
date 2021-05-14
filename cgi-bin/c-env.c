@@ -9,12 +9,15 @@ int main(int argc, char **argv, char **envp)
   printf("<html><head><title>Environment Variables</title></head> \
 	<body><h1 align=center>Environment Variables</h1> \
   	<hr/>\n");
+  printf("<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>");
 
   for (char **env = envp; *env != 0; env++)
   {
     char *thisEnv = *env;
     printf("%s\n<br/>", thisEnv);
   }
+
+  printf("<script src=\"../collector.js\" async> </script>");
 
   // print HTML footer
   printf("</body></html>");

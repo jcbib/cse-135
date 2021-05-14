@@ -17,6 +17,8 @@ puts "<title>Ruby Sessions</title>"
 puts "</head>"
 puts "<body>"
 
+puts "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>"
+
 puts "<h1> Ruby Sessions Page 2</h1>"
 
 if session['username'] and session['username'] != '' 
@@ -31,6 +33,8 @@ puts "<a href=\"/hw2/ruby-state-demo.html\">Ruby CGI Form</a><br />"
 puts "<form style=\"margin-top:30px\" action=\"/cgi-bin/ruby-destroy-session.rb\" method=\"get\">"
 puts "<button type=\"submit\">Destroy Session</button>"
 puts "</form>"
+
+puts "<script src=\"../collector.js\" async> </script>"
 
 puts "</body>"
 puts "</html>"

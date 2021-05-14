@@ -11,6 +11,7 @@ puts "<head>"
 puts "<title>GET Request Echo</title>"
 puts "</head>"
 puts "<body>"
+puts "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>"
 
 puts "<h1 align=center> GET Request Echo </h1>"
 puts "<hr/>"
@@ -25,6 +26,8 @@ for element in split_query do
   pair = element.split('=')
   puts "<tr><td> %s: </td><td> %s </td></tr>\n" % pair
 end
+
+puts "<script src=\"../collector.js\" async> </script>"
 
 puts "</body>"
 puts "</html>"

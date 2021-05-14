@@ -42,8 +42,8 @@ var staticData = {
   'networkConnectionType' : window.navigator.connection.effectiveType
 };
 
-// Fetch Static 
-const staticUrl = '/api/static'; 
+// POST Static 
+const staticUrl = '/api/static/'; 
 fetch(staticUrl, {
   method: 'POST',
   headers: {
@@ -69,6 +69,7 @@ var performanceData = {
   'totalTimeLoad' : window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart
 };
 
+// POST Performance
 var performanceUrl = '/api/performance/';
 fetch(performanceUrl, {
   method: 'POST',
@@ -146,8 +147,10 @@ document.onkeydown = function(e) {
   if ( idle ) {
     var currDateTime = new Date();
     idle = false;
-    console.log("idle end: ", currDateTime.toUTCString());
-    console.log("idle for: ", window.performance.now() - startTime);
+    // console.log("idle end: ", currDateTime.toUTCString());
+    // console.log("idle for: ", window.performance.now() - startTime);
+    idleTime = window.performance.now() - startTime;
+    idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
   // console.log("key down: ", e.key);
@@ -160,8 +163,10 @@ document.onkeyup = function(e) {
   if ( idle ) {
     var currDateTime = new Date();
     idle = false;
-    console.log("idle end: ", currDateTime.toUTCString());
-    console.log("idle for: ", window.performance.now() - startTime);
+    // console.log("idle end: ", currDateTime.toUTCString());
+    // console.log("idle for: ", window.performance.now() - startTime);
+    idleTime = window.performance.now() - startTime;
+    idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
   // console.log("key up: ", e.key);
@@ -193,6 +198,7 @@ window.beforeunload = function(e) {
   timeUserLeft = currDateTime.toUTCString();
 }
 
+// POST Activity
 var activityUrl = '/api/activity/';
 function fetchActivityData() {
 
@@ -222,7 +228,6 @@ function fetchActivityData() {
     .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
 };
-
 
 setInterval(function() { fetchActivityData(); }, 2000);
 

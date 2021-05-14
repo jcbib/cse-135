@@ -7,6 +7,7 @@
   print "</head>";
   print "<body>";
 
+  print "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>";
   print "<h1>Hello, PHP!</h1>";
   print "<p>This page was generated with the PHP!!!!! O_O :D</p>";
   
@@ -14,6 +15,8 @@
 
   # IP Address is an environment variable when using CGI
   print "<p>Your IP Address: " . $_SERVER['REMOTE_ADDR'] . "</p>";
+
+  print "<script src=\"../collector.js\" async> </script>";
 
   print "</body>";
   print "</html>";

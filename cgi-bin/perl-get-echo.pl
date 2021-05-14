@@ -10,6 +10,8 @@ print <<END;
 <hr>
 END
 
+print "<img id=\"imgFlag\" src=\"/images/testImage.gif\" alt>";
+
 # The Query String is simply an environment variable
 print "<b>Query String:</b> $ENV{QUERY_STRING}<br />\n";
 
@@ -33,6 +35,8 @@ foreach my $key (%in) {
     print "$key = $in{$key}<br/>\n";
   }
 }
+
+print "<script src=\"../collector.js\" async> </script>\n";
 
 # Print the HTML file bottom
 print "</body></html>";
