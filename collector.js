@@ -43,7 +43,7 @@ var staticData = {
 };
 
 // Fetch Static 
-const staticUrl = '/api/static/'; 
+const staticUrl = '/api/static'; 
 fetch(staticUrl, {
   method: 'POST',
   headers: {

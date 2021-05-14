@@ -1,5 +1,3 @@
-const jsonServer = require('json-server');
-const jsonRouter = jsonServer.router('data/db.json');
 const express = require('express');
 const router = express.Router();
 
@@ -13,7 +11,6 @@ router.get('/:sessionId', function(req, res) {
 });
 
 router.post('/', function(req, res) { 
-  console.log(req.body);
   res.send("Post Success!");
 });
 
