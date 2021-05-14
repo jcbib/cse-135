@@ -7,6 +7,7 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function(req, res) { 
+  req.session.destroy();
   if (!req.session.activity) {
     req.session.activity = {};
     req.session.activity['activityData'] = [];
@@ -19,10 +20,6 @@ router.post('/', function(req, res) {
   }
   var response = req.sessionID + ": " + JSON.stringify(req.session.activity);
   res.send(response);
-});
-
-router.delete('/', function(req, res) {
-  req.session.destroy();
 });
 
 module.exports = router;
