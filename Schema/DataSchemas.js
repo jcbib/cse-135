@@ -36,14 +36,14 @@ const PerformanceSchema = new Schema({
     totalTimeLoad: Number
 });
 
-const ActivityData = mongoose.model('Activity Data', ActivitySchema);
+const ActivityModel = mongoose.model('Activity Data', ActivitySchema);
 
-const StaticData = mongoose.model('Static Data', StaticSchema);
+const StaticModel = mongoose.model('Static Data', StaticSchema);
 
-const PerformanceData = mongoose.model('Static Data', StaticSchema);
+const PerformanceModel = mongoose.model('Static Data', StaticSchema);
 
-module.exports = ActivityData;
+module.exports = ActivityModel;
 
-module.exports = StaticData;
+module.exports = StaticModel;
 
-module.exports = PerformanceData;
+module.exports = PerformanceModel;
