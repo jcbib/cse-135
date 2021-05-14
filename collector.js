@@ -51,7 +51,7 @@ fetch(staticUrl, {
   },
   body: JSON.stringify(staticData)
 })
-  .then(res => res.json())
+  .then(res => res.text())
   .then(data => console.log("data: " + data))
   .catch(err => console.log("err: " + err));
 
@@ -78,7 +78,7 @@ fetch(performanceUrl, {
   },
   body: JSON.stringify(performanceData)
 })
-  .then(res => res.json())
+  .then(res => res.text())
   .then(data => console.log("data: " + data))
   .catch(err => console.log("err: " + err));
 
