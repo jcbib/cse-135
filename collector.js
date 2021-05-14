@@ -208,6 +208,8 @@ window.beforeunload = function(e) {
 var activityUrl = '/api/activity/';
 function fetchActivityData() {
 
+  console.log(window.location.href);
+
   var activityData = {
     'mousePosX' : mousePosX,
     'mousePosY' : mousePosY,
