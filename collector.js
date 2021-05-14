@@ -208,8 +208,6 @@ window.beforeunload = function(e) {
 var activityUrl = '/api/activity/';
 function fetchActivityData() {
 
-  console.log(window.location.href);
-
   var activityData = {
     'mousePosX' : mousePosX,
     'mousePosY' : mousePosY,
@@ -222,7 +220,7 @@ function fetchActivityData() {
     'idleStopTime' : idleStopTime,
     'timeUserLeft' : timeUserLeft,
     'timeUserEnter' : timeUserEnter,
-    'currentPage' : currentPage
+    'currentPage' : window.location.href
   };
 
   fetch(activityUrl, {

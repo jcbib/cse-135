@@ -14,7 +14,7 @@ const ActivitySchema = new Schema({
     idleStopTime: Number,
     timeUserLeft: Number,
     timeUserEnter: Number,
-    currentPage: currentPage
+    currentPage: String
 });
 
 const StaticSchema = new Schema({
