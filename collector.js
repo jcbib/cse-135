@@ -83,6 +83,7 @@ fetch(performanceUrl, {
   .catch(err => console.log("err: " + err));
 
 // Activity
+var currDate = new Date();
 var mousePosX = 0;
 var mousePosY = 0;
 var mouseDownButton = '';
@@ -93,7 +94,7 @@ var scrollCoord = (window.pageYOffset || document.documentElement.scrollTop);
 var idleTime = 0;
 var idleStopTime = 0;
 var timeUserLeft = 0;
-var timeUserEnter = currDateTime.toUTCString();
+var timeUserEnter = currDate.toUTCString();
 var currentPage = window.location.href;
 
 // Mouse Activity
