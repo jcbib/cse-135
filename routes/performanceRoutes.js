@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Get all performance data
 router.get('/', function (req, res) { 
-  res.json(req.session); 
+  res.json(req.session.performance['performanceData']); 
 });
 
 /**
@@ -11,10 +11,11 @@ router.get('/', function (req, res) {
  */
 router.post('/', function(req, res) { 
   if (!req.session.performance) {
-    req.session.performance = [];
-    req.session.performance.push(req.body);
+    req.session.performance = {};
+    req.session.performance['performanceData'] = [];
+    req.session.performance['performanceData'].push(req.body);
   } else {
-    req.session.performance.push(req.body);
+    req.session.performance['performanceData'].push(req.body);
   }
   var response = req.sessionID + ": " + JSON.stringify(req.session.performance);
   res.send(response);

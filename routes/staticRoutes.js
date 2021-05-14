@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Get all static data
 router.get('/', function (req, res) { 
-  res.json(req.session); 
+  res.json(req.session.static); 
 });
 
 /**
