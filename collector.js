@@ -242,6 +242,8 @@ function fetchActivityData() {
     .then(res => res.text())
     .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
+  
+  idleTime = 0;
 };
 
 // User page is on
