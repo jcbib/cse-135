@@ -12,9 +12,9 @@ router.get('/', function (req, res) {
 router.post('/', function(req, res) { 
   if (!req.session.performance) {
     req.session.performance = {};
-    req.session.performance['performanceData'] = [];
     req.session.performance['performanceData'].push(req.body);
   } else {
+    req.session.performance['performanceData'] = [];
     req.session.performance['performanceData'].push(req.body);
   }
   var response = req.sessionID + ": " + JSON.stringify(req.session.performance);
