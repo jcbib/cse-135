@@ -14,7 +14,8 @@ router.post('/', function(req, res) {
   if (!req.session.activity) {
     req.session.activity = req.body;
   }
-  res.send(req.sessionID, ": ", req.session.activity);
+  var response = req.sessionID + ": " + req.session.activity;
+  res.send(response);
 });
 
 router.delete('/:sessionId', function(req, res) {
