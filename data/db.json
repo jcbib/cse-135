@@ -1,16 +1,15 @@
 {
-  "posts": [
+  "static": [
     { "id": 1, "title": "json-server", "author": "typicode" }, 
     { "id": 2, "title": "test", "author": "kurly" },
     { "id": 3, "title": "test2", "author": "jhon" }
   ],
-  "comments": [
+  "performance": [
     { "id": 1, "body": "some comment", "postId": 1 }
   ],
-  "test": [
+  "activity": [
 
-  ],
-  "profile": { "name": "typicode" }
+  ]
 }
 
 
