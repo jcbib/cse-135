@@ -11,9 +11,9 @@ router.get('/:sessionId', function(req, res) {
 });
 
 router.post('/', function(req, res) { 
-  if (!req.session.activity) {
+  // if (!req.session.activity) {
     req.session.activity = req.body;
-  }
+  // }
   var response = req.sessionID + ": " + JSON.stringify(req.session.activity);
   res.send(response);
 });

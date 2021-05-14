@@ -15,9 +15,9 @@ router.get('/:sessionId', function(req, res) {
  * Request Body: timing-object, load-start, load-end, load-time
  */
 router.post('/', function(req, res) { 
-  if (!req.session.performance) {
+  // if (!req.session.performance) {
     req.session.performance = req.body;
-  }
+  // }
   var response = req.sessionID + ": " + JSON.stringify(req.session.performance);
   res.send(response);
 });
