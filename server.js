@@ -31,7 +31,7 @@ apiServer.use(session({
   secret: 'password123',
   resave: false,
   saveUninitialized: true,
-  store: mongoStore.create({ mongoUrl: 'monogodb://jak-cse135.site/test'}),
+  store: mongoStore.create({ mongoUrl: 'monogodb://localhost/test'}),
   cookie: {
     maxAge: 14 * 24 * 60 * 60 * 10000, 
   }
