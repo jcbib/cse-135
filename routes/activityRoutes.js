@@ -21,4 +21,8 @@ router.post('/', function(req, res) {
   res.send(response);
 });
 
+router.delete('/', function(req, res) {
+  req.session.destroy();
+});
+
 module.exports = router;
