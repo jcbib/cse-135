@@ -94,7 +94,7 @@ var idleTime = 0;
 var idleStopTime = 0;
 var timeUserLeft = 0;
 var timeUserEnter = 0;
-var currentPage = document.URL;
+var currentPage = window.location.href;
 
 // Mouse Activity
 document.onmousemove = function(e) {
