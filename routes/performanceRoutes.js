@@ -15,7 +15,7 @@ router.get('/:sessionId', function(req, res) {
  * Request Body: timing-object, load-start, load-end, load-time
  */
 router.post('/', function(req, res) { 
-  res.json({ msg: 'test'}); 
+  res.json( req.body ); 
 });
 
 router.delete('/:sessionId', function(req, res) {
