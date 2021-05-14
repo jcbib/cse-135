@@ -83,8 +83,8 @@ fetch(performanceUrl, {
   .catch(err => console.log("err: " + err));
 
 // Activity
-var mousePosX = e.clientX;
-var mousePosY = e.clientY;
+var mousePosX = 0;
+var mousePosY = 0;
 var mouseDownButton = '';
 var mouseUpButton = '';
 var keyDown = '';
