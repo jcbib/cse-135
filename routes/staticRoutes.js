@@ -20,7 +20,7 @@ router.post('/', function(req, res) {
   // const table = db.get('test');
   // table.push(req.body).write();
   // res.send(req.body);
-  res.json( {msg: 'posted posted' });
+  res.json( req.body );
 });
 
 router.delete('/:sessionId', function(req, res) {

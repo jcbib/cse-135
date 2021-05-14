@@ -11,7 +11,7 @@ router.get('/:sessionId', function(req, res) {
 });
 
 router.post('/', function(req, res) { 
-  res.send("Post Success!");
+  res.send(req.body);
 });
 
 router.delete('/:sessionId', function(req, res) {
