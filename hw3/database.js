@@ -38,7 +38,16 @@ function createStaticTable() {
       }
     ];
     // console.log(data);
-    // $("#staticDataTable").html("<zing-grid caption = \"Static Browser Data\" data = \"" + JSON.stringify(data) + "\"> </zing-grid>");
+    $("#staticDataTable").html(
+        `
+        <zing-grid
+        caption = "Static Browser Data"
+        data = "[
+        ` + JSON.stringify(data) + `
+        ]> </zing-grid>
+        `
+    );
+    // $("#staticDataTable").html("<zing-grid caption = \"Static Browser Data\" data = \"" + "\"> </zing-grid>");
     // $("#staticDataTable").html("<zing-grid" + " var caption = \'" + caption + "\' var data = \'[{" + data + " }]\'> </zing-grid>");
 };
 

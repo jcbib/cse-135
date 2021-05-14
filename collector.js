@@ -206,7 +206,7 @@ window.onload = function(e) {
   fetchActivityData();
 }
 
-window.beforeunload = function(e) {
+window.onunload = function(e) {
   var currDateTime = new Date();
   // console.log("User has left the page", document.URL," at ", currDateTime.toUTCString());
   timeUserLeft = currDateTime.toUTCString();
