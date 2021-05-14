@@ -83,17 +83,17 @@ fetch(performanceUrl, {
   .catch(err => console.log("err: " + err));
 
 // Activity
-var mousePosX = 0;
-var mousePosY = 0;
+var mousePosX = e.clientX;
+var mousePosY = e.clientY;
 var mouseDownButton = '';
 var mouseUpButton = '';
 var keyDown = '';
 var keyUp = '';
-var scrollCoord = 0;
+var scrollCoord = (window.pageYOffset || document.documentElement.scrollTop);
 var idleTime = 0;
 var idleStopTime = 0;
 var timeUserLeft = 0;
-var timeUserEnter = 0;
+var timeUserEnter = currDateTime.toUTCString();
 var currentPage = window.location.href;
 
 // Mouse Activity
