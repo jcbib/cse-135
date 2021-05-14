@@ -9,9 +9,9 @@ router.get('/', function (req, res) {
 router.post('/', function(req, res) { 
   if (!req.session.activity) {
     req.session.activity = {};
+    req.session.activity['activityData'] = [];
     req.session.activity['activityData'].push(req.body);
   } else {
-    req.session.activity['activityData'] = [];
     req.session.activity['activityData'].push(req.body);
   }
   var response = req.sessionID + ": " + JSON.stringify(req.session.activity);
