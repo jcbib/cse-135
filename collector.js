@@ -103,8 +103,10 @@ document.onmousemove = function(e) {
   if ( idle ) {
     var currDateTime = new Date();
     idle = false;
-    console.log("idle end: ", currDateTime.toUTCString());
-    console.log("idle for: ", window.performance.now() - startTime, "ms");
+    // console.log("idle end: ", currDateTime.toUTCString());
+    // console.log("idle for: ", window.performance.now() - startTime);
+    idleTime = window.performance.now() - startTime;
+    idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
   //console.log("mouse location: ", e.clientX, e.clientY)
@@ -118,8 +120,10 @@ document.onmousedown = function(e) {
   if ( idle ) {
     var currDateTime = new Date();
     idle = false;    
-    console.log("idle end: ", currDateTime.toUTCString());
-    console.log("idle for: ", window.performance.now() - startTime);
+    // console.log("idle end: ", currDateTime.toUTCString());
+    // console.log("idle for: ", window.performance.now() - startTime);
+    idleTime = window.performance.now() - startTime;
+    idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
   // console.log("mousedown button: ", e.button);
@@ -132,8 +136,10 @@ document.onmouseup = function (e) {
   if ( idle ) {
     var currDateTime = new Date();
     idle = false;
-    console.log("idle end: ", currDateTime.toUTCString());
-    console.log("idle for: ", window.performance.now() - startTime);
+    // console.log("idle end: ", currDateTime.toUTCString());
+    // console.log("idle for: ", window.performance.now() - startTime);
+    idleTime = window.performance.now() - startTime;
+    idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
   // console.log("mouseup button: ", e.button);
