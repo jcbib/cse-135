@@ -11,7 +11,10 @@ router.get('/:sessionId', function(req, res) {
 });
 
 router.post('/', function(req, res) { 
-  res.send(req.body);
+  if (!req.session.activity) {
+    req.session.activity = req.body;
+  }
+  res.send(req.sessionID, ": ", req.session.activity);
 });
 
 router.delete('/:sessionId', function(req, res) {
