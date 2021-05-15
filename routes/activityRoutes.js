@@ -7,7 +7,6 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', function(req, res) {
-  req.session.collectorData = {}; 
   if ( !req.session.collectorData ) {
     req.session.collectorData = {};
   }
