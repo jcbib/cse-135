@@ -70,19 +70,22 @@ function createPerformanceTable() {
   );
 };
 
+async function fetchActivityData() {
+  const activityUrl = '/api/activity/';
+  return fetch(activityUrl, {
+    method: 'GET',
+    headers: {
+      "Content-Type": "application/json"
+    },
+  })
+  .then(res => res.json())
+  .then(data => {return data})
+}
+
 function createActivityTable() {
   // Call fetch GET
-  const activityUrl = '/api/activity/';
-  var activityData;
-  fetch(activityUrl, {
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json"
-      },
-    })
-    .then(res => res.json())
-    .then(data => activityData = data)
-    .then(() => console.log(activityData))
+  var activityData = fetchActivityData();
+  console.log(activityData);
 
   var data = [{
     "test": "activity"
