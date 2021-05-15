@@ -86,6 +86,10 @@ fetch(performanceUrl, {
 var currDate = new Date();
 var mousePosX = 0;
 var mousePosY = 0;
+var mouseDownButton = '';
+var mouseUpButton = '';
+var keyDown = '';
+var keyUp = '';
 var scrollCoord = (window.pageYOffset || document.documentElement.scrollTop);
 var idleTime = 0;
 var idleStopTime = 0;
@@ -239,10 +243,11 @@ function fetchActivityData() {
     .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
   
+  
   mouseDownButton = '';
   mouseUpButton = '';
   keyDown = '';
-  keyUp = '';
+  keyUp = '';  
   idleTime = 0;
   idleStopTime = 0;
 };
