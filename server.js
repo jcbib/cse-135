@@ -22,7 +22,6 @@ mongoose.connect(DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true}
   console.log('connection error: ', error);
 });
 
-
 // Returns an Express router
 const jsonRouter = jsonServer.router('data/db.json');
 
