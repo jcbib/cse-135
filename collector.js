@@ -4,8 +4,8 @@ var idleTimeout = setTimeout(setIdle, 2000);
 
 // Check Images
 function isImagesEnabled() {
-  if ((document.getElementById("imgFlag").offsetWidth == 1 && document.getElementById("imgFlag").readyState == "complete") || 
-      (document.getElementById("imgFlag").offsetWidth == 1 && document.getElementById("imgFlag").readyState == undefined)) {
+  if ((document.getElementById("imgFlag").offsetWidth == 1 && document.getElementById("imgFlag").readyState == "complete") ||
+    (document.getElementById("imgFlag").offsetWidth == 1 && document.getElementById("imgFlag").readyState == undefined)) {
     return true;
   } else {
     return false;
@@ -22,26 +22,26 @@ function isCSSEnabled() {
 }
 
 var staticData = {
-  'userAgent' : navigator.userAgent,
-  'userLanguage' : navigator.language,
-  'cookiesEnabled' : navigator.cookieEnabled,
-  'jsEnabled' : true,
+  'userAgent': navigator.userAgent,
+  'userLanguage': navigator.language,
+  'cookiesEnabled': navigator.cookieEnabled,
+  'jsEnabled': true,
   'imageEnabled': isImagesEnabled(),
-  'cssEnabled' : isCSSEnabled(),
-  'screenDimensions' : window.screen.width + "x" + window.screen.height,
-  'windowsDimensions' : window.innerWidth + "x" + window.innerHeight,
-  'networkConnectionType' : window.navigator.connection.effectiveType
+  'cssEnabled': isCSSEnabled(),
+  'screenDimensions': window.screen.width + "x" + window.screen.height,
+  'windowsDimensions': window.innerWidth + "x" + window.innerHeight,
+  'networkConnectionType': window.navigator.connection.effectiveType
 };
 
 // POST Static 
-const staticUrl = '/api/static/'; 
+const staticUrl = '/api/static/';
 fetch(staticUrl, {
-  method: 'POST',
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(staticData)
-})
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(staticData)
+  })
   .then(res => res.text())
   .then(data => console.log("data: " + data))
   .catch(err => console.log("err: " + err));
@@ -54,21 +54,21 @@ fetch(staticUrl, {
 // console.log(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart);
 
 var performanceData = {
-  'wholeTimingObject' : window.performance.timing,
-  'timePageLoadStart' : window.performance.timing.domContentLoadedEventStart,
-  'timePageLoadEnd' : window.performance.timing.domContentLoadedEventEnd,
-  'totalTimeLoad' : window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart
+  'wholeTimingObject': window.performance.timing,
+  'timePageLoadStart': window.performance.timing.domContentLoadedEventStart,
+  'timePageLoadEnd': window.performance.timing.domContentLoadedEventEnd,
+  'totalTimeLoad': window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart
 };
 
 // POST Performance
 var performanceUrl = '/api/performance/';
 fetch(performanceUrl, {
-  method: 'POST',
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(performanceData)
-})
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(performanceData)
+  })
   .then(res => res.text())
   .then(data => console.log("data: " + data))
   .catch(err => console.log("err: " + err));
@@ -90,10 +90,10 @@ var timeUserEnter = currDate.toUTCString();
 var currentPage = window.location.href;
 
 // Mouse Activity
-document.onmousemove = function(e) {
+document.onmousemove = function (e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
-  if ( idle ) {
+  if (idle) {
     var currDateTime = new Date();
     idle = false;
     // console.log("idle end: ", currDateTime.toUTCString());
@@ -108,12 +108,12 @@ document.onmousemove = function(e) {
   stashActivityData();
 };
 
-document.onmousedown = function(e) {
+document.onmousedown = function (e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
-  if ( idle ) {
+  if (idle) {
     var currDateTime = new Date();
-    idle = false;    
+    idle = false;
     // console.log("idle end: ", currDateTime.toUTCString());
     // console.log("idle for: ", window.performance.now() - startTime);
     idleTime = window.performance.now() - startTime;
@@ -128,7 +128,7 @@ document.onmousedown = function(e) {
 document.onmouseup = function (e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
-  if ( idle ) {
+  if (idle) {
     var currDateTime = new Date();
     idle = false;
     // console.log("idle end: ", currDateTime.toUTCString());
@@ -143,10 +143,10 @@ document.onmouseup = function (e) {
 };
 
 // Keyboard Activity
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
-  if ( idle ) {
+  if (idle) {
     var currDateTime = new Date();
     idle = false;
     // console.log("idle end: ", currDateTime.toUTCString());
@@ -160,10 +160,10 @@ document.onkeydown = function(e) {
   stashActivityData();
 };
 
-document.onkeyup = function(e) {
+document.onkeyup = function (e) {
   clearTimeout(idleTimeout);
   idleTimeout = setTimeout(setIdle, 2000);
-  if ( idle ) {
+  if (idle) {
     var currDateTime = new Date();
     idle = false;
     // console.log("idle end: ", currDateTime.toUTCString());
@@ -178,7 +178,7 @@ document.onkeyup = function(e) {
 };
 
 // Scroll Activity
-document.onscroll = function(e) {
+document.onscroll = function (e) {
   // console.log("scroll amount: "  + (window.pageYOffset || document.documentElement.scrollTop));
   scrollCoord = (window.pageYOffset || document.documentElement.scrollTop);
   stashActivityData();
@@ -187,18 +187,18 @@ document.onscroll = function(e) {
 // Idle activity
 function setIdle() {
   // console.log("idle");
-  idle = true; 
+  idle = true;
 }
 
 // User left and entered page
-window.onload = function(e) {
+window.onload = function (e) {
   var currDateTime = new Date();
   // console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
   timeUserEnter = currDateTime.toUTCString();
   stashActivityData();
 }
 
-window.onbeforeunload = function(e) {
+window.onbeforeunload = function (e) {
   var currDateTime = new Date();
   // console.log("User has left the page", document.URL," at ", currDateTime.toUTCString());
   timeUserLeft = currDateTime.toUTCString();
@@ -207,28 +207,29 @@ window.onbeforeunload = function(e) {
 
 // POST Activity
 var activityUrl = '/api/activity/';
+
 function stashActivityData() {
   var activityData = {
-    'mousePosX' : mousePosX,
-    'mousePosY' : mousePosY,
-    'mouseDownButton' : mouseDownButton,
-    'mouseUpButton' : mouseUpButton,
-    'keyDown' : keyDown,
-    'keyUp' : keyUp,
-    'scrollCoord' : scrollCoord,
-    'idleTime' : idleTime,
-    'idleStopTime' : idleStopTime,
-    'timeUserLeft' : timeUserLeft,
-    'timeUserEnter' : timeUserEnter,
-    'currentPage' : window.location.href
+    'mousePosX': mousePosX,
+    'mousePosY': mousePosY,
+    'mouseDownButton': mouseDownButton,
+    'mouseUpButton': mouseUpButton,
+    'keyDown': keyDown,
+    'keyUp': keyUp,
+    'scrollCoord': scrollCoord,
+    'idleTime': idleTime,
+    'idleStopTime': idleStopTime,
+    'timeUserLeft': timeUserLeft,
+    'timeUserEnter': timeUserEnter,
+    'currentPage': window.location.href
   };
 
   activityList.push(activityData);
-  
+
   mouseDownButton = '';
   mouseUpButton = '';
   keyDown = '';
-  keyUp = '';  
+  keyUp = '';
   idleTime = 0;
   idleStopTime = 0;
 };
@@ -236,12 +237,12 @@ function stashActivityData() {
 function fetchActivityData() {
 
   fetch(activityUrl, {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(activityList)
-  })
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(activityList)
+    })
     .then(res => res.text())
     .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));

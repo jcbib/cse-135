@@ -39,10 +39,10 @@ const ActivityModel = mongoose.model('Activity Data', ActivitySchema);
 
 const StaticModel = mongoose.model('Static Data', StaticSchema);
 
-const PerformanceModel = mongoose.model('Static Data', StaticSchema);
+const PerformanceModel = mongoose.model('Performance Data', PerformanceSchema);
 
-module.exports = ActivityModel;
-
-module.exports = StaticModel;
-
-module.exports = PerformanceModel;
+module.exports = {
+    ActivityModel,
+    StaticModel,
+    PerformanceModel
+};
