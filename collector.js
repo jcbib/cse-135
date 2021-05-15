@@ -1,6 +1,6 @@
-STATIC_URL = '/api/static/';
-PERF_URL = '/api/performance/';
-ACTIVITY_URL = '/api/activity/';
+const STATIC_URL = '/api/static/';
+const PERF_URL = '/api/performance/';
+const ACTIVITY_URL = '/api/activity/';
 
 var startTime = window.performance.now();
 var idle = false;
