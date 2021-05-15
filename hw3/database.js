@@ -70,17 +70,43 @@ function createPerformanceTable() {
   );
 };
 
-async function fetchActivityData() {
+const fetchCourses = async args => {
+  const res = await fetch(`/coursemanagement/getschoolcourse`, {
+    method: "POST",
+    body: JSON.stringify({ schoolId: currentSchool2 }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  });
+  const body = await res.json();
+  console.log("coursesbody is:", body)
+  return body;
+};
+
+const fetchActivityData = async args => {
   const activityUrl = '/api/activity/';
-  return fetch(activityUrl, {
+  const res = await fetch(activityUrl, {
     method: 'GET',
     headers: {
       "Content-Type": "application/json"
-    },
-  })
-  .then(res => res.json())
-  .then(data => {return data})
-}
+    }
+  });
+  const activityData = await res.json();
+  console.log("FETCH ACTIVITY DATA: " + activityData);
+  return activityData;
+};
+
+// async function fetchActivityData() {
+//   const activityUrl = '/api/activity/';
+//   return fetch(activityUrl, {
+//     method: 'GET',
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//   })
+//   .then(res => res.json())
+//   .then(data => {return data})
+// }
 
 function createActivityTable() {
   // Call fetch GET
