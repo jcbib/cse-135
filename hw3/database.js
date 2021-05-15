@@ -1,13 +1,3 @@
-const activityUrl = '/api/activity/';
-fetch(activityUrl, {
-    method: 'GET',
-    headers: {
-      "Content-Type": "application/json"
-    },
-  })
-  .then(res => res.json())
-  .then(data => console.log(data))
-
 $(document).ready(function () {
   // Call mongodb to retrieve data and write data into zinggrid
 
@@ -82,6 +72,19 @@ function createPerformanceTable() {
 
 function createActivityTable() {
   // Call fetch GET
+  const activityUrl = '/api/activity/';
+  var activityData;
+  fetch(activityUrl, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+    .then(res => res.json())
+    .then(data => activityData = data)
+  
+  console.log(activityData);
+
   var data = [{
     "test": "activity"
   }];
