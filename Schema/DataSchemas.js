@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost/api')
 
 const ActivitySchema = new Schema({
     mousePosX: Number,

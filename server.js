@@ -1,24 +1,27 @@
-// JSON Server module for JSON Server
+// MODULES
 const jsonServer = require('json-server');
-
-// Importing express + sessions
 const express = require('express');
 const session = require('express-session');
-
-// Mongo session store module
+const mongoose = require('mongoose');
 const mongoStore = require('connect-mongo');
-
-// Body Parser for something
 const bodyParser = require('body-parser');
 
-// Importing routes
+// LOCAL FILES
 const staticRoutes = require('./routes/staticRoutes.js');
 const performanceRoutes = require('./routes/performanceRoutes.js');
 const activityRoutes = require('./routes/activityRoutes.js');
+const { DATABASE_URL, LOCAL_URL, MAX_AGE, JSON_PORT, API_PORT } = require('./constants/envConstants');
 
 // Returns an Express server
 const json = jsonServer.create();
 const apiServer = express();
+
+// Set up default mongoose connection
+mongoose.connect(DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+.catch(error => {
+  console.log('connection error: ', error);
+});
+
 
 // Returns an Express router
 const jsonRouter = jsonServer.router('data/db.json');
@@ -31,9 +34,9 @@ apiServer.use(session({
   secret: 'password123',
   resave: false,
   saveUninitialized: true,
-  store: mongoStore.create({ mongoUrl:'mongodb://localhost/api' }),
+  store: mongoStore.create({ mongoUrl:LOCAL_URL }),
   cookie: {
-    maxAge: 14 * 24 * 60 * 60 * 10000, 
+    maxAge: MAX_AGE, 
   }
 }));
 
@@ -48,5 +51,5 @@ apiServer.use('/performance', performanceRoutes);
 apiServer.use('/activity', activityRoutes);
 json.use(jsonRouter);
 
-json.listen(3000);
-apiServer.listen(3001);
+json.listen(JSON_PORT);
+apiServer.listen(API_PORT);
