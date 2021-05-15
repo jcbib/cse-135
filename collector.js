@@ -1,4 +1,4 @@
-const { STATIC_URL, PERF_URL, ACTIVITY_URL } = require('./constants/clientConstants');
+import { STATIC_URL, PERF_URL, ACTIVITY_URL } from './constants/clientConstants';
 
 var startTime = window.performance.now();
 var idle = false;
