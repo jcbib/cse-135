@@ -110,8 +110,9 @@ const fetchActivityJSON = async args => {
 
 function createActivityTable() {
   // Call fetch GET
-  var activityData = fetchActivityJSON();
-  console.log(activityData[0]);
+  var activityData = await fetchActivityJSON();
+  console.log(activityData);
+  // console.log(activityDat);
 
   var data = [{
     "test": "activity"
