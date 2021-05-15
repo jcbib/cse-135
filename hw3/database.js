@@ -1,8 +1,4 @@
-const DataSchema = require('../Schema/DataSchemas')
-
 const activityUrl = '/api/activity/';
-var activityData;
-
 fetch(activityUrl, {
     method: 'GET',
     headers: {
@@ -11,12 +7,6 @@ fetch(activityUrl, {
   })
   .then(res => res.json())
   .then(data => console.log(data))
-
-//.then(data =>
-//  activityData = new DataSchema.ActivityModel(data)
-//)
-
-
 
 $(document).ready(function () {
   // Call mongodb to retrieve data and write data into zinggrid
