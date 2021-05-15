@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
  * Request Body: user-agent, user-language, accept-cookie, allow-js, allow-img, allow-css,
  *               screen-width, screen-height, window-width, window-height, connection-type
  */
-router.post('/', function(req, res) { 
+router.post('/', async (req, res) { 
   if ( !req.session.collectorData ) {
     req.session.collectorData = {};
   }
