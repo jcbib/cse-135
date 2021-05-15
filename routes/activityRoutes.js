@@ -16,7 +16,7 @@ router.post('/', function(req, res) {
   req.session.collectorData['activity'].concat(req.body);
   req.session.activity = {};
   var response = req.sessionID + ": " + req.session.collectorData['activity'] + req.body + typeof req.session.collectorData['activity'];
-  res.send(response);
+  res.json(req.body);
 });
 
 module.exports = router;
