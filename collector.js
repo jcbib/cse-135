@@ -1,3 +1,5 @@
+const { STATIC_URL, PERF_URL, ACTIVITY_URL } = require('./constants/clientConstants');
+
 var startTime = window.performance.now();
 var idle = false;
 var idleTimeout = setTimeout(setIdle, 2000);
@@ -34,14 +36,13 @@ var staticData = {
 };
 
 // POST Static 
-const staticUrl = '/api/static/';
-fetch(staticUrl, {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(staticData)
-  })
+fetch(STATIC_URL, {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(staticData)
+})
   .then(res => res.text())
   .then(data => console.log("data: " + data))
   .catch(err => console.log("err: " + err));
@@ -61,14 +62,13 @@ var performanceData = {
 };
 
 // POST Performance
-var performanceUrl = '/api/performance/';
-fetch(performanceUrl, {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(performanceData)
-  })
+fetch(PERF_URL, {
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(performanceData)
+})
   .then(res => res.text())
   .then(data => console.log("data: " + data))
   .catch(err => console.log("err: " + err));
@@ -206,8 +206,6 @@ window.onbeforeunload = function (e) {
 }
 
 // POST Activity
-var activityUrl = '/api/activity/';
-
 function stashActivityData() {
   var activityData = {
     'mousePosX': mousePosX,
@@ -236,13 +234,13 @@ function stashActivityData() {
 
 function fetchActivityData() {
 
-  fetch(activityUrl, {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(activityList)
-    })
+  fetch(ACTIVITY_URL, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(activityList)
+  })
     .then(res => res.text())
     .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
