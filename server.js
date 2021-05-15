@@ -16,12 +16,6 @@ const { DATABASE_URL, LOCAL_URL, MAX_AGE, JSON_PORT, API_PORT } = require('./con
 const json = jsonServer.create();
 const apiServer = express();
 
-// Set up default mongoose connection
-mongoose.connect(DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true})
-.catch(error => {
-  console.log('connection error: ', error);
-});
-
 // Returns an Express router
 const jsonRouter = jsonServer.router('data/db.json');
 
@@ -51,4 +45,11 @@ apiServer.use('/activity', activityRoutes);
 json.use(jsonRouter);
 
 json.listen(JSON_PORT);
-apiServer.listen(API_PORT);
+
+// Set up default mongoose connection
+mongoose.connect(DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+.catch(error => {
+  console.log('connection error: ', error);
+}).then( async() => {
+  apiServer.listen(API_PORT);
+});

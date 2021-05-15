@@ -27,7 +27,7 @@ router.post('/', async function (req, res) {
     const postSuccess = await staticObj.save();
     res.json(postSuccess);
   } catch(error) {
-    res.json({message: err});
+    res.json({message: error});
   }
 
   // var response = req.sessionID + ": " + JSON.stringify(req.session.collectorData['static']);
