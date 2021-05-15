@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Get all static data
 router.get('/', function (req, res) { 
-  res.json(req.session.static); 
+  res.json(req.session.collectorData['static']); 
 });
 
 /**
@@ -11,10 +11,14 @@ router.get('/', function (req, res) {
  *               screen-width, screen-height, window-width, window-height, connection-type
  */
 router.post('/', function(req, res) { 
-  if (!req.session.static) {
-    req.session.static = req.body;
+  if ( !req.session.collectorData ) {
+    req.session.collectorData = {};
   }
-  var response = req.sessionID + ": " + JSON.stringify(req.session.static);
+  if ( !req.session.collectorData['static'] ) {
+    req.session.collectorData['static'] = req.body;
+  }
+  req.session.static = {};
+  var response = req.sessionID + ": " + JSON.stringify(req.session.collectorData['static']);
   res.send(response);
 });
 

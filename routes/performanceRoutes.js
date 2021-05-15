@@ -10,17 +10,15 @@ router.get('/', function (req, res) {
  * Request Body: timing-object, load-start, load-end, load-time
  */
 router.post('/', function(req, res) { 
-  if (!req.session.performance) {
-    req.session.performance = {};
-    req.session.performance['performanceData'] = [];
-    req.session.performance['performanceData'].push(req.body);
-  } else {
-    if (!req.session.performance['performanceData']) {
-      req.session.performance['performanceData'] = [];
-    }
-    req.session.performance['performanceData'].push(req.body);
+  if ( !req.session.collectorData ) {
+    req.session.collectorData = {};
   }
-  var response = req.sessionID + ": " + JSON.stringify(req.session.performance);
+  if ( !req.session.collectorData['performance'] ) {
+    req.session.collectorData['performance'] = [];
+  }
+  req.session.collectorData['activityData'].push(req.body);
+  req.session.performance = {};
+  var response = req.sessionID + ": " + req.session.collectorData['performance'];
   res.send(response);
 });
 

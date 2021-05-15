@@ -3,21 +3,19 @@ const router = express.Router();
 
 // Add activity data routes
 router.get('/', function (req, res) { 
-  res.json(req.session.activity['activityData']); 
+  res.json(req.session.collectorData['activity']); 
 });
 
 router.post('/', function(req, res) { 
-  if (!req.session.activity) {
-    req.session.activity = {};
-    req.session.activity['activityData'] = [];
-    req.session.activity['activityData'].push(req.body);
-  } else {
-    if (!req.session.activity['activityData']) {
-      req.session.activity['activityData'] = [];
-    }
-    req.session.activity['activityData'].push(req.body);
+  if ( !req.session.collectorData ) {
+    req.session.collectorData = {};
   }
-  var response = req.sessionID + ": " + JSON.stringify(req.session.activity);
+  if ( !req.session.collectorData['activity'] ) {
+    req.session.collectorData['activity'] = [];
+  }
+  req.session.collectorData['activityData'].push(req.body);
+  req.session.activity = {};
+  var response = req.sessionID + ": " + req.session.collectorData['activity'];
   res.send(response);
 });
 
