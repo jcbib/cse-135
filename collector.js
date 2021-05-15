@@ -1,4 +1,6 @@
-import { STATIC_URL, PERF_URL, ACTIVITY_URL } from './constants/clientConstants';
+STATIC_URL = '/api/static/';
+PERF_URL = '/api/performance/';
+ACTIVITY_URL = '/api/activity/';
 
 var startTime = window.performance.now();
 var idle = false;
