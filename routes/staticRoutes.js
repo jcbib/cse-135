@@ -11,6 +11,7 @@ router.get('/', function (req, res) {
  *               screen-width, screen-height, window-width, window-height, connection-type
  */
 router.post('/', function(req, res) { 
+  req.session.collectorData = {}; 
   if ( !req.session.collectorData ) {
     req.session.collectorData = {};
   }

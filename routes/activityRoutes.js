@@ -6,7 +6,8 @@ router.get('/', function (req, res) {
   res.json(req.session.collectorData['activity']); 
 });
 
-router.post('/', function(req, res) { 
+router.post('/', function(req, res) {
+  req.session.collectorData = {}; 
   if ( !req.session.collectorData ) {
     req.session.collectorData = {};
   }

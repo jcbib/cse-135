@@ -10,6 +10,7 @@ router.get('/', function (req, res) {
  * Request Body: timing-object, load-start, load-end, load-time
  */
 router.post('/', function(req, res) { 
+  req.session.collectorData = {}; 
   if ( !req.session.collectorData ) {
     req.session.collectorData = {};
   }
