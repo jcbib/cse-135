@@ -96,7 +96,21 @@ const fetchCourses = async args => {
 //   return activityData;
 // };
 
-async function fetchActivityJSON() {
+// async function fetchActivityJSON() {
+//   const activityUrl = '/api/activity/';
+//   fetch(activityUrl, {
+//     method: 'GET',
+//     headers: {
+//       "Content-Type": "application/json"
+//     },
+//   })
+//   .then(res => res.json())
+//   .then(data => {return data})
+// }
+
+function createActivityTable() {
+  // Call fetch GET
+  var activityData;
   const activityUrl = '/api/activity/';
   fetch(activityUrl, {
     method: 'GET',
@@ -105,12 +119,8 @@ async function fetchActivityJSON() {
     },
   })
   .then(res => res.json())
-  .then(data => {return data})
-}
+  .then(data => {activityData = data});
 
-function createActivityTable() {
-  // Call fetch GET
-  var activityData = fetchActivityJSON();
   console.log(activityData);
   // console.log(activityDat);
 
