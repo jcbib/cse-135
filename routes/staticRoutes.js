@@ -19,9 +19,17 @@ router.post('/', async function (req, res) {
     req.session.collectorData['static'] = req.body;
   }
 
-  const staticObj = new StaticModel(
-    req.body
-  );
+  const staticObj = new StaticModel({
+    userAgent: req.body.userAgent,
+    userLanguage: req.body.userLanguage,
+    cookiesEnabled: req.body.cookiesEnabled,
+    jsEnabled: req.body.jsEnabled,
+    imageEnabled: req.body.imageEnabled,
+    cssEnabled: req.body.cssEnabled,
+    screenDimensions: req.body.screenDimensions,
+    windowsDimensions: req.body.windowsDimensions,
+    networkConnectionType: req.body.networkConnectionType
+  });
 
   try {
     const postSuccess = await staticObj.save();

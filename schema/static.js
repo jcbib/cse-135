@@ -8,8 +8,8 @@ const StaticSchema = new Schema({
     jsEnabled: Boolean,
     imageEnabled: Boolean,
     cssEnabled: Boolean,
-    screenDimensions: Number,
-    windowsDimensions: Number,
+    screenDimensions: String,
+    windowsDimensions: String,
     networkConnectionType: String
 });
 
