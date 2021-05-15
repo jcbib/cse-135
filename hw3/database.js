@@ -1,3 +1,7 @@
+const STATIC_URL = '/api/static/';
+const PERF_URL = '/api/performance/';
+const ACTIVITY_URL = '/api/activity/';
+
 $(document).ready(function () {
   // Call mongodb to retrieve data and write data into zinggrid
 
@@ -10,64 +14,79 @@ $(document).ready(function () {
 });
 
 function createStaticTable() {
-  var caption = "Static Browser Data";
   // Call fetch GET
-  var data = [{
-      "name": "Philip J. Fry",
-      "origin": "Earth"
+  const staticUrl = '/api/static/';;
+  fetch(staticUrl, {
+    method: 'GET',
+    headers: {
+      "Content-Type": "application/json"
     },
-    {
-      "name": "Turanga Leela",
-      "origin": "Earth"
-    },
-    {
-      "name": "Bender Bending Rodriguez",
-      "origin": "Earth"
-    },
-    {
-      "name": "Amy Wong",
-      "origin": "Mars"
-    },
-    {
-      "name": "Doctor John Zoidberg",
-      "origin": "Decapod 10"
-    },
-    {
-      "name": "Lord Nibbler",
-      "origin": "Earth"
-    }
-  ];
-
-
-  $("#staticDataTable").html(
-    `
-    <zing-grid
-    caption = "Static Browser Data"
-    data = '
-    ` +
-    JSON.stringify(data) +
-    `
-    '> </zing-grid>
-    `
+  })
+  .then(res => res.json())
+  .then(data => 
+    $("#staticDataTable").html(
+      `
+      <zing-grid
+      caption = "Static Browser Data"
+      data = '
+      ` +
+      JSON.stringify(data) +
+      `
+      '> </zing-grid>
+      `
+    )
   );
+
+  // $("#staticDataTable").html(
+  //   `
+  //   <zing-grid
+  //   caption = "Static Browser Data"
+  //   data = '
+  //   ` +
+  //   JSON.stringify(data) +
+  //   `
+  //   '> </zing-grid>
+  //   `
+  // );
 };
 
 function createPerformanceTable() {
   // Call fetch GET
-  var data = [{
-    "test": "performance"
-  }];
-  $("#performanceDataTable").html(
-    `
-    <zing-grid
-    caption = "Performance Browser Data"
-    data = '
-    ` +
-    JSON.stringify(data) +
-    `
-    '> </zing-grid>
-    `
+  const performanceUrl = '/api/performance/';
+  fetch(performanceUrl, {
+    method: 'GET',
+    headers: {
+      "Content-Type": "application/json"
+    },
+  })
+  .then(res => res.json())
+  .then(data => 
+    $("#performanceDataTable").html(
+      `
+      <zing-grid
+      caption = "Performance Browser Data"
+      data = '
+      ` +
+      JSON.stringify(data) +
+      `
+      '> </zing-grid>
+      `
+    )
   );
+  // var data = [{
+  //   "test": "performance"
+  // }];
+  // $("#performanceDataTable").html(
+  //   `
+  //   <zing-grid
+  //   caption = "Performance Browser Data"
+  //   data = '
+  //   ` +
+  //   JSON.stringify(data) +
+  //   `
+  //   '> </zing-grid>
+  //   `
+  // );
 };
 
 const fetchCourses = async args => {
@@ -109,8 +128,7 @@ const fetchCourses = async args => {
 // }
 
 function createActivityTable() {
-  // Call fetch GET
-  var activityData;
+  // Call fetch GET and write to table
   const activityUrl = '/api/activity/';
   fetch(activityUrl, {
     method: 'GET',
@@ -133,21 +151,21 @@ function createActivityTable() {
     )
   );
 
-  console.log(activityData);
-  // console.log(activityDat);
+  // console.log(activityData);
+  // // console.log(activityDat);
 
-  var data = [{
-    "test": "activity"
-  }];
-  $("#activityDataTable").html(
-    `
-    <zing-grid
-    caption = "Activity Browser Data"
-    data = '
-    ` +
-    JSON.stringify(data) +
-    `
-    '> </zing-grid>
-    `
-  );
+  // var data = [{
+  //   "test": "activity"
+  // }];
+  // $("#activityDataTable").html(
+  //   `
+  //   <zing-grid
+  //   caption = "Activity Browser Data"
+  //   data = '
+  //   ` +
+  //   JSON.stringify(data) +
+  //   `
+  //   '> </zing-grid>
+  //   `
+  // );
 };
