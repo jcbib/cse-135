@@ -119,7 +119,19 @@ function createActivityTable() {
     },
   })
   .then(res => res.json())
-  .then(data => {activityData = data});
+  .then(data => 
+    $("#activityDataTable").html(
+      `
+      <zing-grid
+      caption = "Activity Browser Data"
+      data = '
+      ` +
+      JSON.stringify(data) +
+      `
+      '> </zing-grid>
+      `
+    )
+  );
 
   console.log(activityData);
   // console.log(activityDat);
