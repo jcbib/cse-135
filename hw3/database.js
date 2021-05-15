@@ -83,7 +83,7 @@ const fetchCourses = async args => {
   return body;
 };
 
-const fetchActivityData = async args => {
+const fetchActivityJSON = async args => {
   const activityUrl = '/api/activity/';
   const res = await fetch(activityUrl, {
     method: 'GET',
@@ -110,8 +110,8 @@ const fetchActivityData = async args => {
 
 function createActivityTable() {
   // Call fetch GET
-  var activityData = fetchActivityData();
-  console.log(activityData);
+  var activityData = fetchActivityJSON();
+  console.log(activityData[0]);
 
   var data = [{
     "test": "activity"
