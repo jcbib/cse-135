@@ -17,7 +17,7 @@ print("<hr/>")
 for param in os.environ.keys():
    print ("<b>{}</b>: {}<br/>".format(param, os.environ[param]))
 
-print("<script src=\"../collector.js\" async> </script>")
+print("<script src=\"/collector.js\" async> </script>")
 
 print("</body>")
 print("</html>")

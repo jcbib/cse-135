@@ -47,7 +47,7 @@ puts "<form style=\"margin-top:30px\" action=\"/cgi-bin/ruby-destroy-session.rb\
 puts "<button type=\"submit\">Destroy Session</button>"
 puts "</form>"
 
-puts "<script src=\"../collector.js\" async> </script>"
+puts "<script src=\"/collector.js\" async> </script>"
 
 puts "</body>"
 puts "</html>"

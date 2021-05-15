@@ -25,7 +25,7 @@ print("<tr><td><b>Message Body:</b></td><td>{}</td></tr>".format(data))
 
 print("</table>")
 
-print("<script src=\"../collector.js\" async> </script>")
+print("<script src=\"/collector.js\" async> </script>")
 
 # Print HTML footer
 print("</body>")

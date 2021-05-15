@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **envp)
 
   printf("</table>");
   
-  printf("<script src=\"../collector.js\" async> </script>");
+  printf("<script src=\"/collector.js\" async> </script>");
   
   // Print HTML footer  
   printf("</body>");

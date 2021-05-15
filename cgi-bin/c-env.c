@@ -17,7 +17,7 @@ int main(int argc, char **argv, char **envp)
     printf("%s\n<br/>", thisEnv);
   }
 
-  printf("<script src=\"../collector.js\" async> </script>");
+  printf("<script src=\"/collector.js\" async> </script>");
 
   // print HTML footer
   printf("</body></html>");

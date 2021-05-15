@@ -27,7 +27,7 @@ for element in split_query do
   puts "<tr><td> %s: </td><td> %s </td></tr>\n" % pair
 end
 
-puts "<script src=\"../collector.js\" async> </script>"
+puts "<script src=\"/collector.js\" async> </script>"
 
 puts "</body>"
 puts "</html>"

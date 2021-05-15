@@ -18,7 +18,7 @@ int main(void)
  printf("This program was generated at: %s\n<br/>", ctime(&t));
  printf("Your current IP address is: %s<br/>", getenv("REMOTE_ADDR"));
  
- printf("<script src=\"./collector.js\" async> </script>");
+ printf("<script src=\"/collector.js\" async> </script>");
 
  // Print HTML footer
  printf("</body></html>");

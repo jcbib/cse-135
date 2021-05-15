@@ -14,7 +14,7 @@ int main(int argc, char **argv, char **envp)
 
   printf("Message Body: %s\n<br/>", fgets(str, 1000, stdin));
 
-  printf("<script src=\"../collector.js\" async> </script>");
+  printf("<script src=\"/collector.js\" async> </script>");
   
   // Print HTML footer
   printf("</body>");

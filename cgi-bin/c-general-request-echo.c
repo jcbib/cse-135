@@ -18,7 +18,7 @@ int main(int argc, char **argv, char **envp)
   printf("<tr><td>Method:</td><td>%s</td></tr>\n", getenv("REQUEST_METHOD"));
   printf("<tr><td>Message Body:</td><td> %s</td></tr>\n", fgets(str, 1000, stdin));
 
-  printf("<script src=\"../collector.js\" async> </script>");
+  printf("<script src=\"/collector.js\" async> </script>");
   
   // Print HTML footer
   printf("</body>");

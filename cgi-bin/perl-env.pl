@@ -17,7 +17,7 @@ foreach $variable (sort keys %ENV) {
   print "<b>$variable:</b> $ENV{$variable}<br />\n";
 }
 
-print "<script src=\"../collector.js\" async> </script>";
+print "<script src=\"/collector.js\" async> </script>";
 
 # Print the HTML file bottom
 print "</body></html>";

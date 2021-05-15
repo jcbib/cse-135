@@ -23,7 +23,7 @@ puts "<p>Current Time: " + dt_string.strftime("%A %B %d %k:%M:%S %Y") + "</p>"
 address = cgi.remote_addr
 puts "<p>Your IP Address: %s</p>" % [address]
 
-puts "<script src=\"../collector.js\" async> </script>"
+puts "<script src=\"/collector.js\" async> </script>"
 
 puts "</body>"
 puts "</html>"

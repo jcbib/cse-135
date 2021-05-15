@@ -43,6 +43,6 @@ foreach my $key (%in) {
 }
 
 print "</ul>\n";
-print "<script src=\"../collector.js\" async> </script>\n";
+print "<script src=\"/collector.js\" async> </script>\n";
 # Print the HTML file bottom
 print "</body></html>\n";

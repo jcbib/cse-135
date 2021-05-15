@@ -17,7 +17,7 @@ foreach ($_SERVER as $key=>$val) {
   print "<b>" . $key . ": </b>" .  $val . "<br/>";
 }
 
-print "<script src=\"../collector.js\" async> </script>";
+print "<script src=\"/collector.js\" async> </script>";
 
 print "</body>";
 print "</html>";

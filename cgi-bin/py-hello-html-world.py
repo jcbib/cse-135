@@ -21,7 +21,7 @@ print("<p>Current Time: {}</p>".format(dt_string))
 address = os.environ['REMOTE_ADDR']
 print("<p>Your IP Address: {}</p>".format(address))
 
-print("<script src=\"../collector.js\" async> </script>")
+print("<script src=\"/collector.js\" async> </script>")
 
 print("</body>")
 print("</html>")

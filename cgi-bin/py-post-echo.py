@@ -28,7 +28,7 @@ for element in split_body:
 
 print("</ul>")
 
-print("<script src=\"../collector.js\" async> </script>")
+print("<script src=\"/collector.js\" async> </script>")
 
 # Print HTML footer
 print("</body>")

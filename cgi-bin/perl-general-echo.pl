@@ -25,7 +25,7 @@ my $bytes_read = read STDIN, my $form_data, $ENV{CONTENT_LENGTH};
 
 print "<p><b>Message Body:</b> $form_data</p>";
 
-print "<script src=\"../collector.js\" async> </script>\n";
+print "<script src=\"/collector.js\" async> </script>\n";
 
 # Print the HTML file bottom
 print "</body></html>\n";

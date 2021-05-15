@@ -18,7 +18,7 @@ foreach my $key (sort(keys(%ENV))) {
    print  "$key = $ENV{$key}<br />\n";
 }
 
-print "<script src=\"../collector.js\" async> </script>\n";
+print "<script src=\"/collector.js\" async> </script>\n";
 
 # CGI.pm method
 print end_html;

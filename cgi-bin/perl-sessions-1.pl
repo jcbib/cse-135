@@ -38,7 +38,7 @@ print "<form style=\"margin-top:30px\" action=\"/cgi-bin/perl-destroy-session.pl
 print "<button type=\"submit\">Destroy Session</button>";
 print "</form>";
 
-print "<script src=\"../collector.js\" async> </script>";
+print "<script src=\"/collector.js\" async> </script>";
 
 print "</body>";
 print "</html>";

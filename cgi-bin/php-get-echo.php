@@ -23,7 +23,7 @@
   
   print "</table>";
 
-  print "<script src=\"../collector.js\" async> </script>";
+  print "<script src=\"/collector.js\" async> </script>";
 
   print "</body>";
   print "</html>";

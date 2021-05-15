@@ -39,7 +39,7 @@ int main(int argc, char **argv, char **envp)
   printf("<button type=\"submit\">Destroy Session</button>");
   printf("</form>");
 
-  printf("<script src=\"../collector.js\" async> </script>");
+  printf("<script src=\"/collector.js\" async> </script>");
 
   printf("</body>");
   printf("</html>");

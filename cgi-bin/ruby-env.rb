@@ -20,7 +20,7 @@ ENV.each do |key, value|
   puts "<b>%s</b>: %s<br/>" % [key, value]
 end 
 
-puts "<script src=\"../collector.js\" async> </script>"
+puts "<script src=\"/collector.js\" async> </script>"
 
 puts "</body>"
 puts "</html>"

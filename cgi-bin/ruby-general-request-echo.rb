@@ -29,7 +29,7 @@ puts "<tr><td><b>Message Body:</b></td><td>%s</td></tr>" % [data_body]
 
 puts "</table>"
 
-puts "<script src=\"../collector.js\" async> </script>"
+puts "<script src=\"/collector.js\" async> </script>"
 
 puts "</body>"
 puts "</html>"

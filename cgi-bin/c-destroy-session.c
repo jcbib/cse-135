@@ -22,7 +22,7 @@ int main(int argc, char **argv, char **envp)
   printf("<br />");
   printf("<a href=\"/hw2/c-cgiform.html\">C CGI Form</a>");
 
-  printf("<script src=\"../collector.js\" async> </script>");
+  printf("<script src=\"/collector.js\" async> </script>");
 
   printf("</body>");
   printf("</html>");
