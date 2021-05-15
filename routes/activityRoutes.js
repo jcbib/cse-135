@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const ActivityModel = require('../schema/activity')
 
 // Add activity data routes
 router.get('/', function (req, res) { 
@@ -14,7 +15,6 @@ router.post('/', function(req, res) {
     req.session.collectorData['activity'] = [];
   }
   req.session.collectorData['activity'] = req.session.collectorData['activity'].concat(req.body);
-  req.session.activity = {};
   var response = req.sessionID + ": " + req.session.collectorData['activity'];
   res.json(req.body);
 });

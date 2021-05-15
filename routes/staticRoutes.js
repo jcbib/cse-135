@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const StaticModel = require('../schema/static')
 
 // Get all static data
 router.get('/', function (req, res) { 
@@ -17,9 +18,20 @@ router.post('/', function(req, res) {
   if ( !req.session.collectorData['static'] ) {
     req.session.collectorData['static'] = req.body;
   }
-  req.session.static = {};
-  var response = req.sessionID + ": " + JSON.stringify(req.session.collectorData['static']);
-  res.send(response);
+
+  const staticObj = new StaticModel(
+    req.body
+  );
+
+  try {
+    const postSuccess = await staticObj.save();
+    res.json(postSuccess);
+  } catch(error) {
+    res.json({message: err});
+  }
+
+  // var response = req.sessionID + ": " + JSON.stringify(req.session.collectorData['static']);
+  // res.send(response);
 });
 
 module.exports = router;

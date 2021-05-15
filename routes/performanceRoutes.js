@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const PerformanceModel = require('../schema/performance');
 
 // Get all performance data
 router.get('/', function (req, res) { 
@@ -17,7 +18,6 @@ router.post('/', function(req, res) {
     req.session.collectorData['performance'] = [];
   }
   req.session.collectorData['performance'].push(req.body);
-  req.session.performance = {};
   var response = req.sessionID + ": " + req.session.collectorData['performance'];
   res.send(response);
 });
