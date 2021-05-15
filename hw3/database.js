@@ -83,34 +83,34 @@ const fetchCourses = async args => {
   return body;
 };
 
-const fetchActivityJSON = async args => {
-  const activityUrl = '/api/activity/';
-  const res = await fetch(activityUrl, {
-    method: 'GET',
-    headers: {
-      "Content-Type": "application/json"
-    }
-  });
-  const activityData = await res.json();
-  console.log("FETCH ACTIVITY DATA: " + activityData);
-  return activityData;
-};
-
-// async function fetchActivityData() {
+// const fetchActivityJSON = async args => {
 //   const activityUrl = '/api/activity/';
-//   return fetch(activityUrl, {
+//   const res = await fetch(activityUrl, {
 //     method: 'GET',
 //     headers: {
 //       "Content-Type": "application/json"
-//     },
-//   })
-//   .then(res => res.json())
-//   .then(data => {return data})
-// }
+//     }
+//   });
+//   const activityData = await res.json();
+//   console.log("FETCH ACTIVITY DATA: " + activityData);
+//   return activityData;
+// };
+
+async function fetchActivityJSON() {
+  const activityUrl = '/api/activity/';
+  fetch(activityUrl, {
+    method: 'GET',
+    headers: {
+      "Content-Type": "application/json"
+    },
+  })
+  .then(res => res.json())
+  .then(data => {return data})
+}
 
 function createActivityTable() {
   // Call fetch GET
-  var activityData = await fetchActivityJSON();
+  var activityData = fetchActivityJSON();
   console.log(activityData);
   // console.log(activityDat);
 
