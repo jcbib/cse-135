@@ -250,7 +250,7 @@ function fetchActivityData() {
 };
 
 // Send data every set seconds
-setInterval(function(){ fetchActivityData(); }, 5000);
+setInterval(function(){ fetchActivityData(); }, 2000);
 
 // User page is on
 // console.log(document.URL);
