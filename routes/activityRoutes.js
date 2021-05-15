@@ -13,7 +13,7 @@ router.post('/', function(req, res) {
   if ( !req.session.collectorData['activity'] ) {
     req.session.collectorData['activity'] = [];
   }
-  req.session.collectorData['activityData'].push(req.body);
+  req.session.collectorData['activity'].push(req.body);
   req.session.activity = {};
   var response = req.sessionID + ": " + req.session.collectorData['activity'];
   res.send(response);
