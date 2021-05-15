@@ -82,8 +82,7 @@ function createActivityTable() {
     })
     .then(res => res.json())
     .then(data => activityData = data)
-  
-  console.log(activityData);
+    .then(() => console.log(activityData))
 
   var data = [{
     "test": "activity"
