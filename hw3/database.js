@@ -19,22 +19,22 @@ function createStaticTable() {
     },
   })
   .then(res => res.json())
-  .then(data => console.log(data));
-  // .then(data => 
-  //   $("#staticDataTable").html(
-  //     `
-  //     <zing-grid
-  //     ... pager
-  //     page-size="7"
-  //     caption = "Static Browser Data"
-  //     data = '
-  //     ` +
-  //     JSON.stringify(data) +
-  //     `
-  //     '> </zing-grid>
-  //     `
-  //   )
-  // );
+  // .then(data => console.log(data));
+  .then(data => 
+    $("#staticDataTable").html(
+      `
+      <zing-grid
+      ... pager
+      page-size="7"
+      caption = "Static Browser Data"
+      data = '
+      ` +
+      JSON.stringify(data) +
+      `
+      '> </zing-grid>
+      `
+    )
+  );
 
   // $("#staticDataTable").html(
   //   `
