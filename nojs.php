@@ -12,7 +12,7 @@
 
         $postData = array(
             'userAgent' => $_SERVER['HTTP_USER_AGENT'],
-            'userLanguage' => substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 4),
+            'userLanguage' => substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5),
             'cookiesEnabled' => $cookiesEn,
             'jsEnabled' => FALSE,
             'imageEnabled' => FALSE,
