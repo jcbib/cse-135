@@ -13,8 +13,8 @@ const ActivitySchema = new Schema({
       scrollCoord: Number,
       idleTime: Number,
       idleStopTime: Number,
-      timeUserLeft: Number,
-      timeUserEnter: Number,
+      timeUserLeft: String,
+      timeUserEnter: String,
       currentPage: String
     }]
 });
