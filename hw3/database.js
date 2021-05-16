@@ -1,7 +1,3 @@
-const STATIC_URL = '/api/static/';
-const PERF_URL = '/api/performance/';
-const ACTIVITY_URL = '/api/activity/';
-
 $(document).ready(function () {
   // Call mongodb to retrieve data and write data into zinggrid
 
@@ -27,6 +23,7 @@ function createStaticTable() {
     $("#staticDataTable").html(
       `
       <zing-grid
+      height = "200"
       caption = "Static Browser Data"
       data = '
       ` +
@@ -64,6 +61,7 @@ function createPerformanceTable() {
     $("#performanceDataTable").html(
       `
       <zing-grid
+      height = "200"
       caption = "Performance Browser Data"
       data = '
       ` +
@@ -141,6 +139,7 @@ function createActivityTable() {
     $("#activityDataTable").html(
       `
       <zing-grid
+      height="200"
       caption = "Activity Browser Data"
       data = '
       ` +
