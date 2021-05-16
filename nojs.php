@@ -24,8 +24,8 @@
 
         $options = array (
             'http' => array(
-                'header' => 'Content-Type: application/json',
                 'method' => 'POST',
+                'header' => 'Content-Type: application/json',
                 'content' => json_encode($postData)
             )
         );
@@ -38,5 +38,9 @@
 
         $responseData = json_decode($result, TRUE);
         print_r($responseData);
+        echo "\n\n";
+        print_r($postData);
+        echo "\n\n";
+        print_r(json_encode($postData));
     }
 ?>
