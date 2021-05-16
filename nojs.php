@@ -3,7 +3,7 @@
         // JS is enabled, do not need to do anything.
     } else {
         $cookiesEn = FALSE;
-        $url = 'http://jak-cse135.site/testnojs.php';
+        $url = 'http://jak-cse135.site/api/static';
         setcookie('testcookie', 'hello');
 
         if (isset($_COOKIE['testcookie'])) {
@@ -22,20 +22,30 @@
             'networkConnectionType' => 'JavaScript Disabled, Unable to Retrieve'
         );
 
-        $options = array (
-            'http' => array(
-                'method' => 'POST',
-                'header' => "Content-Type: application/json\r\n". 
-                            "Accept: application/json\r\n",
-                'content' => http_build_query($postData)
-            )
-        );
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        $context = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
-        if ($result === FALSE) {
-            die('Error');
-        }
+        $server_output = curl_exec($ch);
+        curl_close($ch);
+
+
+        // $options = array (
+        //     'http' => array(
+        //         'method' => 'POST',
+        //         'header' => "Content-Type: application/json\r\n". 
+        //                     "Accept: application/json\r\n",
+        //         'content' => http_build_query($postData)
+        //     )
+        // );
+
+        // $context = stream_context_create($options);
+        // $result = file_get_contents($url, false, $context);
+        // if ($result === FALSE) {
+        //     die('Error');
+        // }
 
         $responseData = json_decode($result, TRUE);
         print_r($responseData);
