@@ -14,12 +14,15 @@
 <body>
   <img id="imgFlag" src="/images/testImage.gif" alt>
 
-  <div id="staticDataTable">
-  </div>
-  <div id="performanceDataTable">
-  </div>
-  <div id="activityDataTable">
-  </div>
+  <!-- populated by createStaticTable() in database.js -->
+  <div id="staticDataTable"></div>
+
+  <!-- populated by createPerformanceTable() in database.js -->
+  <div id="performanceDataTable"></div>
+
+  <!-- populated by createActivityTable() in database.js -->
+  <div id="activityDataTable"></div>
+
   <script src="/collector.js" async> </script>
 </body>
 </html>

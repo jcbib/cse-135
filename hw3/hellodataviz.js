@@ -1,5 +1,13 @@
+const MON = 0;
+const TUE = 1;
+const WED = 2;
+const THU = 3;
+const FRI = 4;
+const SAT = 5;
+const SUN = 6;
+
 $(document).ready(function () {
-    // drawPieChart();
+    drawPieChart();
 });
 
 function drawPieChart() {
@@ -58,6 +66,59 @@ function fetchStaticDataGraph(jsonData) {
         id: 'pieChart',
         data: pieConfig,
         height: 400,
+        width: "100%"
+    });
+};
+
+function drawBarChart() {
+    const activityUrl = '/api/activity/';
+    fetch(activityUrl, {
+        method: 'GET',
+        headers: {
+            "Content-Type": "application/json"
+        },
+    }).then(res => res.json())
+    .then(data => fetchActivityDataGraph(data));
+};
+
+function fetchActivityDataGraph(jsonData) {
+    let allActivityArray = [];
+    jsonData.forEach(obj => {
+        let activityArray = obj['activityData'];
+        // Push each activityData into bigger array
+        activityArray.forEach(activity => {
+            allActivityArray.push(activity);
+        });
+    });
+
+
+    var barConfig = {
+        type: "bar",
+        "legend": {
+
+        },
+        series: [{
+                values: [20, 40, 25, 50, 15, 45, 33, 34],
+                "text": "Test 1-001A3",
+                "legend-text": "Test 1"
+            },
+            {
+                values: [5, 30, 21, 18, 59, 50, 28, 33],
+                "text": "Test 2-002B4",
+                "legend-text": "Test 2"
+            },
+            {
+                values: [30, 5, 18, 21, 33, 41, 29, 15],
+                "text": "Test 3-004C3",
+                "legend-text": "Test 3"
+            }
+        ]
+    };
+
+    zingchart.render({
+        id: 'barChart',
+        data: barConfig,
+        height: "100%",
         width: "100%"
     });
 }
