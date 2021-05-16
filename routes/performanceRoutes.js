@@ -46,10 +46,10 @@ router.post('/', function(req, res) {
       const performanceObj = new PerformanceModel({
         sessionId: req.sessionID,
         performanceData: [{
-          wholeTimingObject: Object,
-          timePageLoadStart: Number,
-          timePageLoadEnd: Number,
-          totalTimeLoad: Number
+          wholeTimingObject: req.body.wholeTimingObject,
+          timePageLoadStart: req.body.timePageLoadStart,
+          timePageLoadEnd: req.body.timePageLoadEnd,
+          totalTimeLoad: req.body.totalTimeLoad
         }]
       });
       
