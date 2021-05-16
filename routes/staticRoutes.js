@@ -35,7 +35,7 @@ router.post('/', async function (req, res) {
   let staticData = 0;
 
   try {
-    staticData = await staticObj.findOne({sessionId: req.sessionID});
+    staticData = await StaticModel.findOne({sessionId: req.sessionID});
   } catch(error) {
     res.json({message: error});
   }
