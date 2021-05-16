@@ -54,15 +54,15 @@ function fetchBarDataGraph(jsonData) {
             let name = activity['currentPage'].split("/");
             if (name[3] == 'anh') {
                 let idx = findDate(date);
-                anh[idx] += 1;
+                anhVisit[idx] += 1;
             }
             if (name[3] == 'kelly') {
                 let idx = findDate(date);
-                kelly[idx] += 1;
+                kellyVisit[idx] += 1;
             }
             if (name[3] == 'jon') {
                 let idx = findDate(date);
-                jon[idx] += 1;
+                jonVisit[idx] += 1;
             }
         }
     });
@@ -73,15 +73,15 @@ function fetchBarDataGraph(jsonData) {
 
         },
         "series": [{
-            "values": anh,
+            "values": anhVisit,
             "text": "Anh-001A3",
             "legend-text": "Anh"
         }, {
-            "values": kelly,
+            "values": kellyVisit,
             "text": "Kelly-002B4",
             "legend-text": "Kelly"
         }, {
-            "values": jon,
+            "values": jonVisit,
             "text": "Jon-004C3",
             "legend-text": "Jon"
         }]
@@ -189,7 +189,7 @@ function fetchActivityDataGraph(jsonData) {
 
         },
         "title": {
-            "text": "Number of Key Strokes Per Day of the Week" 
+            "text": "Number of Key Strokes Per Day of the Week"
         },
         'scale-x': {
             labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]

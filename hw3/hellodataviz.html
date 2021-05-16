@@ -30,34 +30,6 @@
 
 <body>
     <div id='lineChart'></div>
-    <script>
-        var lineConfig = {
-            "type": "line",
-            "legend": {
-
-            },
-            "series": [{
-                "values": [20, 40, 25, 50, 15, 45, 33, 34],
-                "text": "Anh-001A3",
-                "legend-text": "Anh"
-            }, {
-                "values": [5, 30, 21, 18, 59, 50, 28, 33],
-                "text": "Kelly-002B4",
-                "legend-text": "Kelly"
-            }, {
-                "values": [30, 5, 18, 21, 33, 41, 29, 15],
-                "text": "Jon-004C3",
-                "legend-text": "Jon"
-            }]
-        };
-
-        zingchart.render({
-            id: 'lineChart',
-            data: lineConfig,
-            height: "100%",
-            width: "100%"
-        });
-    </script>
 
     <!-- populated by drawPieChart() in hellodataviz.js -->
     <div id='pieChart'></div>
