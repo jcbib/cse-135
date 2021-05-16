@@ -47,7 +47,7 @@ function fetchStaticData(retries = 5) {
     body: JSON.stringify(staticData)
   })
     .then(res => {
-      if (res.ok) console.log(res.text());
+      if (res.ok) res.text();
       if (retries > 0) {
         return fetchStaticData(retries - 1);
       } else {
