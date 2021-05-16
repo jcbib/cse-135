@@ -39,6 +39,7 @@
             die('Error');
         }
 
+        print_r($context)
         $responseData = json_decode($result, TRUE);
         print_r($responseData);
     }
