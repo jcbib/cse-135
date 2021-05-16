@@ -112,7 +112,8 @@ function writeActivityTable(jsonData) {
     // console.log(activityArray);
     activityArray.forEach(activity => {
       activity['sessionId'] = obj['sessionId'];
+      tableArray.push(activity);
     });
-    console.log(activityArray);
   });
+  console.log(tableArray);
 };
