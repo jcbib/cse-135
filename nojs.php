@@ -3,7 +3,7 @@
         // JS is enabled, do not need to do anything.
     } else {
         $cookiesEn = FALSE;
-        $url = 'http://jak-cse135.site/api/activity';
+        $url = 'http://jak-cse135.site/api/static';
         setcookie('testcookie', 'hello');
 
         if (isset($_COOKIE['testcookie'])) {
@@ -24,7 +24,7 @@
 
         $options = array (
             'http' => array(
-                'header' => 'Content-Type: application/json\r\n',
+                'header' => 'Content-Type: application/json',
                 'method' => 'POST',
                 'content' => json_encode($postData)
             )
