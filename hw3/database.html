@@ -10,14 +10,9 @@
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
   <script src="database.js"></script>
   
-  <!-- Check if JS detected -->
-  <script type="text/javscript">document.cookie = 'hasJS=true';</script>
-  <noscript><img src="/nojs.php"></noscript>
 </head>
 
 <body>
-  <img id="imgFlag" src="/images/testImage.gif" alt>
-
   <!-- populated by createStaticTable() in database.js -->
   <div id="staticDataTable"></div>
 
@@ -26,7 +21,5 @@
 
   <!-- populated by createActivityTable() in database.js -->
   <div id="activityDataTable"></div>
-
-  <script src="/collector.js" async> </script>
 </body>
 </html>
