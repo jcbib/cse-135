@@ -24,7 +24,7 @@
 
         $options = array (
             'http' => array(
-                'header' => 'Content-Type: application/json\r\n',
+                'header' => 'Content-Type: application/json',
                 'method' => 'POST',
                 'content' => json_encode($postData)
             )
