@@ -54,7 +54,7 @@ function fetchStaticData(retries = 5) {
         throw new Error(res);
       }
     })
-    .catch(err => console.log("err: " + err));
+    .catch(err => err);
 };
 
 // fetch(STATIC_URL, {
@@ -94,7 +94,7 @@ function fetchPerformanceData(retries = 5) {
         throw new Error(res);
       }
     })
-    .catch(err => console.log("err: " + err));
+    .catch(err => err);
 }
 
 // fetch(PERF_URL, {
@@ -273,7 +273,7 @@ function fetchActivityData(retries = 5) {
         throw new Error(res);
       }
     })
-    .catch(err => console.log("err: " + err));
+    .catch(err => err);
 };
 
 // Send data every set seconds
