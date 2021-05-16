@@ -3,7 +3,7 @@
         // JS is enabled, do not need to do anything.
     } else {
         $cookiesEn = FALSE;
-        $url = 'http://jak-cse135.site/api/static';
+        $url = 'http://jak-cse135.site/testnojs.php';
         setcookie('testcookie', 'hello');
 
         if (isset($_COOKIE['testcookie'])) {
@@ -32,7 +32,7 @@
         );
 
         $context = stream_context_create($options);
-        $result = file_get_contents($url, FALSE, $context);
+        $result = file_get_contents($url, false, $context);
         if ($result === FALSE) {
             die('Error');
         }
