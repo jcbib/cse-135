@@ -12,7 +12,7 @@ const ActivitySchema = new Schema({
       keyUp: String,
       scrollCoord: Number,
       idleTime: Number,
-      idleStopTime: Number,
+      idleStopTime: String,
       timeUserLeft: String,
       timeUserEnter: String,
       currentPage: String
