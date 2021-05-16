@@ -54,7 +54,6 @@ function fetchStaticData(retries = 5) {
         throw new Error(res);
       }
     })
-    // .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
 };
 
@@ -70,11 +69,6 @@ function fetchStaticData(retries = 5) {
 //   .catch(err => console.log("err: " + err));
 
 // Performance
-// console.log(window.performance.timing);
-
-// console.log(window.performance.timing.domContentLoadedEventStart);
-// console.log(window.performance.timing.domContentLoadedEventEnd);
-// console.log(window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart);
 
 var performanceData = {
   'wholeTimingObject': window.performance.timing,
@@ -100,7 +94,6 @@ function fetchPerformanceData(retries = 5) {
         throw new Error(res);
       }
     })
-    // .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
 }
 
@@ -138,13 +131,10 @@ document.onmousemove = function (e) {
   if (idle) {
     var currDateTime = new Date();
     idle = false;
-    // console.log("idle end: ", currDateTime.toUTCString());
-    // console.log("idle for: ", window.performance.now() - startTime);
     idleTime = window.performance.now() - startTime;
     idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
-  //console.log("mouse location: ", e.clientX, e.clientY)
   mousePosX = e.clientX;
   mousePosY = e.clientY;
   stashActivityData();
@@ -156,13 +146,10 @@ document.onmousedown = function (e) {
   if (idle) {
     var currDateTime = new Date();
     idle = false;
-    // console.log("idle end: ", currDateTime.toUTCString());
-    // console.log("idle for: ", window.performance.now() - startTime);
     idleTime = window.performance.now() - startTime;
     idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
-  // console.log("mousedown button: ", e.button);
   mouseDownButton = e.button;
   stashActivityData();
 };
@@ -173,13 +160,10 @@ document.onmouseup = function (e) {
   if (idle) {
     var currDateTime = new Date();
     idle = false;
-    // console.log("idle end: ", currDateTime.toUTCString());
-    // console.log("idle for: ", window.performance.now() - startTime);
     idleTime = window.performance.now() - startTime;
     idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
-  // console.log("mouseup button: ", e.button);
   mouseUpButton = e.button;
   stashActivityData();
 };
@@ -191,13 +175,10 @@ document.onkeydown = function (e) {
   if (idle) {
     var currDateTime = new Date();
     idle = false;
-    // console.log("idle end: ", currDateTime.toUTCString());
-    // console.log("idle for: ", window.performance.now() - startTime);
     idleTime = window.performance.now() - startTime;
     idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
-  // console.log("key down: ", e.key);
   keyDown = e.key;
   stashActivityData();
 };
@@ -208,27 +189,22 @@ document.onkeyup = function (e) {
   if (idle) {
     var currDateTime = new Date();
     idle = false;
-    // console.log("idle end: ", currDateTime.toUTCString());
-    // console.log("idle for: ", window.performance.now() - startTime);
     idleTime = window.performance.now() - startTime;
     idleStopTime = currDateTime.toUTCString();
   }
   startTime = window.performance.now();
-  // console.log("key up: ", e.key);
   keyUp = e.key;
   stashActivityData();
 };
 
 // Scroll Activity
 document.onscroll = function (e) {
-  // console.log("scroll amount: "  + (window.pageYOffset || document.documentElement.scrollTop));
   scrollCoord = (window.pageYOffset || document.documentElement.scrollTop);
   stashActivityData();
 }
 
 // Idle activity
 function setIdle() {
-  // console.log("idle");
   idle = true;
 }
 
@@ -238,7 +214,6 @@ function setIdle() {
 // Store activity data in a list to be sent as a batch in an interval 
 window.onload = function (e) {
   var currDateTime = new Date();
-  // console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
   timeUserEnter = currDateTime.toUTCString();
   fetchStaticData();
   fetchPerformanceData();
@@ -247,7 +222,6 @@ window.onload = function (e) {
 
 window.onbeforeunload = function (e) {
   var currDateTime = new Date();
-  // console.log("User has left the page", document.URL," at ", currDateTime.toUTCString());
   timeUserLeft = currDateTime.toUTCString();
   stashActivityData();
 }
@@ -299,7 +273,6 @@ function fetchActivityData(retries = 5) {
         throw new Error(res);
       }
     })
-    // .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
 };
 
