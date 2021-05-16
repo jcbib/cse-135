@@ -38,7 +38,14 @@ function fetchStaticDataGraph(jsonData) {
     let pieConfig = {
         "type": "pie",
         "title": {
-            "text": "A Pie Chart"
+            "text"
+            : "Different Screen Dimensions Used on jak-cse135.site"
+        },
+        'value-box': {
+            placement: "out",
+            'font-color': "black",
+            'font-size': 16,
+            'font-weight': "normal"
         },
         "legend": {
 
