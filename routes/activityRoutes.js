@@ -27,7 +27,7 @@ router.post('/', function(req, res) {
     if ( entry ) {
       try {
         const postSuccess = await ActivityModel.findOneAndUpdate({sessionId: req.sessionID}, 
-          { activityData: req.session.collectorData['activity']});
+          { activityData: req.body });
         res.json(postSuccess);
       } catch(error) {
         res.json({message: error});
