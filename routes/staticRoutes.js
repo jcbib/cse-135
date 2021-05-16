@@ -27,7 +27,7 @@ router.post('/', function (req, res) {
   StaticModel.findOne({sessionId: req.sessionID}, async function(err, entry) {
     if (err) res.json({ message: error});
     if ( entry ) {
-      res.text("This has already been saved!");
+      res.send("This has already been saved!");
     } else {
       const staticObj = new StaticModel({
         sessionId: req.sessionID,
@@ -43,7 +43,7 @@ router.post('/', function (req, res) {
       });
       try {
         const postSuccess = await staticObj.save();
-        res.text("Post Success!");
+        res.send("Post Success!");
       } catch(error) {
         res.json({message: error});
       }
