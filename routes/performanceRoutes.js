@@ -4,7 +4,7 @@ const PerformanceModel = require('../schema/performance');
 const { DATA_LIMIT } = require('../constants/envConstants');
 
 // Get all performance data
-router.get('/', function (req, res) { 
+router.get('/', async function (req, res) { 
   try {
     const performanceObj = await PerformanceModel.find();
     res.json(performanceObj);
