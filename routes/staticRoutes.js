@@ -3,7 +3,7 @@ const router = express.Router();
 const StaticModel = require('../schema/static')
 
 // Get all static data
-router.get('/', function (req, res) {
+router.get('/', async function (req, res) {
    try {
      const staticObj = await StaticModel.find();
      res.json(staticObj);
