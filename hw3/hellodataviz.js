@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    drawPieChart();
+    // drawPieChart();
 });
 
 function drawPieChart() {
@@ -23,7 +23,6 @@ function fetchStaticDataGraph(jsonData) {
             screenDimDict[obj['screenDimensions']] += 1;
         }
     });
-    console.log(screenDimDict);
 
     let series = [];
     for (let screenDim in screenDimDict) {
