@@ -41,11 +41,13 @@ function fetchStaticDataGraph(jsonData) {
             "text"
             : "Different Screen Dimensions Used on jak-cse135.site"
         },
-        'value-box': {
-            placement: "out",
-            'font-color': "black",
-            'font-size': 16,
-            'font-weight': "normal"
+        "plot": {
+            'value-box': {
+                'placement': "out",
+                'font-color': "black",
+                'font-size': 16,
+                'font-weight': "normal"
+            }
         },
         "legend": {
 
