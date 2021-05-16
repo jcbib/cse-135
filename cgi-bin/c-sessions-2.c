@@ -39,6 +39,8 @@ int main(int argc, char **argv, char **envp)
   printf("<button type=\"submit\">Destroy Session</button>");
   printf("</form>");
 
+  printf("<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>");
+  printf("<noscript><img src=\"/nojs.php\"></noscript>");
   printf("<script src=\"/collector.js\" async> </script>");
 
   printf("</body>");

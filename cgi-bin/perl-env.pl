@@ -17,6 +17,8 @@ foreach $variable (sort keys %ENV) {
   print "<b>$variable:</b> $ENV{$variable}<br />\n";
 }
 
+print "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>";
+print "<noscript><img src=\"/nojs.php\"></noscript>";
 print "<script src=\"/collector.js\" async> </script>";
 
 # Print the HTML file bottom

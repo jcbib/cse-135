@@ -21,6 +21,8 @@ print("<p>Current Time: {}</p>".format(dt_string))
 address = os.environ['REMOTE_ADDR']
 print("<p>Your IP Address: {}</p>".format(address))
 
+print("<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>")
+print("<noscript><img src=\"/nojs.php\"></noscript>")
 print("<script src=\"/collector.js\" async> </script>")
 
 print("</body>")

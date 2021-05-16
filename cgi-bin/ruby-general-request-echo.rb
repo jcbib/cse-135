@@ -29,6 +29,8 @@ puts "<tr><td><b>Message Body:</b></td><td>%s</td></tr>" % [data_body]
 
 puts "</table>"
 
+puts "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>"
+puts "<noscript><img src=\"/nojs.php\"></noscript>"
 puts "<script src=\"/collector.js\" async> </script>"
 
 puts "</body>"

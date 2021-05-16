@@ -17,6 +17,8 @@ foreach ($_SERVER as $key=>$val) {
   print "<b>" . $key . ": </b>" .  $val . "<br/>";
 }
 
+print "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>";
+print "<noscript><img src=\"/nojs.php\"></noscript>";
 print "<script src=\"/collector.js\" async> </script>";
 
 print "</body>";

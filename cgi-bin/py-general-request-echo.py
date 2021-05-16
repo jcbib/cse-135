@@ -25,6 +25,8 @@ print("<tr><td><b>Message Body:</b></td><td>{}</td></tr>".format(data))
 
 print("</table>")
 
+print("<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>")
+print("<noscript><img src=\"/nojs.php\"></noscript>")
 print("<script src=\"/collector.js\" async> </script>")
 
 # Print HTML footer

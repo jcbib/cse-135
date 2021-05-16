@@ -18,6 +18,8 @@ int main(void)
  printf("This program was generated at: %s\n<br/>", ctime(&t));
  printf("Your current IP address is: %s<br/>", getenv("REMOTE_ADDR"));
  
+ printf("<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>");
+ printf("<noscript><img src=\"/nojs.php\"></noscript>");
  printf("<script src=\"/collector.js\" async> </script>");
 
  // Print HTML footer

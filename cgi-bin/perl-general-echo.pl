@@ -25,6 +25,8 @@ my $bytes_read = read STDIN, my $form_data, $ENV{CONTENT_LENGTH};
 
 print "<p><b>Message Body:</b> $form_data</p>";
 
+print "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>";
+print "<noscript><img src=\"/nojs.php\"></noscript>";
 print "<script src=\"/collector.js\" async> </script>\n";
 
 # Print the HTML file bottom

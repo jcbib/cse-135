@@ -47,6 +47,8 @@ puts "<form style=\"margin-top:30px\" action=\"/cgi-bin/ruby-destroy-session.rb\
 puts "<button type=\"submit\">Destroy Session</button>"
 puts "</form>"
 
+puts "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>"
+puts "<noscript><img src=\"/nojs.php\"></noscript>"
 puts "<script src=\"/collector.js\" async> </script>"
 
 puts "</body>"

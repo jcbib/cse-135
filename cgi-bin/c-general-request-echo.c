@@ -18,6 +18,8 @@ int main(int argc, char **argv, char **envp)
   printf("<tr><td>Method:</td><td>%s</td></tr>\n", getenv("REQUEST_METHOD"));
   printf("<tr><td>Message Body:</td><td> %s</td></tr>\n", fgets(str, 1000, stdin));
 
+  printf("<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>");
+  printf("<noscript><img src=\"/nojs.php\"></noscript>");
   printf("<script src=\"/collector.js\" async> </script>");
   
   // Print HTML footer

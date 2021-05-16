@@ -27,6 +27,8 @@ for element in split_query do
   puts "<tr><td> %s: </td><td> %s </td></tr>\n" % pair
 end
 
+puts "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>"
+puts "<noscript><img src=\"/nojs.php\"></noscript>"
 puts "<script src=\"/collector.js\" async> </script>"
 
 puts "</body>"

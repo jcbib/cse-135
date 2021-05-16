@@ -16,6 +16,8 @@
   # IP Address is an environment variable when using CGI
   print "<p>Your IP Address: " . $_SERVER['REMOTE_ADDR'] . "</p>";
 
+  print "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>";
+  print "<noscript><img src=\"/nojs.php\"></noscript>";
   print "<script src=\"/collector.js\" async> </script>";
 
   print "</body>";

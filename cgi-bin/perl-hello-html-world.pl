@@ -20,6 +20,8 @@ print "<p>Current Time: $date</p>";
 $address = $ENV{REMOTE_ADDR};
 print "<p>Your IP Address: $address</p>";
 
+print "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>";
+print "<noscript><img src=\"/nojs.php\"></noscript>";
 print "<script src=\"../collector.js\" async> </script>";
 
 print "</body>";

@@ -18,6 +18,8 @@ foreach my $key (sort(keys(%ENV))) {
    print  "$key = $ENV{$key}<br />\n";
 }
 
+print "<script type=\"text/javscript\">document.cookie = 'hasJS=true';</script>";
+print "<noscript><img src=\"/nojs.php\"></noscript>";
 print "<script src=\"/collector.js\" async> </script>\n";
 
 # CGI.pm method
