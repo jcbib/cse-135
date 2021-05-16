@@ -19,35 +19,31 @@ router.post('/', async function (req, res) {
     req.session.collectorData['static'] = req.body;
   }
 
-  const staticObj = new StaticModel({
-    sessionId: req.sessionID,
-    userAgent: req.body.userAgent,
-    userLanguage: req.body.userLanguage,
-    cookiesEnabled: req.body.cookiesEnabled,
-    jsEnabled: req.body.jsEnabled,
-    imageEnabled: req.body.imageEnabled,
-    cssEnabled: req.body.cssEnabled,
-    screenDimensions: req.body.screenDimensions,
-    windowsDimensions: req.body.windowsDimensions,
-    networkConnectionType: req.body.networkConnectionType
-  });
-
-  let staticData = 0;
-
-  try {
-    staticData = await StaticModel.findOne({sessionId: req.sessionID});
-  } catch(error) {
-    res.json({message: error});
-  }
-
-  if ( staticData == 0 ) {
-    try {
-      const postSuccess = await staticObj.save();
-      res.json(postSuccess);
-    } catch(error) {
-      res.json({message: error});
+  StaticModel.findOne({sessionId: req.sessionID}, function(err, entry) {
+    if (err) res.json({ message: error});
+    if ( entry ) {
+      res.text("This has already been saved!");
+    } else {
+      const staticObj = new StaticModel({
+        sessionId: req.sessionID,
+        userAgent: req.body.userAgent,
+        userLanguage: req.body.userLanguage,
+        cookiesEnabled: req.body.cookiesEnabled,
+        jsEnabled: req.body.jsEnabled,
+        imageEnabled: req.body.imageEnabled,
+        cssEnabled: req.body.cssEnabled,
+        screenDimensions: req.body.screenDimensions,
+        windowsDimensions: req.body.windowsDimensions,
+        networkConnectionType: req.body.networkConnectionType
+      });
+      try {
+        const postSuccess = await staticObj.save();
+        res.json(postSuccess);
+      } catch(error) {
+        res.json({message: error});
+      }
     }
-  }
+  });
   
 });
 
