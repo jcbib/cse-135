@@ -47,7 +47,7 @@
         //     die('Error');
         // }
 
-        $responseData = json_decode($result, TRUE);
+        $responseData = json_decode($serever_output, TRUE);
         print_r($responseData);
     }
 ?>
