@@ -116,8 +116,7 @@ function writeActivityTable(jsonData) {
     });
   });
   // console.log(tableArray);
-  // $("#activityDataTable").html(
-  console.log(
+  $("#activityDataTable").html(
     `
     <zing-grid
     ... pager
