@@ -96,7 +96,7 @@ function createActivityTable() {
       caption = "Activity Browser Data"
       data = '
       ` +
-      JSON.stringify(data['Activity Data']) +
+      JSON.stringify(data) +
       `
       '> </zing-grid>
       `
