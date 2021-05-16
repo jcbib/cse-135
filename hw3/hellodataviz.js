@@ -158,6 +158,6 @@ function findDate(date) {
         case 'SAT':
             return SAT;
         case 'SUN':
-            return 'SUN';
+            return SUN;
     };
 };
