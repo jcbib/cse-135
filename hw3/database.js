@@ -19,20 +19,21 @@ function createStaticTable() {
     },
   })
   .then(res => res.json())
-  .then(data => 
-    $("#staticDataTable").html(
-      `
-      <zing-grid
-      ... pager
-      height = "200"
-      caption = "Static Browser Data"
-      data = '
-      ` +
-      JSON.stringify(data) +
-      `
-      '> </zing-grid>
-      `
-    )
+  .then(data => console.log(data))
+  // .then(data => 
+  //   $("#staticDataTable").html(
+  //     `
+  //     <zing-grid
+  //     ... pager
+  //     page-size="7"
+  //     caption = "Static Browser Data"
+  //     data = '
+  //     ` +
+  //     JSON.stringify(data) +
+  //     `
+  //     '> </zing-grid>
+  //     `
+  //   )
   );
 
   // $("#staticDataTable").html(
@@ -63,7 +64,7 @@ function createPerformanceTable() {
       `
       <zing-grid
       ... pager
-      height = "200"
+      page-size="7"
       caption = "Performance Browser Data"
       data = '
       ` +
@@ -142,7 +143,7 @@ function createActivityTable() {
       `
       <zing-grid
       ... pager
-      height="200"
+      page-size="7"
       caption = "Activity Browser Data"
       data = '
       ` +
