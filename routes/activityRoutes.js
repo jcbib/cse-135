@@ -20,6 +20,9 @@ router.post('/', function(req, res) {
     req.session.collectorData['activity'] = [];
   }
 
+  if ( req.session.collectorData['activity'].length >= 1000 ) {
+    req.session.collectorData['activity'] = [];
+  }
   req.session.collectorData['activity'] = req.session.collectorData['activity'].concat(req.body);
 
   ActivityModel.findOne({sessionId: req.sessionID}, async function(err, entry) {
@@ -27,7 +30,7 @@ router.post('/', function(req, res) {
     if ( entry ) {
       try {
         const postSuccess = await ActivityModel.findOneAndUpdate({sessionId: req.sessionID}, 
-          { activityData: req.body });
+          { activityData: req.session.collectorData['activity'] });
         res.json(postSuccess);
       } catch(error) {
         res.json({message: error});
