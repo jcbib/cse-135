@@ -47,7 +47,8 @@
         //     die('Error');
         // }
         echo "hello";
-        print_r($server_output)
+        print_r($ch);
+        print_r($server_output);
         $responseData = json_decode($server_output, TRUE);
         print_r($responseData);
     }
