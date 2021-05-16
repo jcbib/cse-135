@@ -37,7 +37,6 @@
         }
 
         $responseData = json_decode($result, TRUE);
-        echo "HEEELELELELELLELEOEOEOEOEOEOE";
         print_r($responseData);
     }
 ?>
