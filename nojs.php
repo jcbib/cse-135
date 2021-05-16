@@ -10,7 +10,7 @@
             $cookiesEn = FALSE;
         } 
 
-        $postData = array(
+        $posty = array(
             'userAgent' => $_SERVER['HTTP_USER_AGENT'],
             'userLanguage' => substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2),
             'cookiesEnabled' => $cookiesEn,
@@ -26,7 +26,7 @@
             'http' => array(
                 'method' => 'POST',
                 'header' => 'Content-Type: application/json',
-                'content' => json_encode($postData)
+                'content' => json_encode($posty)
             )
         );
 
