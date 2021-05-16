@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const ActivityModel = require('../schema/activity')
+const ActivityModel = require('../schema/activity');
+const { DATA_LIMIT } = require('../constants/envConstants');
 
 // Add activity data routes
 router.get('/', async function (req, res) { 
@@ -20,10 +21,13 @@ router.post('/', function(req, res) {
     req.session.collectorData['activity'] = [];
   }
 
-  if ( req.session.collectorData['activity'].length >= 1000 ) {
-    req.session.collectorData['activity'] = [];
-  }
+  const currLen = req.session.collectorData['activity'].length;
+
   req.session.collectorData['activity'] = req.session.collectorData['activity'].concat(req.body);
+
+  if ( currLen >= DATA_LIMIT ) {
+    req.session.collectorData['activity'] = req.session.collectorData['activity'].slice(currLen - DATA_LIMIT);
+  }
 
   ActivityModel.findOne({sessionId: req.sessionID}, async function(err, entry) {
     if (err) res.json({ message: error});
