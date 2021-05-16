@@ -37,7 +37,7 @@ var staticData = {
   'networkConnectionType': window.navigator.connection.effectiveType
 };
 
-// POST Static 
+// POST Static with 5 retries
 function fetchStaticData(retries = 5) {
   fetch(STATIC_URL, {
     method: 'POST',
@@ -83,17 +83,37 @@ var performanceData = {
   'totalTimeLoad': window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart
 };
 
-// POST Performance
-fetch(PERF_URL, {
-  method: 'POST',
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(performanceData)
-})
-  .then(res => res.text())
-  // .then(data => console.log("data: " + data))
-  .catch(err => console.log("err: " + err));
+// POST Performance with 5 retries
+function fetchPerformanceData(retries = 5) {
+  fetch(PERF_URL, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(performanceData)
+  })
+    .then(res => {
+      if (res.ok) return res.text();
+      if (retries > 0) {
+        return fetchPerformanceData(retries - 1);
+      } else {
+        throw new Error(res);
+      }
+    })
+    // .then(data => console.log("data: " + data))
+    .catch(err => console.log("err: " + err));
+}
+
+// fetch(PERF_URL, {
+//   method: 'POST',
+//   headers: {
+//     "Content-Type": "application/json"
+//   },
+//   body: JSON.stringify(performanceData)
+// })
+//   .then(res => res.text())
+//   // .then(data => console.log("data: " + data))
+//   .catch(err => console.log("err: " + err));
 
 // Activity
 var activityList = [];
@@ -214,12 +234,14 @@ function setIdle() {
 
 // User left and entered page
 
-// After user has loaded the page, send a POST request for static, performance, and activity data 
+// After user has loaded the page, send a POST request for static and performance data 
+// Store activity data in a list to be sent as a batch in an interval 
 window.onload = function (e) {
   var currDateTime = new Date();
   // console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
   timeUserEnter = currDateTime.toUTCString();
   fetchStaticData();
+  fetchPerformanceData();
   stashActivityData();
 }
 
@@ -257,6 +279,7 @@ function stashActivityData() {
   idleStopTime = 0;
 };
 
+// POST Activity with 5 retries
 function fetchActivityData(retries = 5) {
   fetch(ACTIVITY_URL, {
     method: 'POST',
