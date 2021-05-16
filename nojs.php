@@ -27,7 +27,7 @@
                 'method' => 'POST',
                 'header' => "Content-Type: application/json\r\n". 
                             "Accept: application/json\r\n",
-                'content' => htttp_build_query($postData)
+                'content' => http_build_query($postData)
             )
         );
 
