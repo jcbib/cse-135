@@ -86,7 +86,7 @@ function fetchBarDataGraph(jsonData) {
             "line-color": "#2a7ca",
             "line-width": 5,
             "marker": {
-                "border-color": "#2a7ca"
+                "background-color": "#2a7ca"
             }
 
         }, {
@@ -96,7 +96,7 @@ function fetchBarDataGraph(jsonData) {
             "line-color": "#fe4a49",
             "line-width": 5,
             "marker": {
-                "border-color": "#fe4a49"
+                "background-color": "#fe4a49"
             }
 
         }, {
@@ -106,7 +106,7 @@ function fetchBarDataGraph(jsonData) {
             "line-color": "#fed766",
             "line-width": 5,
             "marker": {
-                "border-color": "#fed766"
+                "background-color": "#fed766"
             }
         }]
     };
