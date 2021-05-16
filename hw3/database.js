@@ -46,34 +46,32 @@ function createPerformanceTable() {
     },
   })
   .then(res => res.json())
-  .then(data => 
-    $("#performanceDataTable").html(
-      `
-      <zing-grid
-      ... pager
-      page-size="7"
-      caption = "Performance Browser Data"
-      data = '
-      ` +
-      JSON.stringify(data) +
-      `
-      '> </zing-grid>
-      `
-    )
-  );
+  .then(data => writePerformanceTable(data));
 };
 
-const fetchCourses = async args => {
-  const res = await fetch(`/coursemanagement/getschoolcourse`, {
-    method: "POST",
-    body: JSON.stringify({ schoolId: currentSchool2 }),
-    headers: {
-      "Content-Type": "application/json"
-    }
+function writePerformanceTable(jsonData) {
+  let tableArray = [];
+  jsonData.forEach(obj => {
+    let performanceArray = obj['performanceData'];
+    // Append sessionId to each performanceData entry and push into bigger array
+    performanceArray.forEach(performance => {
+      performance['sessionId'] = obj['sessionId'];
+      tableArray.push(performance);
+    });
   });
-  const body = await res.json();
-  console.log("coursesbody is:", body)
-  return body;
+  $("#performanceDataTable").html(
+    `
+    <zing-grid
+    ... pager
+    page-size="7"
+    caption = "Performance Browser Data"
+    data = '
+    ` +
+    JSON.stringify(tableArray) +
+    `
+    '> </zing-grid>
+    `
+  );
 };
 
 function createActivityTable() {
@@ -86,36 +84,19 @@ function createActivityTable() {
     },
   })
   .then(res => res.json())
-  .then(data => writeActivityTable(data))
-    // $("#activityDataTable").html(
-  //   console.log(
-  //     `
-  //     <zing-grid
-  //     ... pager
-  //     page-size="7"
-  //     caption = "Activity Browser Data"
-  //     data = '
-  //     ` +
-  //     JSON.stringify(data) +
-  //     `
-  //     '> </zing-grid>
-  //     `
-  //   )
-  // );
+  .then(data => writeActivityTable(data));
 };
 
 function writeActivityTable(jsonData) {
-  // console.log(JSON.stringify(jsonData));
   let tableArray = [];
   jsonData.forEach(obj => {
     let activityArray = obj['activityData'];
-    // console.log(activityArray);
+    // Append sessionId to each activityData entry and push into bigger array
     activityArray.forEach(activity => {
       activity['sessionId'] = obj['sessionId'];
       tableArray.push(activity);
     });
   });
-  // console.log(tableArray);
   $("#activityDataTable").html(
     `
     <zing-grid
