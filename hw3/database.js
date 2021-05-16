@@ -29,7 +29,7 @@ function createStaticTable() {
       caption = "Static Browser Data"
       data = '
       ` +
-      JSON.stringify(data).replaceAll("'", "\'") +
+      (JSON.stringify(data)).replaceAll("'", "\'") +
       `
       '> </zing-grid>
       `
