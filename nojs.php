@@ -27,7 +27,9 @@
                 'method' => 'POST',
                 'header' => "Content-Type: application/json\r\n" .
                             "Accept: application/json\r\n",
-                'content' => json_encode($posty)
+                'content' => array(
+                            'message' => "HELLO"
+                )
             )
         );
 
