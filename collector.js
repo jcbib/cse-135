@@ -63,9 +63,6 @@ var performanceData = {
   'totalTimeLoad': window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart
 };
 
-console.log(typeof performanceData['timePageLoadEnd']);
-console.log(typeof performanceData['timePageLoadStart']);
-console.log(typeof performanceData['totalTimeLoad']);
 // POST Performance
 fetch(PERF_URL, {
   method: 'POST',
