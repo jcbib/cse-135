@@ -14,12 +14,86 @@ $(document).ready(function () {
 function drawPieChart() {
     const staticUrl = '/api/static/';
     fetch(staticUrl, {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json"
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(res => res.json())
+        .then(data => fetchStaticDataGraph(data));
+};
+
+function drawLineChart() {
+    const activityUrl = '/api/activity/';
+    fetch(activityUrl, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(res => res.json())
+        .then(data => fetchBarDataGraph(data));
+};
+
+function fetchBarDataGraph(jsonData) {
+    let allActivityArray = [];
+    jsonData.forEach(obj => {
+        let activityArray = obj['activityData'];
+        // Push each activityData into bigger array
+        activityArray.forEach(activity => {
+            allActivityArray.push(activity);
+        });
+    });
+
+    let anhVisit = [0, 0, 0, 0, 0, 0, 0];
+    let kellyVisit = [0, 0, 0, 0, 0, 0, 0];
+    let jonVisit = [0, 0, 0, 0, 0, 0, 0];
+
+    allActivityArray.forEach(activity => {
+        // extract day of the week and set it to uppercase
+        if (activity['timeUserEnter']) {
+            let date = activity['timeUserEnter'].substring(0, 3).toUpperCase();
+            let name = activity['currentPage'].split("/");
+            if (name[3] == 'anh') {
+                let idx = findDate(date);
+                anh[idx] += 1;
+            }
+            if (name[3] == 'kelly') {
+                let idx = findDate(date);
+                kelly[idx] += 1;
+            }
+            if (name[3] == 'jon') {
+                let idx = findDate(date);
+                jon[idx] += 1;
+            }
+        }
+    });
+
+    var lineConfig = {
+        "type": "line",
+        "legend": {
+
         },
-    }).then(res => res.json())
-    .then(data => fetchStaticDataGraph(data));
+        "series": [{
+            "values": anh,
+            "text": "Anh-001A3",
+            "legend-text": "Anh"
+        }, {
+            "values": kelly,
+            "text": "Kelly-002B4",
+            "legend-text": "Kelly"
+        }, {
+            "values": jon,
+            "text": "Jon-004C3",
+            "legend-text": "Jon"
+        }]
+    };
+
+    zingchart.render({
+        id: 'lineChart',
+        data: lineConfig,
+        height: "100%",
+        width: "100%"
+    });
+
 };
 
 function fetchStaticDataGraph(jsonData) {
@@ -46,8 +120,7 @@ function fetchStaticDataGraph(jsonData) {
     let pieConfig = {
         "type": "pie",
         "title": {
-            "text"
-            : "Different Screen Dimensions Used on jak-cse135.site"
+            "text": "Different Screen Dimensions Used on jak-cse135.site"
         },
         "plot": {
             'value-box': {
@@ -74,12 +147,12 @@ function fetchStaticDataGraph(jsonData) {
 function drawBarChart() {
     const activityUrl = '/api/activity/';
     fetch(activityUrl, {
-        method: 'GET',
-        headers: {
-            "Content-Type": "application/json"
-        },
-    }).then(res => res.json())
-    .then(data => fetchActivityDataGraph(data));
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+        }).then(res => res.json())
+        .then(data => fetchActivityDataGraph(data));
 };
 
 function fetchActivityDataGraph(jsonData) {
@@ -137,7 +210,7 @@ function fetchActivityDataGraph(jsonData) {
 };
 
 function findDate(date) {
-    switch(date) {
+    switch (date) {
         case 'MON':
             return MON;
         case 'TUE':
