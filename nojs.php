@@ -38,6 +38,6 @@
 
         $responseData = json_decode($result, TRUE);
         echo "HEEELELELELELLELEOEOEOEOEOEOE";
-        echo $responseData;
+        print_r($responseData);
     }
 ?>
