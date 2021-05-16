@@ -74,7 +74,7 @@ function fetchBarDataGraph(jsonData) {
 
         },
         "title": {
-            "text": "Number of Pings Per Day"
+            "text": "Number of Pings Per Day On Individual Portfolio"
         },
         'scale-x': {
             labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -83,19 +83,19 @@ function fetchBarDataGraph(jsonData) {
             "values": anhVisit,
             "text": "Anh",
             "legend-text": "Anh",
-            "background-color": "#2a7ca"
+            "line-color": "#2a7ca"
 
         }, {
             "values": kellyVisit,
             "text": "Kelly",
             "legend-text": "Kelly",
-            "background-color": "#fe4a49"
+            "line-color": "#fe4a49"
 
         }, {
             "values": jonVisit,
-            "text": "Jon",
+            "text": "Jon-fed766",
             "legend-text": "Jon",
-            "background-color": "#fed766"
+            "line-color": "#fed766"
         }]
     };
 
