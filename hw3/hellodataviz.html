@@ -60,7 +60,7 @@
     <div id='pieChart'></div>
     <script>
         ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
-
+        console.log('before fetch');
         const staticUrl = '/api/static/';
         fetch(staticUrl, {
             method: 'GET',
@@ -69,6 +69,7 @@
             },
         }).then(res => res.json())
         .then(data => function(data){
+            console.log(data);
             let screenDimDict = {};
             data.forEach(obj => {
                 if (screenDimDict['screenDimensions'] == undefined) {
