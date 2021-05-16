@@ -83,10 +83,10 @@ function fetchBarDataGraph(jsonData) {
             "values": anhVisit,
             "text": "Anh",
             "legend-text": "Anh",
-            "line-color": "#2a7ca",
+            "line-color": "#3f7ad9",
             "line-width": 5,
             "marker": {
-                "background-color": "#2a7ca"
+                "background-color": "#3f7ad9"
             }
 
         }, {
