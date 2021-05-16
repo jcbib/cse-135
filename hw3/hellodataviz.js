@@ -1,5 +1,3 @@
-const { findOneAndUpdate } = require("../schema/activity");
-
 const MON = 0;
 const TUE = 1;
 const WED = 2;
@@ -113,7 +111,7 @@ function fetchActivityDataGraph(jsonData) {
 
     console.log(keyUpCounts);
     console.log(keyDownCounts);
-    
+
     var barConfig = {
         type: "bar",
         "legend": {
