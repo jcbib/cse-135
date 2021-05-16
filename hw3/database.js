@@ -87,7 +87,8 @@ function createActivityTable() {
   })
   .then(res => res.json())
   .then(data => 
-    $("#activityDataTable").html(
+    // $("#activityDataTable").html(
+    console.log(
       `
       <zing-grid
       ... pager
@@ -101,4 +102,8 @@ function createActivityTable() {
       `
     )
   );
+};
+
+function writeActivityTable(jsonData) {
+
 };
