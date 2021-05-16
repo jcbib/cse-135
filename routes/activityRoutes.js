@@ -21,9 +21,9 @@ router.post('/', function(req, res) {
     req.session.collectorData['activity'] = [];
   }
 
-  const currLen = req.session.collectorData['activity'].length;
-
   req.session.collectorData['activity'] = req.session.collectorData['activity'].concat(req.body);
+
+  const currLen = req.session.collectorData['activity'].length;
 
   if ( currLen >= DATA_LIMIT ) {
     req.session.collectorData['activity'] = req.session.collectorData['activity'].slice(currLen - DATA_LIMIT);

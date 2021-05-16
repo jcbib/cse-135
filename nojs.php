@@ -22,24 +22,21 @@
             'networkConnectionType' => 'JavaScript Disabled, Unable to Retrieve'
         );
 
-        $payload = json_encode($postData);
+        $options = array (
+            'http' => array(
+                'method' => 'POST',
+                'header' => 'Content-Type: application/json',
+                'content' => json_encode($postData)
+            )
+        );
 
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $result = curl_exec($ch);
-        curl_close($ch);
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, FALSE, $context);
+        if ($result === FALSE) {
+            die('Error');
+        }
 
         $responseData = json_decode($result, TRUE);
         print_r($responseData);
-        echo "\n\n";
-        print_r($postData);
-        echo "\n\n";
-        print_r(json_encode($postData));
     }
 ?>

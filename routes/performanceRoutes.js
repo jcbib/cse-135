@@ -23,10 +23,10 @@ router.post('/', function(req, res) {
   if ( !req.session.collectorData['performance'] ) {
     req.session.collectorData['performance'] = [];
   }
-  
-  const currLen = req.session.collectorData['performance'].length;
 
   req.session.collectorData['performance'].push(req.body);
+  
+  const currLen = req.session.collectorData['performance'].length;
 
   if ( currLen >= DATA_LIMIT ) {
     req.session.collectorData['performance'] = req.session.collectorData['performance'].slice(currLen - DATA_LIMIT);
