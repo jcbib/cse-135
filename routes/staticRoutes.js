@@ -43,7 +43,7 @@ router.post('/', function (req, res) {
       });
       try {
         const postSuccess = await staticObj.save();
-        res.send("Post Success!");
+        res.json(req.body);
       } catch(error) {
         res.json({message: error});
       }

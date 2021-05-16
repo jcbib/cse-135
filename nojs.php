@@ -10,26 +10,24 @@
             $cookiesEn = FALSE;
         } 
 
-        // $posty = array(
-        //     'userAgent' => $_SERVER['HTTP_USER_AGENT'],
-        //     'userLanguage' => substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2),
-        //     'cookiesEnabled' => $cookiesEn,
-        //     'jsEnabled' => FALSE,
-        //     'imageEnabled' => FALSE,
-        //     'cssEnabled' => FALSE,
-        //     'screenDimensions' => 'JavaScript Disabled, Unable to Retrieve',
-        //     'windowsDimensions' => 'JavaScript Disabled, Unable to Retrieve',
-        //     'networkConnectionType' => 'JavaScript Disabled, Unable to Retrieve'
-        // );
+        $postData = array(
+            'userAgent' => $_SERVER['HTTP_USER_AGENT'],
+            'userLanguage' => substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2),
+            'cookiesEnabled' => $cookiesEn,
+            'jsEnabled' => FALSE,
+            'imageEnabled' => FALSE,
+            'cssEnabled' => FALSE,
+            'screenDimensions' => 'JavaScript Disabled, Unable to Retrieve',
+            'windowsDimensions' => 'JavaScript Disabled, Unable to Retrieve',
+            'networkConnectionType' => 'JavaScript Disabled, Unable to Retrieve'
+        );
 
         $options = array (
             'http' => array(
                 'method' => 'POST',
-                'header' => "Content-Type: application/json\r\n" .
+                'header' => "Content-Type: application/json". 
                             "Accept: application/json\r\n",
-                'content' => array(
-                            'message' => "HELLO"
-                )
+                'content' => json_encode($postData)
             )
         );
 
@@ -39,7 +37,6 @@
             die('Error');
         }
 
-        print_r($context);
         $responseData = json_decode($result, TRUE);
         print_r($responseData);
     }
