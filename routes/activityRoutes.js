@@ -3,7 +3,7 @@ const router = express.Router();
 const ActivityModel = require('../schema/activity')
 
 // Add activity data routes
-router.get('/', function (req, res) { 
+router.get('/', async function (req, res) { 
   try {
     const activityObj = await ActivityModel.find();
     res.json(activityObj);
