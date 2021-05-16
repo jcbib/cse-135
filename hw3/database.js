@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 function createStaticTable() {
   // Call fetch GET
-  const staticUrl = '/api/static/';;
+  const staticUrl = '/api/static/';
   fetch(staticUrl, {
     method: 'GET',
     headers: {

@@ -60,6 +60,26 @@
     <div id='pieChart'></div>
     <script>
         ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
+
+        const staticUrl = '/api/static/';
+        fetch(staticUrl, {
+            method: 'GET',
+            headers: {
+            "Content-Type": "application/json"
+            },
+        }).then(res => res.json())
+        .then(data => function(data){
+            let screenDimDict = {};
+            data.forEach(obj => {
+                if (screenDimDict['screenDimensions'] == undefined) {
+                    screenDimDict['screenDimensions'] = 1;
+                } else {
+                    screenDimDict['screenDimensions'] += 1;
+                }
+            });
+            console.log(screenDimDict);
+        });
+
         var pieConfig = {
             "type": "pie",
             "title": {
