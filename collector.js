@@ -46,7 +46,7 @@ fetch(STATIC_URL, {
   body: JSON.stringify(staticData)
 })
   .then(res => res.text())
-  .then(data => console.log("data: " + data))
+  // .then(data => console.log("data: " + data))
   .catch(err => console.log("err: " + err));
 
 // Performance
@@ -72,7 +72,7 @@ fetch(PERF_URL, {
   body: JSON.stringify(performanceData)
 })
   .then(res => res.text())
-  .then(data => console.log("data: " + data))
+  // .then(data => console.log("data: " + data))
   .catch(err => console.log("err: " + err));
 
 // Activity
@@ -244,7 +244,7 @@ function fetchActivityData() {
     body: JSON.stringify(activityList)
   })
     .then(res => res.text())
-    .then(data => console.log("data: " + data))
+    // .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
 
   activityList = [];
