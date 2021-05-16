@@ -86,24 +86,24 @@ function createActivityTable() {
     },
   })
   .then(res => res.json())
-  .then(data => 
+  .then(data => writeActivityTable(data))
     // $("#activityDataTable").html(
-    console.log(
-      `
-      <zing-grid
-      ... pager
-      page-size="7"
-      caption = "Activity Browser Data"
-      data = '
-      ` +
-      JSON.stringify(data) +
-      `
-      '> </zing-grid>
-      `
-    )
-  );
+  //   console.log(
+  //     `
+  //     <zing-grid
+  //     ... pager
+  //     page-size="7"
+  //     caption = "Activity Browser Data"
+  //     data = '
+  //     ` +
+  //     JSON.stringify(data) +
+  //     `
+  //     '> </zing-grid>
+  //     `
+  //   )
+  // );
 };
 
 function writeActivityTable(jsonData) {
-
+  console.log(JSON.stringify(jsonData));
 };
