@@ -5,9 +5,9 @@ const PerformanceSchema = new Schema({
     sessionId: String,
     performanceData: [{
         wholeTimingObject: Object,
-        timePageLoadStart: Number,
-        timePageLoadEnd: Number,
-        totalTimeLoad: Number
+        timePageLoadStart: BigInt,
+        timePageLoadEnd: BigInt,
+        totalTimeLoad: BigInt
     }]
 });
 
