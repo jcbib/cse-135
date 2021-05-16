@@ -1,3 +1,5 @@
+const { findOneAndUpdate } = require("../schema/activity");
+
 const MON = 0;
 const TUE = 1;
 const WED = 2;
@@ -91,7 +93,27 @@ function fetchActivityDataGraph(jsonData) {
         });
     });
 
+    let keyUpCounts = [0, 0, 0, 0, 0, 0, 0];
+    let keyDownCounts = [0, 0, 0, 0, 0, 0, 0];
 
+    allActivityArray.forEach(activity => {
+        // extract day of the week and set it to uppercase
+        if (activity['timeUserEnter']) {
+            let date = activity['timeUserEnter'].substring(0, 3).toUpperCase();
+            if (activity['keyUp']) {
+                let idx = findDate(date);
+                keyUpCounts[idx] += 1;
+            }
+            if (activity['keyDown']) {
+                let idx = findDate(date);
+                keyDownCounts[idx] += 1;
+            }
+        }
+    });
+
+    console.log(keyUpCounts);
+    console.log(keyDownCounts);
+    
     var barConfig = {
         type: "bar",
         "legend": {
@@ -121,4 +143,23 @@ function fetchActivityDataGraph(jsonData) {
         height: "100%",
         width: "100%"
     });
-}
+};
+
+function findDate(date) {
+    switch(date) {
+        case 'MON':
+            return MON;
+        case 'TUE':
+            return TUE;
+        case 'WED':
+            return WED;
+        case 'THU':
+            return THU;
+        case 'FRI':
+            return FRI;
+        case 'SAT':
+            return SAT;
+        case 'SUN':
+            return 'SUN';
+    };
+};
