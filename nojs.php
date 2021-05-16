@@ -3,7 +3,7 @@
         // JS is enabled, do not need to do anything.
     } else {
         $cookiesEn = FALSE;
-        $url = 'http://jak-cse135.site/api/static';
+        $url = 'http://jak-cse135.site/testnojs.php';
         setcookie('testcookie', 'hello');
 
         if (isset($_COOKIE['testcookie'])) {
