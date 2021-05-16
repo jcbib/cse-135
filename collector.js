@@ -38,16 +38,36 @@ var staticData = {
 };
 
 // POST Static 
-fetch(STATIC_URL, {
-  method: 'POST',
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(staticData)
-})
-  .then(res => res.text())
-  // .then(data => console.log("data: " + data))
-  .catch(err => console.log("err: " + err));
+function fetchStaticData(retries = 5) {
+  fetch(STATIC_URL, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(staticData)
+  })
+    .then(res => {
+      if (res.ok) res.text();
+      if (retries > 0) {
+        return fetchStaticData(retries - 1);
+      } else {
+        throw new Error(res);
+      }
+    })
+    // .then(data => console.log("data: " + data))
+    .catch(err => console.log("err: " + err));
+};
+
+// fetch(STATIC_URL, {
+//   method: 'POST',
+//   headers: {
+//     "Content-Type": "application/json"
+//   },
+//   body: JSON.stringify(staticData)
+// })
+//   .then(res => res.text())
+//   // .then(data => console.log("data: " + data))
+//   .catch(err => console.log("err: " + err));
 
 // Performance
 // console.log(window.performance.timing);
@@ -193,10 +213,13 @@ function setIdle() {
 }
 
 // User left and entered page
+
+// After user has loaded the page, send a POST request for static, performance, and activity data 
 window.onload = function (e) {
   var currDateTime = new Date();
   // console.log("User has entered the page", document.URL," at ", currDateTime.toUTCString());
   timeUserEnter = currDateTime.toUTCString();
+  fetchStaticData();
   stashActivityData();
 }
 
@@ -234,8 +257,7 @@ function stashActivityData() {
   idleStopTime = 0;
 };
 
-function fetchActivityData(retries = 3) {
-
+function fetchActivityData(retries = 5) {
   fetch(ACTIVITY_URL, {
     method: 'POST',
     headers: {
@@ -244,18 +266,18 @@ function fetchActivityData(retries = 3) {
     body: JSON.stringify(activityList)
   })
     .then(res => {
-      if (res.ok) return res.text();
+      if (res.ok) {
+        activityList = [];
+        return res.text();
+      }
       if (retries > 0) {
         return fetchActivityData(retries - 1);
       } else {
         throw new Error(res);
       }
     })
-    // .catch(err => console.error)
     // .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
-
-  activityList = [];
 };
 
 // Send data every set seconds
