@@ -46,7 +46,7 @@
         // if ($result === FALSE) {
         //     die('Error');
         // }
-
+        echo "hello";
         $responseData = json_decode($server_output, TRUE);
         print_r($responseData);
     }
