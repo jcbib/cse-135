@@ -73,6 +73,12 @@ function fetchBarDataGraph(jsonData) {
         "legend": {
 
         },
+        "title": {
+            "text": "Number of Pings Per Day"
+        },
+        'scale-x': {
+            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
         "series": [{
             "values": anhVisit,
             "text": "Anh-001A3",
