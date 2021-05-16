@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const PerformanceSchema = new Schema({
     sessionId: String,
     performanceData: [{
-        wholeTimingObject: Number,
+        wholeTimingObject: Object,
         timePageLoadStart: Number,
         timePageLoadEnd: Number,
         totalTimeLoad: Number
