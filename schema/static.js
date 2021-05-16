@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const StaticSchema = new Schema({
+    sessionId: String,
     userAgent: String,
     userLanguage: String,
     cookiesEnabled: Boolean,

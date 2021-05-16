@@ -31,15 +31,23 @@ router.post('/', async function (req, res) {
     networkConnectionType: req.body.networkConnectionType
   });
 
+  let staticData = 0;
+
   try {
-    const postSuccess = await staticObj.save();
-    res.json(postSuccess);
+    staticData = await staticObj.findOne({sessionId: req.sessionID});
   } catch(error) {
     res.json({message: error});
   }
 
-  // var response = req.sessionID + ": " + JSON.stringify(req.session.collectorData['static']);
-  // res.send(response);
+  if ( staticData == 0 ) {
+    try {
+      const postSuccess = await staticObj.save();
+      res.json(postSuccess);
+    } catch(error) {
+      res.json({message: error});
+    }
+  }
+  
 });
 
 module.exports = router;
