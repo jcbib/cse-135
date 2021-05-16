@@ -20,6 +20,7 @@ router.post('/', async function (req, res) {
   }
 
   const staticObj = new StaticModel({
+    sessionId: req.sessionID,
     userAgent: req.body.userAgent,
     userLanguage: req.body.userLanguage,
     cookiesEnabled: req.body.cookiesEnabled,
