@@ -6,7 +6,7 @@ const StaticModel = require('../schema/static')
 router.get('/', async function (req, res) {
    try {
      const staticObj = await StaticModel.find();
-     res.json(staticObj);
+     res.json(req.body);
    } catch(error) {
      res.json({message: error});
    }
