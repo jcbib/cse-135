@@ -234,7 +234,7 @@ function stashActivityData() {
   idleStopTime = 0;
 };
 
-function fetchActivityData() {
+function fetchActivityData(retries = 3) {
 
   fetch(ACTIVITY_URL, {
     method: 'POST',
@@ -243,7 +243,15 @@ function fetchActivityData() {
     },
     body: JSON.stringify(activityList)
   })
-    .then(res => res.text())
+    .then(res => {
+      if (res.ok) return res.text();
+      if (retries > 0) {
+        return fetchActivityData(retries - 1);
+      } else {
+        throw new Error(res);
+      }
+    })
+    // .catch(err => console.error)
     // .then(data => console.log("data: " + data))
     .catch(err => console.log("err: " + err));
 
@@ -251,7 +259,7 @@ function fetchActivityData() {
 };
 
 // Send data every set seconds
-setInterval(function(){ fetchActivityData(); }, 2000);
+setInterval(function(){ fetchActivityData(); }, 500);
 
 // User page is on
 // console.log(document.URL);

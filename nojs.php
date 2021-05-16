@@ -3,7 +3,7 @@
         // JS is enabled, do not need to do anything.
     } else {
         $cookiesEn = FALSE;
-        $url = 'http://jak-cse135.site/api/static'
+        $url = 'http://jak-cse135.site/api/static';
         setcookie('testcookie', 'hello');
 
         if (isset($_COOKIE['testcookie'])) {
@@ -12,14 +12,14 @@
 
         $postData = array(
             'userAgent' => $_SERVER['HTTP_USER_AGENT'],
-            'userLanguage': substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2),
-            'cookiesEnabled': $cookiesEn,
-            'jsEnabled': FALSE,
-            'imageEnabled': FALSE,
-            'cssEnabled': FALSE,
-            'screenDimensions': 'JavaScript Disabled, Unable to Retrieve',
-            'windowsDimensions': 'JavaScript Disabled, Unable to Retrieve',
-            'networkConnectionType': 'JavaScript Disabled, Unable to Retrieve'
+            'userLanguage' => substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2),
+            'cookiesEnabled' => $cookiesEn,
+            'jsEnabled' => FALSE,
+            'imageEnabled' => FALSE,
+            'cssEnabled' => FALSE,
+            'screenDimensions' => 'JavaScript Disabled, Unable to Retrieve',
+            'windowsDimensions' => 'JavaScript Disabled, Unable to Retrieve',
+            'networkConnectionType' => 'JavaScript Disabled, Unable to Retrieve'
         );
 
         $options = array (
@@ -37,6 +37,7 @@
         }
 
         $responseData = json_decode($result, TRUE);
-        echo $responseData;
+        echo "HEEELELELELELLELEOEOEOEOEOEOE";
+        print_r($responseData);
     }
 ?>

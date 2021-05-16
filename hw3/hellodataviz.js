@@ -188,15 +188,23 @@ function fetchActivityDataGraph(jsonData) {
         "legend": {
 
         },
+        "title": {
+            "text": "Number of Key Strokes Per Day of the Week" 
+        },
+        'scale-x': {
+            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        },
         series: [{
                 values: keyUpCounts,
                 "text": "Key Up Strokes",
-                "legend-text": "Key Up Strokes"
+                "legend-text": "Key Up Strokes",
+                "background-color": "#004c6d"
             },
             {
                 values: keyDownCounts,
                 "text": "Key Down Strokes",
-                "legend-text": "Key Down Strokes"
+                "legend-text": "Key Down Strokes",
+                "background-color": "#5380a0"
             }
         ]
     };
