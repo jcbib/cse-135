@@ -8,6 +8,7 @@ const SUN = 6;
 
 $(document).ready(function () {
     drawPieChart();
+    drawBarChart();
 });
 
 function drawPieChart() {
