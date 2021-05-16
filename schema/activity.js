@@ -3,18 +3,20 @@ const Schema = mongoose.Schema;
 
 const ActivitySchema = new Schema({
     sessionId: String,
-    mousePosX: Number,
-    mousePosY: Number,
-    mouseDownButton: String,
-    mouseUpButton: String,
-    keyDown: String,
-    keyUp: String,
-    scrollCoord: Number,
-    idleTime: Number,
-    idleStopTime: Number,
-    timeUserLeft: Number,
-    timeUserEnter: Number,
-    currentPage: String
+    activityData: [{
+      mousePosX: Number,
+      mousePosY: Number,
+      mouseDownButton: String,
+      mouseUpButton: String,
+      keyDown: String,
+      keyUp: String,
+      scrollCoord: Number,
+      idleTime: Number,
+      idleStopTime: Number,
+      timeUserLeft: Number,
+      timeUserEnter: Number,
+      currentPage: String
+    }]
 });
 
 const ActivityModel = mongoose.model('Activity Data', ActivitySchema);
