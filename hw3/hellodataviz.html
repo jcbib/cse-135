@@ -24,6 +24,7 @@
             width: 100%;
         }
     </style>
+    <script src="hellodataviz.js"></script>
 </head>
 
 <body>
@@ -58,14 +59,14 @@
     </script>
 
     <div id='pieChart'></div>
-    <script>
+    <!-- <script>
         ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "b55b025e438fa8a98e32482b5f768ff5"];
         console.log('before fetch');
         const staticUrl = '/api/static/';
         fetch(staticUrl, {
             method: 'GET',
             headers: {
-            "Content-Type": "application/json"
+                "Content-Type": "application/json"
             },
         }).then(res => res.json())
         .then(data => function(data){
@@ -79,7 +80,7 @@
                 }
             });
             console.log(screenDimDict);
-            
+
             var pieConfig = {
                 "type": "pie",
                 "title": {
@@ -124,7 +125,7 @@
             });
         });
 
-    </script>
+    </script> -->
 
     <div id='barChart'></div>
     <script>
