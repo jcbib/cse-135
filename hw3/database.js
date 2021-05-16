@@ -106,6 +106,8 @@ function createActivityTable() {
 
 function writeActivityTable(jsonData) {
   console.log(JSON.stringify(jsonData));
-  let jsonArray = [];
-  console.log(jsonData[0]);
+  let tableArray = [];
+  jsonData.forEach(obj => {
+    console.log(obj);
+  })
 };
