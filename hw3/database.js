@@ -19,7 +19,6 @@ function createStaticTable() {
     },
   })
   .then(res => res.json())
-  // .then(data => console.log(data));
   .then(data => 
     $("#staticDataTable").html(
       `
@@ -35,18 +34,6 @@ function createStaticTable() {
       `
     )
   );
-
-  // $("#staticDataTable").html(
-  //   `
-  //   <zing-grid
-  //   caption = "Static Browser Data"
-  //   data = '
-  //   ` +
-  //   JSON.stringify(data) +
-  //   `
-  //   '> </zing-grid>
-  //   `
-  // );
 };
 
 function createPerformanceTable() {
@@ -74,20 +61,6 @@ function createPerformanceTable() {
       `
     )
   );
-  // var data = [{
-  //   "test": "performance"
-  // }];
-  // $("#performanceDataTable").html(
-  //   `
-  //   <zing-grid
-  //   caption = "Performance Browser Data"
-  //   data = '
-  //   ` +
-  //   JSON.stringify(data) +
-  //   `
-  //   '> </zing-grid>
-  //   `
-  // );
 };
 
 const fetchCourses = async args => {
@@ -102,31 +75,6 @@ const fetchCourses = async args => {
   console.log("coursesbody is:", body)
   return body;
 };
-
-// const fetchActivityJSON = async args => {
-//   const activityUrl = '/api/activity/';
-//   const res = await fetch(activityUrl, {
-//     method: 'GET',
-//     headers: {
-//       "Content-Type": "application/json"
-//     }
-//   });
-//   const activityData = await res.json();
-//   console.log("FETCH ACTIVITY DATA: " + activityData);
-//   return activityData;
-// };
-
-// async function fetchActivityJSON() {
-//   const activityUrl = '/api/activity/';
-//   fetch(activityUrl, {
-//     method: 'GET',
-//     headers: {
-//       "Content-Type": "application/json"
-//     },
-//   })
-//   .then(res => res.json())
-//   .then(data => {return data})
-// }
 
 function createActivityTable() {
   // Call fetch GET and write to table
@@ -147,28 +95,10 @@ function createActivityTable() {
       caption = "Activity Browser Data"
       data = '
       ` +
-      JSON.stringify(data) +
+      JSON.stringify(data['Activity Data']) +
       `
       '> </zing-grid>
       `
     )
   );
-
-  // console.log(activityData);
-  // // console.log(activityDat);
-
-  // var data = [{
-  //   "test": "activity"
-  // }];
-  // $("#activityDataTable").html(
-  //   `
-  //   <zing-grid
-  //   caption = "Activity Browser Data"
-  //   data = '
-  //   ` +
-  //   JSON.stringify(data) +
-  //   `
-  //   '> </zing-grid>
-  //   `
-  // );
 };
