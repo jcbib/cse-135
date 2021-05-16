@@ -110,28 +110,20 @@ function fetchActivityDataGraph(jsonData) {
         }
     });
 
-    console.log(keyUpCounts);
-    console.log(keyDownCounts);
-
     var barConfig = {
         type: "bar",
         "legend": {
 
         },
         series: [{
-                values: [20, 40, 25, 50, 15, 45, 33, 34],
-                "text": "Test 1-001A3",
-                "legend-text": "Test 1"
+                values: keyUpCounts,
+                "text": "Key Up Strokes",
+                "legend-text": "Key Up Strokes"
             },
             {
-                values: [5, 30, 21, 18, 59, 50, 28, 33],
-                "text": "Test 2-002B4",
-                "legend-text": "Test 2"
-            },
-            {
-                values: [30, 5, 18, 21, 33, 41, 29, 15],
-                "text": "Test 3-004C3",
-                "legend-text": "Test 3"
+                values: keyDownCounts,
+                "text": "Key Down Strokes",
+                "legend-text": "Key Down Strokes"
             }
         ]
     };
