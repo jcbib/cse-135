@@ -105,7 +105,7 @@ function createActivityTable() {
 };
 
 function writeActivityTable(jsonData) {
-  console.log(JSON.stringify(jsonData));
+  // console.log(JSON.stringify(jsonData));
   let tableArray = [];
   jsonData.forEach(obj => {
     let activityArray = obj['activityData'];
@@ -115,5 +115,19 @@ function writeActivityTable(jsonData) {
       tableArray.push(activity);
     });
   });
-  console.log(tableArray);
+  // console.log(tableArray);
+  // $("#activityDataTable").html(
+  console.log(
+    `
+    <zing-grid
+    ... pager
+    page-size="7"
+    caption = "Activity Browser Data"
+    data = '
+    ` +
+    JSON.stringify(tableArray) +
+    `
+    '> </zing-grid>
+    `
+  );
 };
