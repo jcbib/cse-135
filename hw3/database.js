@@ -23,6 +23,7 @@ function createStaticTable() {
     $("#staticDataTable").html(
       `
       <zing-grid
+      ... pager
       height = "200"
       caption = "Static Browser Data"
       data = '
@@ -61,6 +62,7 @@ function createPerformanceTable() {
     $("#performanceDataTable").html(
       `
       <zing-grid
+      ... pager
       height = "200"
       caption = "Performance Browser Data"
       data = '
@@ -139,6 +141,7 @@ function createActivityTable() {
     $("#activityDataTable").html(
       `
       <zing-grid
+      ... pager
       height="200"
       caption = "Activity Browser Data"
       data = '
