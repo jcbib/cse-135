@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
  * Request Body: user-agent, user-language, accept-cookie, allow-js, allow-img, allow-css,
  *               screen-width, screen-height, window-width, window-height, connection-type
  */
-router.post('/', async function (req, res) { 
+router.post('/', function (req, res) { 
   if ( !req.session.collectorData ) {
     req.session.collectorData = {};
   }
@@ -19,7 +19,7 @@ router.post('/', async function (req, res) {
     req.session.collectorData['static'] = req.body;
   }
 
-  StaticModel.findOne({sessionId: req.sessionID}, function(err, entry) {
+  StaticModel.findOne({sessionId: req.sessionID}, async function(err, entry) {
     if (err) res.json({ message: error});
     if ( entry ) {
       res.text("This has already been saved!");
