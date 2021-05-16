@@ -81,21 +81,20 @@ function fetchBarDataGraph(jsonData) {
         },
         "series": [{
             "values": anhVisit,
-            "text": "Anh-2a7ca",
+            "text": "Anh",
             "legend-text": "Anh",
             "background-color": "#2a7ca"
 
         }, {
             "values": kellyVisit,
-            "text": "Kelly-fe4a49",
+            "text": "Kelly",
             "legend-text": "Kelly",
             "background-color": "#fe4a49"
 
         }, {
             "values": jonVisit,
-            "text": "Jon-fed766",
+            "text": "Jon",
             "legend-text": "Jon",
-
             "background-color": "#fed766"
         }]
     };
