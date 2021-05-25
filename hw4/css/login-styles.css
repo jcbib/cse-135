@@ -1,0 +1,43 @@
+
+#login-title {
+  font-size: 64px;
+}
+
+.title-text {
+  text-align: center;
+}
+
+#login-header {
+  font-size: 36px;
+  padding: 5%;
+  font-weight: bold;
+}
+
+#login-box {
+  display:flex;
+  margin: 2% 30%;
+  background-color: #d1d1d1;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.login-line {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2% 25%;
+}
+
+.login-line-text {
+  font-size: 18px;
+}
+
+#login-button {
+  font-size: 14px;
+  margin: 5% 42%;
+}
+
+body {
+  color:#252627;
+  font-family: Poppins;
+}
