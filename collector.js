@@ -34,7 +34,7 @@ var staticData = {
   'cssEnabled': isCSSEnabled(),
   'screenDimensions': window.screen.width + "x" + window.screen.height,
   'windowsDimensions': window.innerWidth + "x" + window.innerHeight,
-  'networkConnectionType': window.navigator.connection.effectiveType
+  'networkConnectionType': (window.navigator.connection === undefined ? null : window.navigator.connection.effectiveType)
 };
 
 // POST Static with 5 retries
@@ -71,7 +71,7 @@ function fetchStaticData(retries = 5) {
 // Performance
 
 var performanceData = {
-  'wholeTimingObject': window.performance.timing,
+  'wholeTimingObject': performance.getEntriesByType('navigation').length > 0 ? performance.getEntriesByType('navigation')[0] : null,
   'timePageLoadStart': window.performance.timing.domContentLoadedEventStart,
   'timePageLoadEnd': window.performance.timing.domContentLoadedEventEnd,
   'totalTimeLoad': window.performance.timing.domContentLoadedEventEnd - window.performance.timing.domContentLoadedEventStart
